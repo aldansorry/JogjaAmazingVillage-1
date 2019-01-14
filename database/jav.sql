@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2019 at 10:07 AM
+-- Generation Time: Jan 14, 2019 at 11:38 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -40,6 +40,20 @@ CREATE TABLE `agenda` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `berita`
+--
+
+CREATE TABLE `berita` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fk_desawisata` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `desawisata`
 --
 
@@ -52,6 +66,13 @@ CREATE TABLE `desawisata` (
   `_long` double NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `desawisata`
+--
+
+INSERT INTO `desawisata` (`id`, `nama`, `alamat`, `deskripsi`, `_lat`, `_long`, `foto`) VALUES
+(1, '1', '1', '1', 1, 1, '1');
 
 -- --------------------------------------------------------
 
@@ -94,8 +115,44 @@ CREATE TABLE `kategori` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `foto` varchar(100) NOT NULL,
+  `fk_desawisata` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `nama`, `keterangan`, `foto`, `fk_desawisata`) VALUES
+(2, '1', '', 'logoaldansorry2.png', 1),
+(3, 'Wisata Alam', '', 'logoaldansorry3.png', 1),
+(4, 'Wisata Buatan', '', 'logoaldansorry4.png', 1),
+(5, '2', '', 'Code.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `level`
+--
+
+CREATE TABLE `level` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `datecreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createdby` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `editedby` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`id`, `nama`, `datecreated`, `createdby`, `editedby`) VALUES
+(1, 'Super Admin', '2019-01-14 08:55:41', NULL, NULL),
+(2, 'Admin', '2019-01-14 08:55:49', NULL, NULL),
+(3, 'Operator', '2019-01-14 08:55:58', NULL, NULL),
+(4, 'Admin Desawisata', '2019-01-14 09:11:01', NULL, NULL),
+(5, 'Operator Kamar', '2019-01-14 09:13:17', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -148,6 +205,38 @@ CREATE TABLE `toko` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `telp` varchar(16) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `status` int(11) NOT NULL,
+  `ket_status` varchar(64) NOT NULL,
+  `foto` varchar(100) NOT NULL,
+  `fk_level` int(11) NOT NULL,
+  `fk_desawisata` int(11) DEFAULT NULL,
+  `fk_penginapan` int(11) DEFAULT NULL,
+  `datecreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createdby` varchar(32) DEFAULT NULL,
+  `editedby` varchar(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `nama`, `alamat`, `telp`, `email`, `username`, `password`, `status`, `ket_status`, `foto`, `fk_level`, `fk_desawisata`, `fk_penginapan`, `datecreated`, `createdby`, `editedby`) VALUES
+(1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, 1, NULL, '2019-01-14 09:16:22', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `wisata`
 --
 
@@ -174,6 +263,13 @@ ALTER TABLE `agenda`
   ADD KEY `fk_desawisata` (`fk_desawisata`);
 
 --
+-- Indexes for table `berita`
+--
+ALTER TABLE `berita`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_desawisatas` (`fk_desawisata`);
+
+--
 -- Indexes for table `desawisata`
 --
 ALTER TABLE `desawisata`
@@ -197,6 +293,13 @@ ALTER TABLE `kamar`
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_desawisata` (`fk_desawisata`);
+
+--
+-- Indexes for table `level`
+--
+ALTER TABLE `level`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -221,6 +324,15 @@ ALTER TABLE `toko`
   ADD KEY `fk_desawisata` (`fk_desawisata`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_levle` (`fk_level`),
+  ADD KEY `fk_desa_wisata` (`fk_desawisata`),
+  ADD KEY `fk_penginapan` (`fk_penginapan`);
+
+--
 -- Indexes for table `wisata`
 --
 ALTER TABLE `wisata`
@@ -239,10 +351,16 @@ ALTER TABLE `agenda`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `berita`
+--
+ALTER TABLE `berita`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `desawisata`
 --
 ALTER TABLE `desawisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `galeri`
@@ -260,7 +378,13 @@ ALTER TABLE `kamar`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `level`
+--
+ALTER TABLE `level`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `penginapan`
@@ -281,6 +405,12 @@ ALTER TABLE `toko`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
@@ -297,6 +427,12 @@ ALTER TABLE `agenda`
   ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
+-- Constraints for table `berita`
+--
+ALTER TABLE `berita`
+  ADD CONSTRAINT `berita_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
+
+--
 -- Constraints for table `galeri`
 --
 ALTER TABLE `galeri`
@@ -307,6 +443,12 @@ ALTER TABLE `galeri`
 --
 ALTER TABLE `kamar`
   ADD CONSTRAINT `kamar_ibfk_1` FOREIGN KEY (`fk_penginapan`) REFERENCES `penginapan` (`id`);
+
+--
+-- Constraints for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD CONSTRAINT `kategori_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
 -- Constraints for table `penginapan`
@@ -325,6 +467,14 @@ ALTER TABLE `review`
 --
 ALTER TABLE `toko`
   ADD CONSTRAINT `toko_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`fk_level`) REFERENCES `level` (`id`),
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`),
+  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`fk_penginapan`) REFERENCES `penginapan` (`id`);
 
 --
 -- Constraints for table `wisata`

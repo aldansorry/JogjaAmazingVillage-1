@@ -28,17 +28,30 @@ class Login extends CI_Controller {
 			'username' => $username,
 			'password' => $password
 		);
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		$cekDB = $this->db->get('users');
 		
-		$cekDB = json_decode($this->curl->simple_post($this->apidata->url_pusat_server.'/Login', $data, array(CURLOPT_BUFFERSIZE => 10)));
-		
-		if ($cekDB->num_rows == 1) {
-			$data = $cekDB->data;
+		if ($cekDB->num_rows() == 1) {
+			$data = $cekDB->row(0);
 			$userdata = array(
 				'id' => $data->id,
 				'nama' => $data->nama,
 				'username' => $username,
-				'level' => $data->fk_level,
+				'fk_level' => $data->fk_level,
+				'fk_penginapan' => $data->fk_penginapan,
 			);
+			if ($data->fk_desawisata != null) {
+				$res_desawisata = $this->db->where('id',$data->fk_desawisata)->get('desawisata')->row(0);
+				$desawisata_data = array(
+					'id' => $res_desawisata->id,
+					'nama' => $res_desawisata->nama,
+					'alamat' => $res_desawisata->alamat,
+					'deskripsi' => $res_desawisata->deskripsi,
+					'foto' => $res_desawisata->foto,
+				);
+				$userdata['desawisata'] = $desawisata_data;
+			}
 			$this->session->set_userdata('logged_in',$userdata);
 			return true;
 		}else{

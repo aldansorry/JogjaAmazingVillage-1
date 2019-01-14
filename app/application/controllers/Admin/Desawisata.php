@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Desawisata extends CI_Controller {
 
-  var $c_name = "D  esawisata";
+  var $c_name = "Desawisata";
 
   public function __construct()
   {
