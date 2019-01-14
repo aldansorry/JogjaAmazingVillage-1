@@ -60,7 +60,7 @@
                                 <ul class="collapse">
                                     <li><a href="<?php echo base_url('Admin/Kategori'); ?>">Kategori</a></li>
                                     <li><a href="<?php echo base_url('Admin/Galeri'); ?>">Galeri</a></li>
-                                    <li><a href="<?php echo base_url('Admin/Objekwisata'); ?>">Objek Wisata</a></li>
+                                    <li><a href="<?php echo base_url('Admin/Desawisata'); ?>">Objek Wisata</a></li>
                                     <li><a href="<?php echo base_url('Admin/Agenda'); ?>">Agenda</a></li>
                                     <li><a href="<?php echo base_url('Admin/News'); ?>">News</a></li>
 
