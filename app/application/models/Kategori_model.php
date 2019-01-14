@@ -29,10 +29,30 @@ class Kategori_model extends CI_Model {
     $set = [
       'nama' => $this->input->post('nama'),
       'foto' => $foto,
-      'fk_desawisata' => $this->input->post('fk_desawisata'),
+      'fk_desawisata' => $this->session->userdata('logged_in')['desawisata']['id'],
     ];
 
     $insert = $this->db->insert($this->table,$set);
+    $error = $this->db->error();
+    $this->db->db_debug = $db_debug;
+    return $error;
+  }
+
+   public function update_data($id,$foto = null)
+  {
+    $db_debug = $this->db->db_debug;
+    $this->db->db_debug = FALSE;
+    $set = [
+      'nama' => $this->input->post('nama'),
+      'fk_desawisata' => $this->session->userdata('logged_in')['desawisata']['id'],
+    ];
+
+    if ($foto != null) {
+      $set['foto'] = $foto;
+    }
+
+    $this->db->where('id',$id);
+    $update = $this->db->update($this->table,$set);
     $error = $this->db->error();
     $this->db->db_debug = $db_debug;
     return $error;

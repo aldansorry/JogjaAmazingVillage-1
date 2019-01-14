@@ -46,29 +46,24 @@
                 }
             },
             { 
-                "title" : "nama",
+                "title" : "Nama",
                 "data": "nama" 
             },
             { 
-                "title" : "alamat",
+                "title" : "Alamat",
                 "data": "alamat" 
             },
             { 
-                "title" : "deskripsi",
+                "title" : "Deskripsi",
                 "data": "deskripsi" 
             },
             { 
-                "title" : "_lat",
+                "title" : "Lattitude",
                 "data": "_lat" 
             },
              { 
-                "title" : "_long",
+                "title" : "Longtitude",
                 "data": "_long" 
-            },
-
-            { 
-                "title" : "Foto",
-                "data": "foto" 
             },
             {
                 "title": "Actions",

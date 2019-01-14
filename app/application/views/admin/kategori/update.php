@@ -50,7 +50,7 @@
   var formData = new FormData(this);    
 
   $.ajax({
-    url: "<?php echo base_url('Admin/Kategori/insert') ?>",
+    url: "<?php echo base_url('Admin/Kategori/update/'.$data->id) ?>",
     type: 'POST',
     data: formData,
     success: function (data) {

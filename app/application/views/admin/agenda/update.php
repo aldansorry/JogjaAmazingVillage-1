@@ -1,6 +1,6 @@
 <div class="modal-content bg-light">
-     <div class="modal-header bg-primary">
-          <h5 class="modal-title text-white">Tambah Data</h5>
+     <div class="modal-header bg-success">
+          <h5 class="modal-title text-white">Ubah Data</h5>
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
      </div>
      <div class="modal-body">
@@ -8,21 +8,21 @@
       <div class="form-group row">
           <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
           <div class="col-sm-10">
-            <input type="date" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo set_value('tanggal') ?>">
+            <input type="date" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo $data->tanggal ?>">
             <?php echo form_error('tanggal') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo set_value('judul') ?>">
+            <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
             <?php echo form_error('judul') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-            <textarea name="keterangan" class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo set_value('keterangan') ?></textarea>
+            <textarea name="keterangan" class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo $data->keterangan ?></textarea>
             <?php echo form_error('keterangan') ?>
           </div>
      </div>
@@ -30,9 +30,9 @@
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
+    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
   </div>
 </div>
 <div class="form-group row">

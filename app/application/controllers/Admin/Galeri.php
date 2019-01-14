@@ -30,6 +30,7 @@ class Galeri extends CI_Controller {
   {
     $data = [
       'c_name' => $this->c_name,
+      'data' => $this->Galeri_model->get_data(),
     ];
     $this->load->view('admin/galeri/insert',$data);
   }
@@ -72,7 +73,52 @@ class Galeri extends CI_Controller {
 
   public function update($id)
   {
-//consturct laters
+    $data = [
+      'c_name' => $this->c_name,
+      'data' => $this->Galeri_model->get_id($id),
+    ];
+    $this->form_validation->set_rules('judul','judul','required');
+    $this->form_validation->set_rules('nourut','nourut','required');
+    $this->form_validation->set_rules('ukuran','ukuran','required');
+    if ($this->form_validation->run() == false) {
+      $this->load->view('admin/galeri/update',$data);
+    }else{
+      if ($_FILES['foto']['name'] != "") {
+        $config['upload_path'] = './uploads/Galeri/';
+      $config['allowed_types'] = 'gif|jpg|png';
+      $config['max_size']  = '100';
+      $config['max_width']  = '1024';
+      $config['max_height']  = '768';
+      
+      $this->load->library('upload', $config);
+      
+      if ( ! $this->upload->do_upload('foto')){
+        $data['error'] = $this->upload->display_errors();
+        $this->load->view('admin/galeri/update',$data);
+      }
+      else{
+        $upload_data = $this->upload->data();
+        $this->load->view('admin/Galeri/update',$data);
+        $error = $this->Galeri_model->update_data($id,$upload_data['file_name']);
+        if ($error['code'] == 0) {
+          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+        }else{
+
+          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        }
+      }
+      }else{
+
+        $this->load->view('admin/Galeri/update',$data);
+        $error = $this->Galeri_model->update_data($id,null);
+        if ($error['code'] == 0) {
+          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+        }else{
+
+          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        }
+      }
+    }
   }
   public function delete($id)
   {

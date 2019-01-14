@@ -81,28 +81,40 @@ class Kategori extends CI_Controller {
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/kategori/update',$data);
     }else{
-      $config['upload_path'] = './uploads/kategori/';
-      $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size']  = '100';
-      $config['max_width']  = '1024';
-      $config['max_height']  = '768';
-      
-      $this->load->library('upload', $config);
-      
-      if ( ! $this->upload->do_upload('foto')){
-        $data['error'] = $this->upload->display_errors();
-        $this->load->view('admin/kategori/update',$data);
-      }
-      else{
-        $upload_data = $this->upload->data();
-        $this->load->view('admin/kategori/update',$data);
-        $error = $this->Kategori_model->insert_data($upload_data['file_name']);
-        if ($error['code'] == 0) {
-          echo '<script>swal("Berhasil", "Data berhasil ditambahkan", "success");</script>';
-        }else{
+      if ($_FILES['foto']['name'] != "") {
+        $config['upload_path'] = './uploads/kategori/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size']  = '100';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
 
-          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('foto')){
+          $data['error'] = $this->upload->display_errors();
+          $this->load->view('admin/kategori/update',$data);
         }
+        else{
+          $upload_data = $this->upload->data();
+          $error = $this->Kategori_model->update_data($id,$upload_data['file_name']);
+          $data['data'] = $this->Kategori_model->get_id($id);
+          $this->load->view('admin/kategori/update',$data);
+          if ($error['code'] == 0) {
+            echo '<script>swal("Berhasil", "Data berhasil ditambahkan", "success");</script>';
+          }else{
+
+            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+          }
+        }
+      }else{
+          $this->load->view('admin/kategori/update',$data);
+          $error = $this->Kategori_model->update_data($id,null);
+          if ($error['code'] == 0) {
+            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+          }else{
+
+            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+          }
       }
     }
   }
