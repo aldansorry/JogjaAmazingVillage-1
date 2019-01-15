@@ -83,7 +83,7 @@ class Agenda extends CI_Controller {
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/agenda/update',$data);
     }else{
-      if ($_FILE['foto']['name'] != "") {
+      if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/agenda/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']  = '100';
