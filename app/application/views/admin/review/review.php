@@ -52,28 +52,33 @@
                 },
 
                 { 
-                "title" : "email",
+                "title" : "Email",
                 "data": "email" 
                 },
 
                 { 
-                "title" : "telp",
+                "title" : "Telephone",
                 "data": "telp" 
                 },
 
                 { 
-                "title" : "rating",
+                "title" : "Rating",
                 "data": "rating" 
                 },
 
                 { 
-                "title" : "keterangan",
+                "title" : "Keterangan",
                 "data": "keterangan" 
                 },
 
                 { 
-                "title" : "foto",
+                "title" : "Foto",
                 "data": "foto" 
+                },
+
+                { 
+                "title" : "Desawisata",
+                "data": "fk_desawisata" 
                 },
 
                 {

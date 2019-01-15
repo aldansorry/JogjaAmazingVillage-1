@@ -30,9 +30,9 @@ class Review extends CI_Controller {
   {
     $data = [
       'c_name' => $this->c_name,
-      'data' => $this->Review_model->get_data(),
+      'data' => $this->Review_model->get_id($id),
     ];
-    $this->load->view('admin/review/insert',$data);
+    $this->load->view('admin/review/info',$data);
   }
   public function insert()
   {

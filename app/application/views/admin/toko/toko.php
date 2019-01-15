@@ -52,23 +52,28 @@
                 },
 
                 { 
-                "title" : "alamat",
+                "title" : "Alamat",
                 "data": "alamat" 
                 },
 
                 { 
-                "title" : "keterangan",
+                "title" : "Keterangan",
                 "data": "keterangan" 
                 },
 
                 { 
-                "title" : "jenis",
+                "title" : "Jenis",
                 "data": "jenis" 
                 },
 
                 { 
-                "title" : "foto",
+                "title" : "Foto",
                 "data": "foto" 
+                },
+
+                { 
+                "title" : "Desawisata",
+                "data": "fk_desawisata" 
                 },
 
 

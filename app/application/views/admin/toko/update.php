@@ -1,6 +1,6 @@
 <div class="modal-content bg-light">
-     <div class="modal-header bg-primary">
-          <h5 class="modal-title text-white">Tambah Data</h5>
+     <div class="modal-header bg-success">
+          <h5 class="modal-title text-white">Ubah Data</h5>
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
      </div>
      <div class="modal-body">
@@ -8,7 +8,7 @@
       <div class="form-group row">
           <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
           <div class="col-sm-10">
-           <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
+           <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
           <?php echo form_error('nama') ?>
       </div>
  </div>
@@ -16,7 +16,7 @@
       <div class="form-group row">
           <label for="input-alamat" class="col-sm-2 col-form-label">Alamat</label>
           <div class="col-sm-10">
-           <input type="text" name="alamat" class="form-control" id="input-alamat" placeholder="alamat" value="<?php echo set_value('alamat') ?>">
+           <input type="text" name="alamat" class="form-control" id="input-alamat" placeholder="alamat" value="<?php echo $data->alamat ?>">
           <?php echo form_error('alamat') ?>
       </div>
  </div>
@@ -24,23 +24,24 @@
       <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-           <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo set_value('keterangan') ?>">
+           <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo $data->keterangan ?>">
           <?php echo form_error('keterangan') ?>
       </div>
  </div>
+      
 
       <div class="form-group row">
           <label for="input-jenis" class="col-sm-2 col-form-label">Jenis</label>
           <div class="col-sm-10">
-           <input type="text" name="jenis" class="form-control" id="input-jenis" placeholder="jenis" value="<?php echo set_value('jenis') ?>">
+           <input type="text" name="jenis" class="form-control" id="input-jenis" placeholder="jenis" value="<?php echo $data->jenis ?>">
           <?php echo form_error('jenis') ?>
       </div>
  </div>
- 
 
-     <div class="form-group row">
+ <div class="form-group row">
     <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
     <div class="col-sm-10">
+     <input type="hidden" name="fk_desawisata" value="<?php echo $this->session->userdata('logged_in')['desawisata']['id'] ?>">
      <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
    </div>
  </div>
@@ -48,9 +49,9 @@
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/toko/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
+    <img src="<?php echo base_url('uploads/toko/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/toko/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
   </div>
 </div>
 <div class="form-group row">
@@ -65,7 +66,7 @@
 </div>
 <div class="modal-footer">
      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     <button type="submit" class="btn btn-primary" form="formdata">Save changes</button>
+     <button type="submit" class="btn btn-success" form="formdata">Save changes</button>
 </div>
 
 </div>
@@ -76,7 +77,7 @@
       var formData = new FormData(this);    
 
       $.ajax({
-          url: "<?php echo base_url('Admin/Toko/insert') ?>",
+          url: "<?php echo base_url('Admin/Toko/update/'.$data->id) ?>",
           type: 'POST',
           data: formData,
           success: function (data) {
@@ -89,7 +90,7 @@
    });
  });
 
-    function readURL(input) {
+     function readURL(input) {
 
   if (input.files && input.files[0]) {
     var reader = new FileReader();
