@@ -84,10 +84,10 @@
 			<?php foreach ($agenda as $value): ?>
 				<div class="col-lg-4">
 					<div class="single-service">
-						<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/s1.png" alt="">
-						<h4>Agenda 1</h4>
+						<img class="img-fluid" src="<?php echo base_url("uploads/agenda/".$value->foto) ?>" alt="">
+						<h4><?php echo $value->judul ?></h4>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
+							<?php echo $value->keterangan ?>
 						</p>
 					</div>
 				</div>
@@ -110,7 +110,7 @@
 		<div class="row gallery-item">
 			<?php foreach ($galeri as $value): ?>
 				<div class="col-md-4">
-				<a href="<?php echo base_url('uploads/galeri/'.$value->foto) ?>" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url('assets_home/'); ?>img/elements/g1.jpg);"></div></a>
+				<a href="<?php echo base_url('uploads/galeri/'.$value->foto) ?>" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url("uploads/galeri/".$value->foto); ?>"></div></a>
 			</div>
 			<?php endforeach ?>
 		</div>
@@ -134,16 +134,20 @@
 
 <div class="container">
 	<div class="section-top-border">
-		<h3 class="mb-30">Left Aligned</h3>
+		<?php foreach ($berita as $key => $value): ?>
+			<h3 class="mb-30"><?php echo $value->judul ?></h3>
 		<div class="row">
 			<div class="col-md-3">
-				<img src="<?php echo base_url('assets_home/') ?>img/elements/d.jpg" alt="" class="img-fluid">
+				<img src="<?php echo base_url("uploads/berita/".$value->foto) ?>" alt="" class="img-fluid">
 			</div>
 			<div class="col-md-9 mt-sm-20">
-				<p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino players found themselves being chased by the Federal government. But, after a fortnight, the online casino industry came up with a solution and new online casinos started taking root. These began to operate under a different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that would accept this new clarification and start doing business with me. Listed in this article are the electronic banking systems that accept players from the United States that wish to play in online casinos.</p>
+				<p><?php echo $value->konten ?></p>
 			</div>
 		</div>
 	</div>
+		<?php endforeach ?>
+
+
 
 </div>
 
