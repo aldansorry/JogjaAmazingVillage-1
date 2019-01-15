@@ -43,7 +43,7 @@
 				<?php foreach ($objekwisata as $value): ?>
 					<div class="single-portfolio col-sm-4 all <?php echo $value->fk_kategori ?>">
 						<div class="item">
-							<img src="<?php echo base_url("uploads/objekwisata/".$value->foto) ?>" alt="Work 1">
+							<img src="<?php echo base_url("uploads/wisata/".$value->foto) ?>" alt="Work 1">
 							<div class="p-inner">
 								<h4><?php echo $value->nama ?></h4>
 								<div class="cat">Corporate</div>
