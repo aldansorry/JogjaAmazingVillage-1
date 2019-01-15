@@ -9,7 +9,7 @@
       <div class="form-group row">
           <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
+            <input type="text" readonly name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
             <?php echo form_error('nama') ?>
           </div>
      </div>
@@ -17,14 +17,14 @@
        <div class="form-group row">
           <label for="input-email" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="email" class="form-control" id="input-email" placeholder="email" value="<?php echo $data->email ?>">
+            <input type="text" readonly name="email" class="form-control-plaintext" id="input-email" placeholder="email" value="<?php echo $data->email ?>">
             <?php echo form_error('email') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-rating" class="col-sm-2 col-form-label">Rating</label>
           <div class="col-sm-10">
-            <textarea name="rating" readonly class="form-control" id="input-rating" cols="30" rows="10"><?php echo $data->rating ?></textarea>
+            <textarea name="rating" readonly class="form-control-plaintext" id="input-rating" cols="30" rows="10"><?php echo $data->rating ?></textarea>
             <?php echo form_error('rating') ?>
           </div>
      </div>
@@ -32,7 +32,7 @@
      <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-            <textarea name="keterangan" readonly class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo $data->keterangan ?></textarea>
+            <textarea name="keterangan" readonly class="form-control-plaintext" id="input-keterangan" cols="30" rows="10"><?php echo $data->keterangan ?></textarea>
             <?php echo form_error('keterangan') ?>
           </div>
      </div>

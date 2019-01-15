@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Beita_model extends CI_Model {
+class Berita_model extends CI_Model {
 
   var $table = "Berita";
   var $primary_key = "id";

@@ -8,21 +8,21 @@
       <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">judul</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
+            <input type="text" readonly name="judul" class="form-control-plaintext" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
             <?php echo form_error('judul') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-nourut" class="col-sm-2 col-form-label">nourut</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="nourut" class="form-control" id="input-nourut" placeholder="nourut" value="<?php echo $data->nourut ?>">
+            <input type="text" readonly name="nourut" class="form-control-plaintext" id="input-nourut" placeholder="nourut" value="<?php echo $data->nourut ?>">
             <?php echo form_error('nourut') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-ukuran" class="col-sm-2 col-form-label">Ukuran</label>
           <div class="col-sm-10">
-            <textarea name="text" readonly class="form-control" id="input-ukuran" cols="30" rows="10"><?php echo $data->ukuran ?></textarea>
+            <textarea name="text" readonly class="form-control-plaintext" id="input-ukuran" cols="30" rows="10"><?php echo $data->ukuran ?></textarea>
             <?php echo form_error('ukuran') ?>
           </div>
      </div>

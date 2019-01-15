@@ -1,38 +1,45 @@
 <div class="modal-content bg-light">
      <div class="modal-header bg-success">
-          <h5 class="modal-title text-white">Ubah Data</h5>
+          <h5 class="modal-title text-white">Tambah Data</h5>
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
      </div>
      <div class="modal-body">
           <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
+       <div class="form-group row">
+          <label for="input-no" class="col-sm-2 col-form-label">no</label>
+          <div class="col-sm-10">
+            <input type="text" name="no" class="form-control" id="input-no" placeholder="no" value="<?php echo $data->no ?>">
+            <?php echo form_error('no') ?>
+          </div>
+     </div>
+       <div class="form-group row">
+          <label for="input-kategori" class="col-sm-2 col-form-label">kategori</label>
+          <div class="col-sm-10">
+            <textarea name="kategori" class="form-control" id="input-kategori" cols="30" rows="10"><?php echo $data->kategori ?></textarea>
+            <?php echo form_error('kategori') ?>
+          </div>
+     </div>
       <div class="form-group row">
-          <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
+          <label for="input-fasilitas" class="col-sm-2 col-form-label">fasilitas</label>
           <div class="col-sm-10">
-            <input type="date" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo $data->tanggal ?>">
-            <?php echo form_error('tanggal') ?>
+            <input type="text" name="fasilitas" class="form-control" id="input-fasilitas" placeholder="fasilitas" value="<?php echo $data->fasilitas ?>">
+            <?php echo form_error('fasilitas') ?>
           </div>
      </div>
-       <div class="form-group row">
-          <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
+      <div class="form-group row">
+          <label for="input-status" class="col-sm-2 col-form-label">status</label>
           <div class="col-sm-10">
-            <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
-            <?php echo form_error('judul') ?>
-          </div>
-     </div>
-       <div class="form-group row">
-          <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
-          <div class="col-sm-10">
-            <textarea name="keterangan" class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo $data->keterangan ?></textarea>
-            <?php echo form_error('keterangan') ?>
+            <input type="datetime" name="status" class="form-control" id="input-status" placeholder="status" value="<?php echo $data->status ?>">
+            <?php echo form_error('status') ?>
           </div>
      </div>
  
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
-    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('uploads/agenda/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/kamar/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
+    <img src="<?php echo base_url('uploads/kamar/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/kamar/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
   </div>
 </div>
 <div class="form-group row">
@@ -57,7 +64,7 @@
       var formData = new FormData(this);    
 
       $.ajax({
-          url: "<?php echo base_url('Admin/Agenda/update/'.$data->id) ?>",
+          url: "<?php echo base_url('Admin/kamar/update/'.$data->id) ?>",
           type: 'POST',
           data: formData,
           success: function (data) {
@@ -69,6 +76,7 @@
         processData: false
    });
  });
+     //di bawah ini di tambahkan
      function readURL(input) {
 
   if (input.files && input.files[0]) {

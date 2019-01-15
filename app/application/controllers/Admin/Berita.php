@@ -41,7 +41,7 @@ class Berita extends CI_Controller {
     ];
     $this->form_validation->set_rules('judul','judul','required');
     $this->form_validation->set_rules('konten','konten','required');
-    $this->form_validation->set_rules('author','author','required');
+    $this->form_validation->set_rules('author ','author ','required');
     $this->form_validation->set_rules('tanggal','tanggal','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/insert',$data);
@@ -85,7 +85,7 @@ class Berita extends CI_Controller {
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/update',$data);
     }else{
-      if ($_FILE['foto']['name'] != "") {
+      if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/berita/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']  = '100';

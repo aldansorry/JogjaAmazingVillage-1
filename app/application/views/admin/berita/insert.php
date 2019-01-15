@@ -5,13 +5,6 @@
      </div>
      <div class="modal-body">
           <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
-      <div class="form-group row">
-          <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
-          <div class="col-sm-10">
-            <input type="date" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo set_value('tanggal') ?>">
-            <?php echo form_error('tanggal') ?>
-          </div>
-     </div>
        <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
@@ -20,10 +13,24 @@
           </div>
      </div>
        <div class="form-group row">
-          <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
+          <label for="input-konten" class="col-sm-2 col-form-label">konten</label>
           <div class="col-sm-10">
-            <textarea name="keterangan" class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo set_value('keterangan') ?></textarea>
-            <?php echo form_error('keterangan') ?>
+            <textarea name="konten" class="form-control" id="input-konten" cols="30" rows="10"><?php echo set_value('konten') ?></textarea>
+            <?php echo form_error('konten') ?>
+          </div>
+     </div>
+      <div class="form-group row">
+          <label for="input-author" class="col-sm-2 col-form-label">author</label>
+          <div class="col-sm-10">
+            <input type="text" name="author" class="form-control" id="input-author" placeholder="author" value="<?php echo set_value('author') ?>">
+            <?php echo form_error('author') ?>
+          </div>
+     </div>
+      <div class="form-group row">
+          <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
+          <div class="col-sm-10">
+            <input type="datetime" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo set_value('tanggal') ?>">
+            <?php echo form_error('tanggal') ?>
           </div>
      </div>
  

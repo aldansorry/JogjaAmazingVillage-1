@@ -5,25 +5,32 @@
      </div>
      <div class="modal-body">
           <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
-      <div class="form-group row">
-          <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
-          <div class="col-sm-10">
-            <input type="date" readonly name="tanggal" class="form-control-plaintext" id="input-tanggal" placeholder="tanggal" value="<?php echo $data->tanggal ?>">
-            <?php echo form_error('tanggal') ?>
-          </div>
-     </div>
        <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="judul" class="form-control-plaintext" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
+            <input type="text" readonly name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
             <?php echo form_error('judul') ?>
           </div>
      </div>
        <div class="form-group row">
-          <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
+          <label for="input-konten" class="col-sm-2 col-form-label">konten</label>
           <div class="col-sm-10">
-            <textarea name="keterangan" readonly class="form-control-plaintext" id="input-keterangan" cols="30" rows="10"><?php echo $data->keterangan ?></textarea>
-            <?php echo form_error('keterangan') ?>
+            <textarea name="konten" readonly class="form-control" id="input-konten" cols="30" rows="10"><?php echo $data->konten ?></textarea>
+            <?php echo form_error('konten') ?>
+          </div>
+     </div>
+      <div class="form-group row">
+          <label for="input-author" class="col-sm-2 col-form-label">author</label>
+          <div class="col-sm-10">
+            <input type="text" readonly name="author" class="form-control" id="input-author" placeholder="author" value="<?php echo $data->author ?>">
+            <?php echo form_error('author') ?>
+          </div>
+     </div>
+      <div class="form-group row">
+          <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
+          <div class="col-sm-10">
+            <input type="datetime" readonly name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo $data->tanggal ?>">
+            <?php echo form_error('tanggal') ?>
           </div>
      </div>
  

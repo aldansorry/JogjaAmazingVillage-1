@@ -8,21 +8,21 @@
       <div class="form-group row">
           <label for="input-nama" class="col-sm-2 col-form-label">nama</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
+            <input type="text" readonly name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
             <?php echo form_error('nama') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">keterangan</label>
           <div class="col-sm-10">
-            <input type="textarea" readonly name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo $data->keterangan ?>">
+            <input type="textarea" readonly name="keterangan" class="form-control-plaintext" id="input-keterangan" placeholder="keterangan" value="<?php echo $data->keterangan ?>">
             <?php echo form_error('keterangan') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-alamat" class="col-sm-2 col-form-label">alamat</label>
           <div class="col-sm-10">
-            <textarea name="text" readonly class="form-control" id="input-alamat" cols="30" rows="10"><?php echo $data->alamat ?></textarea>
+            <textarea name="text" readonly class="form-control-plaintext" id="input-alamat" cols="30" rows="10"><?php echo $data->alamat ?></textarea>
             <?php echo form_error('alamat') ?>
           </div>
      </div>
