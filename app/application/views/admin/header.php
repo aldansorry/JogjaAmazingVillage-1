@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Desa - Jogja Amazing Village</title>
+    <title>Jogja Amazing Village</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/') ?>assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="<?php echo base_url('assets/') ?>assets/css/bootstrap.min.css">
@@ -56,12 +56,12 @@
                         <nav>
                             <ul class="metismenu" id="menu">
 
-                                <li><a href="#"><i class="ti-map-alt"></i> <span>Dashboard</span></a></li>
-                                <li><a href="#"><i class="ti-map-alt"></i> <span>Users</span></a></li>
-                                <li><a href="<?php echo base_url('Admin/Desawisata') ?>"><i class="ti-map-alt"></i> <span>Desa Wisata</span></a></li>
+                                <li><a href="#"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
+                                <li><a href="#"><i class="ti-user"></i> <span>Users</span></a></li>
+                                <li><a href="<?php echo base_url('Admin/Desawisata') ?>"><i class="ti-world"></i> <span>Desa Wisata</span></a></li>
                                 <hr>
                                 <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Desa Wisata</span></a>
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-home"></i><span>Desa Wisata</span></a>
                                     <ul class="collapse">
                                         <li><a href="<?php echo base_url('Admin/Kategori'); ?>">Kategori</a></li>
                                         <li><a href="<?php echo base_url('Admin/Wisata'); ?>">Wisata</a></li>

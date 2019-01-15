@@ -30,9 +30,9 @@ class Galeri extends CI_Controller {
   {
     $data = [
       'c_name' => $this->c_name,
-      'data' => $this->Galeri_model->get_data(),
+      'data' => $this->Galeri_model->get_id($id),
     ];
-    $this->load->view('admin/galeri/insert',$data);
+    $this->load->view('admin/galeri/info',$data);
   }
   public function insert()
   {
@@ -45,7 +45,7 @@ class Galeri extends CI_Controller {
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/galeri/insert',$data);
     }else{
-      $config['upload_path'] = './uploads/Galeri/';
+      $config['upload_path'] = './uploads/galeri/';
       $config['allowed_types'] = 'gif|jpg|png';
       $config['max_size']  = '100';
       $config['max_width']  = '1024';
@@ -84,7 +84,7 @@ class Galeri extends CI_Controller {
       $this->load->view('admin/galeri/update',$data);
     }else{
       if ($_FILES['foto']['name'] != "") {
-        $config['upload_path'] = './uploads/Galeri/';
+        $config['upload_path'] = './uploads/galeri/';
       $config['allowed_types'] = 'gif|jpg|png';
       $config['max_size']  = '100';
       $config['max_width']  = '1024';

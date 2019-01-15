@@ -110,7 +110,7 @@
 		<div class="row gallery-item">
 			<?php foreach ($galeri as $value): ?>
 				<div class="col-md-4">
-				<a href="<?php echo base_url('assets_home/') ?>img/elements/g1.jpg" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url('assets_home/'); ?>img/elements/g1.jpg);"></div></a>
+				<a href="<?php echo base_url('uploads/galeri/'.$value->foto) ?>" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url('assets_home/'); ?>img/elements/g1.jpg);"></div></a>
 			</div>
 			<?php endforeach ?>
 		</div>

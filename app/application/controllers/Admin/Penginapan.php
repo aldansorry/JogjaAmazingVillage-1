@@ -30,9 +30,9 @@ class Penginapan extends CI_Controller {
   {
     $data = [
       'c_name' => $this->c_name,
-      'data' => $this->Penginapan_model->get_data(),
+      'data' => $this->Penginapan_model->get_id($id),
     ];
-    $this->load->view('admin/penginapan/insert',$data);
+    $this->load->view('admin/penginapan/info',$data);
   }
   public function insert()
   {

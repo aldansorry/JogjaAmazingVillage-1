@@ -1,6 +1,6 @@
 <div class="modal-content bg-light">
- <div class="modal-header bg-primary">
-  <h5 class="modal-title text-white">Tambah Data</h5>
+ <div class="modal-header bg-success">
+  <h5 class="modal-title text-white">Ubah Data</h5>
   <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 </div>
 <div class="modal-body">
@@ -8,21 +8,21 @@
   <div class="form-group row">
   <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
     <div class="col-sm-10">
-      <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo set_value('judul') ?>">
+      <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
       <?php echo form_error('judul') ?>
     </div>
   </div>
   <div class="form-group row">
     <label for="input-nourut" class="col-sm-2 col-form-label">Nourut</label>
     <div class="col-sm-10">
-      <input type="text" name="nourut" class="form-control" id="input-nourut" placeholder="nourut" value="<?php echo set_value('nourut') ?>">
+      <input type="text" name="nourut" class="form-control" id="input-nourut" placeholder="nourut" value="<?php echo $data->nourut ?>">
       <?php echo form_error('nourut') ?>
     </div>
   </div>
   <div class="form-group row">
     <label for="input-ukuran" class="col-sm-2 col-form-label">Ukuran</label>
     <div class="col-sm-10">
-      <input type="text" name="ukuran" class="form-control" id="input-ukuran" placeholder="ukuran" value="<?php echo set_value('ukuran') ?>">
+      <input type="text" name="ukuran" class="form-control" id="input-ukuran" placeholder="ukuran" value="<?php echo $data->ukuran ?>">
       <?php echo form_error('ukuran') ?>
     </div>
   </div>
@@ -30,9 +30,9 @@
   <div class="row mb-2">
    <div class="col-sm-2"></div>
    <div class="col-md-10">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/galeri/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
+    <img src="<?php echo base_url('uploads/galeri/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/galeri/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
   </div>
 </div>
 <div class="form-group row">
@@ -48,7 +48,7 @@
 </div>
 <div class="modal-footer">
  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
- <button type="submit" class="btn btn-primary" form="formdata">Save changes</button>
+ <button type="submit" class="btn btn-success" form="formdata">Save changes</button>
 </div>
 
 </div>
@@ -59,7 +59,7 @@
   var formData = new FormData(this);    
 
   $.ajax({
-    url: "<?php echo base_url('Admin/Galeri/insert') ?>",
+    url: "<?php echo base_url('Admin/Galeri/update/'.$data->id) ?>", //di ubah
     type: 'POST',
     data: formData,
     success: function (data) {

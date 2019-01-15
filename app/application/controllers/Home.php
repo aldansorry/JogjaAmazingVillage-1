@@ -7,14 +7,14 @@ class Home extends CI_Controller {
 	{
 		$this->load->model([
 			'Kategori_model',
-			'Objekwisata_model',
+			'Wisata_model',
 			'Agenda_model',
 			'Galeri_model',
 		]);
 		$data = [
 			'c_name' => 'Home',
 			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Objekwisata_model->get_data(),
+			'objekwisata' => $this->Wisata_model->get_data(),
 			'agenda' => $this->Agenda_model->get_data(),
 			'galeri' => $this->Galeri_model->get_data(),
 		];
