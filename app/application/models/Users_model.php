@@ -1,25 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kamar_model extends CI_Model {
+class Users_model extends CI_Model {
 
-  var $table = "kamar";
+  var $table = "users";
   var $primary_key = "id";
   
   public function get_data()
   {
     $this->db->select('*');
     $this->db->from($this->table);
-    $this->db->order_by('no');
-    return $this->db->get()->result();
-  }
-
-  public function get_by_penginapan($id_penginapan)
-  {
-    $this->db->select('*');
-    $this->db->from($this->table);
-    $this->db->order_by('no');
-    $this->db->where('fk_penginapan',$id_penginapan);
+    $this->db->order_by('nama');
     return $this->db->get()->result();
   }
 
@@ -27,21 +18,27 @@ class Kamar_model extends CI_Model {
   {
     $this->db->select('*');
     $this->db->from($this->table);
-   $this->db->where('id',$id);
+    $this->db->where('id',$id);
     return $this->db->get()->row(0);
   }
 
-  public function insert_data($id_kamar,$foto)
+  public function insert_data($foto)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
     $set = [
-      'no' => $this->input->post('no'),
-      'kategori' => $this->input->post('kategori'),
-      'fasilitas' => $this->input->post('fasilitas'),
+      'nama' => $this->input->post('nama'),
+      'alamat' => $this->input->post('alamat'),
+      'telp' => $this->input->post('telp'),
+      'email' => $this->input->post('email'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password'),
       'status' => $this->input->post('status'),
+      'ket_status' => $this->input->post('ket_status'),
+
+      'fk_level' => $this->input->post('fk_level'),
+      'fk_desawisata' => $this->input->post('fk_desawisata'),
       'foto' => $foto,
-      'fk_penginapan' => $id_kamar,
     ];
 
     $insert = $this->db->insert($this->table,$set);
@@ -50,16 +47,12 @@ class Kamar_model extends CI_Model {
     return $error;
   }
 
-  public function update_data($id,$foto)
+   public function update_data($id,$foto = null)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
     $set = [
-      'no' => $this->input->post('no'),
-      'kategori' => $this->input->post('kategori'),
-      'fasilitas' => $this->input->post('fasilitas'),
-      'status' => $this->input->post('status'),
-      'foto' => $foto,
+      'nama' => $this->input->post('nama'),
     ];
 
     if ($foto != null) {

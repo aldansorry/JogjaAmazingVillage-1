@@ -32,7 +32,7 @@
     $(document).ready(() => {
         $('#product-table').DataTable( {
             "ajax": {
-                'url': "<?= base_url('Admin/'.$c_name.'/getdata') ?>",
+                'url': "<?= base_url('Admin/'.$c_name.'/getdata/'.$id_penginapan) ?>",
             },
             "columns": [
             {
@@ -102,7 +102,7 @@
     function input_form() {
         $('#modal').modal('show');
         $.ajax({
-            url: "<?php echo base_url('Admin/'.$c_name.'/insert') ?>",
+            url: "<?php echo base_url('Admin/'.$c_name.'/insert/'.$id_penginapan) ?>",
             data: null,
             success: function(data)
             {

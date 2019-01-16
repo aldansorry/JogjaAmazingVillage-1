@@ -45,44 +45,58 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                
-                { 
+            { 
                 "title" : "Nama",
                 "data": "nama" 
-                },
-
-                { 
-                "title" : "keterangan",
-                "data": "keterangan" 
-                },
-
-                { 
+            },
+            { 
                 "title" : "alamat",
                 "data": "alamat" 
-                },
-
-                { 
-                "title" : "foto",
-                "data": "foto" 
-                },
-
-                {
-                    "title": "Actions",
-                    "width" : "120px",
-                    "data":'id',
-                    "visible":true,
-                    "class": "text-center",
-                    render: (data, type, row) => {
-                        let ret = "";
-                        ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                        ret += ' <a href="<?php echo base_url('Admin/Kamar/index/') ?>'+data+'" class="btn btn-xs btn-rounded btn-warning"> <i class="fa fa-exchange"></i> Detail</a>';
-                        ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                        ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
-                        return ret;
-                    }
+            },
+            { 
+                "title" : "telp",
+                "data": "telp" 
+            },
+            { 
+                "title" : "email",
+                "data": "email" 
+            },
+            { 
+                "title" : "username",
+                "data": "username" 
+            },
+            { 
+                "title" : "status",
+                "data": "status" 
+            },
+            { 
+                "title" : "ket_status",
+                "data": "ket_status" 
+            },
+            { 
+                "title" : "fk_level",
+                "data": "fk_level" 
+            },
+            { 
+                "title" : "fk_desawisata",
+                "data": "fk_desawisata" 
+            },
+            {
+                "title": "Actions",
+                "width" : "120px",
+                "data":'id',
+                "visible":true,
+                "class": "text-center",
+                render: (data, type, row) => {
+                    let ret = "";
+                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    return ret;
                 }
-                ]
-            } );
+            }
+            ]
+        } );
     });
 
     function reload_table() {

@@ -64,13 +64,13 @@
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="ti-home"></i><span>Desa Wisata</span></a>
                                     <ul class="collapse">
                                         <li><a href="<?php echo base_url('Admin/Kategori'); ?>">Kategori</a></li>
+                                        <li><a href="<?php echo base_url('Admin/Berita'); ?>">Berita</a></li>
                                         <li><a href="<?php echo base_url('Admin/Wisata'); ?>">Wisata</a></li>
                                         <li><a href="<?php echo base_url('Admin/Toko'); ?>">Toko</a></li>
                                         <li><a href="<?php echo base_url('Admin/Penginapan'); ?>">Penginapan</a></li>
                                         <li><a href="<?php echo base_url('Admin/Agenda'); ?>">Agenda</a></li>
                                         <li><a href="<?php echo base_url('Admin/Galeri'); ?>">Galeri</a></li>
                                         <li><a href="<?php echo base_url('Admin/Review'); ?>">Review</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Kamar'); ?>">Kamar</a></li>
                                     </ul>
                                 </li>
 
