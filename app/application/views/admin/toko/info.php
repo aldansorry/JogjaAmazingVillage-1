@@ -12,12 +12,12 @@
             <input type="text" readonly name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
             <?php echo form_error('nama') ?>
           </div>
-     </div>orm-control
+     </div>
 
        <div class="form-group row">
           <label for="input-alamat" class="col-sm-2 col-form-label">Alamat</label>
           <div class="col-sm-10">
-            <input type="text" readonly name="alamat" class="f" id="input-alamat" placeholder="alamat" value="<?php echo $data->alamat ?>">
+            <input type="text" readonly name="alamat" class="form-control-plaintext" id="input-alamat" placeholder="alamat" value="<?php echo $data->alamat ?>">
             <?php echo form_error('alamat') ?>
           </div>
      </div>

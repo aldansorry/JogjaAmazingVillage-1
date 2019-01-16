@@ -6,9 +6,9 @@
 	<div class="container">
 		<div class="row fullscreen d-flex align-items-center justify-content-center">
 			<div class="banner-content col-lg-10">
-				<h5 class="text-uppercase">Now you can watch the Talent</h5>
+				<h5 class="text-uppercase">Desawisata Jogja</h5>
 				<h1>
-					Let’s Explore Idea!				
+					Jogja Amazing Village				
 				</h1>
 				<a href="#" class="primary-btn text-uppercase">Explore Now</a>
 			</div>											
@@ -43,7 +43,7 @@
 				<?php foreach ($objekwisata as $value): ?>
 					<div class="single-portfolio col-sm-4 all <?php echo $value->fk_kategori ?>">
 						<div class="item">
-							<img src="<?php echo base_url("uploads/wisata/".$value->foto) ?>" alt="Work 1">
+							<img src="<?php echo base_url("uploads/  wisata/".$value->foto) ?>" alt="Work 1">
 							<div class="p-inner">
 								<h4><?php echo $value->nama ?></h4>
 								<div class="cat">Corporate</div>
