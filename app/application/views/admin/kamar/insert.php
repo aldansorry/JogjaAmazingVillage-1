@@ -64,7 +64,7 @@
       var formData = new FormData(this);    
 
       $.ajax({
-          url: "<?php echo base_url('Admin/Kamar/insert') ?>",
+          url: "<?php echo base_url('Admin/Kamar/insert/'.$id_penginapan) ?>",
           type: 'POST',
           data: formData,
           success: function (data) {

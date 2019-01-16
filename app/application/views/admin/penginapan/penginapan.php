@@ -75,6 +75,7 @@
                     render: (data, type, row) => {
                         let ret = "";
                         ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                        ret += ' <a href="<?php echo base_url('Admin/Kamar/index/') ?>'+data+'" class="btn btn-xs btn-rounded btn-warning"> <i class="fa fa-exchange"></i> Detail</a>';
                         ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
                         ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
                         return ret;

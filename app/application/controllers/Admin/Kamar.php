@@ -11,19 +11,20 @@ class Kamar extends CI_Controller {
     $this->load->library('form_validation');
     $this->load->model("Kamar_model");
   }
-  public function index()
+  public function index($id)
   {
     $data = [
       'c_name' => $this->c_name,
+      'id_penginapan' => $id,
     ];
     $this->load->view('admin/header');
     $this->load->view('admin/kamar/kamar',$data);
     $this->load->view('admin/footer');
   }
 
-  public function getdata()
+  public function getdata($id)
   {
-    $data['data'] = $this->Kamar_model->get_data();
+    $data['data'] = $this->Kamar_model->get_by_penginapan($id);
     echo json_encode($data);
   }
   public function info($id)
@@ -34,10 +35,12 @@ class Kamar extends CI_Controller {
     ];
     $this->load->view('admin/kamar/info',$data);
   }
-  public function insert()
+  
+  public function insert($id)
   {
     $data = [
       'c_name' => $this->c_name,
+      'id_penginapan' => $id,
     ];
     $this->form_validation->set_rules('no','no','required');
     $this->form_validation->set_rules('kategori','kategori','required');
@@ -61,7 +64,7 @@ class Kamar extends CI_Controller {
       else{
         $upload_data = $this->upload->data();
         $this->load->view('admin/kamar/insert',$data);
-        $error = $this->Kamar_model->insert_data($upload_data['file_name']);
+        $error = $this->Kamar_model->insert_data($id,$upload_data['file_name']);
         if ($error['code'] == 0) {
           echo '<script>swal("Berhasil", "Data berhasil ditambahkan", "success");</script>';
         }else{

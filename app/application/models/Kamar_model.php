@@ -14,6 +14,15 @@ class Kamar_model extends CI_Model {
     return $this->db->get()->result();
   }
 
+  public function get_by_penginapan($id_penginapan)
+  {
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $this->db->order_by('no');
+    $this->db->where('fk_penginapan',$id_penginapan);
+    return $this->db->get()->result();
+  }
+
   public function get_id($id)
   {
     $this->db->select('*');
@@ -22,7 +31,7 @@ class Kamar_model extends CI_Model {
     return $this->db->get()->row(0);
   }
 
-  public function insert_data($foto)
+  public function insert_data($id_kamar,$foto)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
@@ -32,7 +41,7 @@ class Kamar_model extends CI_Model {
       'fasilitas' => $this->input->post('fasilitas'),
       'status' => $this->input->post('status'),
       'foto' => $foto,
-      'fk_penginapan' => $this->session->userdata('logged_in')['desawisata']['id'],
+      'fk_penginapan' => $id_kamar,
     ];
 
     $insert = $this->db->insert($this->table,$set);
@@ -51,7 +60,6 @@ class Kamar_model extends CI_Model {
       'fasilitas' => $this->input->post('fasilitas'),
       'status' => $this->input->post('status'),
       'foto' => $foto,
-      'fk_penginapan' => $this->session->userdata('logged_in')['desawisata']['id'],
     ];
 
     if ($foto != null) {
