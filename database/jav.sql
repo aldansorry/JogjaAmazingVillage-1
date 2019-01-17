@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15 Jan 2019 pada 08.04
+-- Generation Time: 17 Jan 2019 pada 03.17
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -40,7 +40,7 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id`, `tanggal`, `judul`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, '2019-01-28', 'oi', 'sa', 'Capture5.PNG', 1);
+(1, '2019-02-01', 'Upacara skaten', 'akan diadakn upacara sekaten yang jatuh pada taggal 1 Frebruari 2019', 'images.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id`, `judul`, `konten`, `author`, `tanggal`, `foto`, `fk_desawisata`) VALUES
-(1, '13', 'qwexf1', 'SS', '2019-01-18 00:00:00', 'Capture5.PNG', 1);
+(1, 'Peresmian Desa Wisata Tembi', 'Desawisata Tembi Telah diresmikan Oleh Gubernur DIY', 'Bagus Pogar', '0000-00-00 00:00:00', 'PERESMIAN-FRONT-OFFICE.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `desawisata` (
 --
 
 INSERT INTO `desawisata` (`id`, `nama`, `alamat`, `deskripsi`, `_lat`, `_long`, `foto`) VALUES
-(1, '1', '1', '1', 1, 1, '1');
+(1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, '1.jpg');
 
 -- --------------------------------------------------------
 
@@ -108,8 +108,7 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id`, `judul`, `foto`, `nourut`, `ukuran`, `fk_desawisata`) VALUES
-(1, '2', 'Capture13.PNG', '1', '1', 1),
-(2, '2', 'Capture9.PNG', '2', '2', 1);
+(1, 'Pengunjung belajar batik di desa tembi', 'desa-wisata-tembi_20180919_125221.jpg', '1', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -126,13 +125,6 @@ CREATE TABLE `kamar` (
   `status` varchar(100) NOT NULL,
   `fk_penginapan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `kamar`
---
-
-INSERT INTO `kamar` (`id`, `no`, `kategori`, `foto`, `fasilitas`, `status`, `fk_penginapan`) VALUES
-(1, '1', 'heh', '', 'h', 'h', 1);
 
 -- --------------------------------------------------------
 
@@ -153,10 +145,7 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nama`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(2, '1', '', 'logoaldansorry2.png', 1),
-(3, 'Wisata Alam', '', 'logoaldansorry3.png', 1),
-(4, 'Wisata Buatan', '', 'logoaldansorry4.png', 1),
-(5, '2', '', 'Code.png', 1);
+(1, 'Wisata alam', '', 'air-terjun-sri-gethuk.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -203,7 +192,7 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id`, `nama`, `keterangan`, `alamat`, `foto`, `fk_desawisata`) VALUES
-(1, 'q', 'q', 'q', 'Capture2.PNG', 1);
+(1, 'D omah ', 'home stay yang terletak di desa wisata tembi', 'desa Tembi, Sewon, Bantul, Yogyakarta,', '5587566764f8029e976fa07463837d0e.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -227,7 +216,7 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `nama`, `email`, `telp`, `rating`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, '1', '1', 1, 1, '1', 'Capture.PNG', 1);
+(1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 0, 'desanya sangat bagus', '1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -244,6 +233,13 @@ CREATE TABLE `toko` (
   `foto` varchar(100) NOT NULL,
   `fk_desawisata` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `toko`
+--
+
+INSERT INTO `toko` (`id`, `nama`, `alamat`, `keterangan`, `jenis`, `foto`, `fk_desawisata`) VALUES
+(1, 'Jendela Jogja', 'Jalan Gedong Kuning A No.161, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198', 'Toko Oleh oleh khas jogja', 'Oleh oleh', '1145527JENDELA-JOGJA-5780x390.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -293,6 +289,13 @@ CREATE TABLE `wisata` (
   `fk_desawisata` int(11) NOT NULL,
   `fk_kategori` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `wisata`
+--
+
+INSERT INTO `wisata` (`id`, `nama`, `keterangan`, `harga`, `jamkunjung`, `foto`, `fk_desawisata`, `fk_kategori`) VALUES
+(1, 'Wisata alam Arum jeram', 'Arum jeram', 10000000, '00:00:08', '0800031karo-rafting780x390.JPG', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -406,17 +409,17 @@ ALTER TABLE `desawisata`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `level`
 --
@@ -436,7 +439,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -446,7 +449,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

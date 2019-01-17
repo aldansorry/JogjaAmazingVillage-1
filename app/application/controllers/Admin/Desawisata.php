@@ -49,7 +49,7 @@ class Desawisata extends CI_Controller {
     }else{
       $config['upload_path'] = './uploads/desawisata/';
       $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size']  = '100';
+      $config['max_size']  = '2000';
       $config['max_width']  = '1024';
       $config['max_height']  = '768';
       
@@ -90,7 +90,7 @@ class Desawisata extends CI_Controller {
       if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/desawisata/';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size']  = '100';
+        $config['max_size']  = '2000';
         $config['max_width']  = '1024';
         $config['max_height']  = '768';
 

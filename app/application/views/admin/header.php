@@ -57,7 +57,7 @@
                             <ul class="metismenu" id="menu">
 
                                 <li><a href="#"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
-                                <li><a href="#"><i class="ti-user"></i> <span>Users</span></a></li>
+                                <li><a href="<?php echo base_url('Admin/Users'); ?>"><i class="ti-user"></i> <span>Users</span></a></li>
                                 <li><a href="<?php echo base_url('Admin/Desawisata') ?>"><i class="ti-world"></i> <span>Desa Wisata</span></a></li>
                                 <hr>
                                 <li>

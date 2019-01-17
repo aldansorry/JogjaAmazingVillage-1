@@ -40,15 +40,12 @@ class Berita extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('konten','konten','required');
-    $this->form_validation->set_rules('author ','author ','required');
-    $this->form_validation->set_rules('tanggal','tanggal','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/insert',$data);
     }else{
       $config['upload_path'] = './uploads/berita/';
       $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size']  = '100';
+      $config['max_size']  = '2000';
       $config['max_width']  = '1024';
       $config['max_height']  = '768';
       
@@ -79,16 +76,15 @@ class Berita extends CI_Controller {
       'data' => $this->Berita_model->get_id($id),
     ];
     $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('konten','konten','required');
-    $this->form_validation->set_rules('author','author','required');
-    $this->form_validation->set_rules('tanggal','tanggal','required');
+    $this->form_validation->set_rules('judul','judul','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/update',$data);
     }else{
       if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/berita/';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size']  = '100';
+        $config['max_size']  = '2000';
         $config['max_width']  = '1024';
         $config['max_height']  = '768';
 
