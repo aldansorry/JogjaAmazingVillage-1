@@ -8,21 +8,21 @@
   <div class="form-group row">
   <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
     <div class="col-sm-10">
-      <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo set_value('judul') ?>">
+      <input type="text" name="judul" class="form-control" id="input-judul" value="<?php echo set_value('judul') ?>">
       <?php echo form_error('judul') ?>
     </div>
   </div>
   <div class="form-group row">
-    <label for="input-nourut" class="col-sm-2 col-form-label">Nourut</label>
+    <label for="input-nourut" class="col-sm-2 col-form-label">No Urut</label>
     <div class="col-sm-10">
-      <input type="text" name="nourut" class="form-control" id="input-nourut" placeholder="nourut" value="<?php echo set_value('nourut') ?>">
+      <input type="text" name="nourut" class="form-control" id="input-nourut" value="<?php echo set_value('nourut') ?>">
       <?php echo form_error('nourut') ?>
     </div>
   </div>
   <div class="form-group row">
     <label for="input-ukuran" class="col-sm-2 col-form-label">Ukuran</label>
     <div class="col-sm-10">
-      <input type="text" name="ukuran" class="form-control" id="input-ukuran" placeholder="ukuran" value="<?php echo set_value('ukuran') ?>">
+      <input type="text" name="ukuran" class="form-control" id="input-ukuran" value="<?php echo set_value('ukuran') ?>">
       <?php echo form_error('ukuran') ?>
     </div>
   </div>

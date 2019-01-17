@@ -32,7 +32,13 @@
       <div class="form-group row">
           <label for="input-rating" class="col-sm-2 col-form-label">Rating</label>
           <div class="col-sm-10">
-           <input type="text" name="rating" class="form-control" id="input-rating" placeholder="rating" value="<?php echo set_value('rating') ?>">
+           <select name="rating" class="form-control">
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+           </select>
           <?php echo form_error('rating') ?>
       </div>
  </div>
@@ -40,18 +46,11 @@
       <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-           <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo set_value('keterangan') ?>">
+           <textarea name="keterangan" class="form-control" id="input-keterangan"><?php echo set_value('keterangan') ?></textarea>
           <?php echo form_error('keterangan') ?>
       </div>
  </div>
 
- <div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
-    <div class="col-sm-10">
-     <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
-   </div>
- </div>
- 
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">

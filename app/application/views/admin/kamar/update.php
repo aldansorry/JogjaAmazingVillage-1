@@ -29,7 +29,10 @@
       <div class="form-group row">
           <label for="input-status" class="col-sm-2 col-form-label">status</label>
           <div class="col-sm-10">
-            <input type="datetime" name="status" class="form-control" id="input-status" placeholder="status" value="<?php echo $data->status ?>">
+            <select name="status" class="form-control">
+              <option value="Ada">Ada</option>
+              <option value="Penuh">Penuh</option>
+            </select>
             <?php echo form_error('status') ?>
           </div>
      </div>

@@ -110,8 +110,8 @@
 		<div class="row gallery-item">
 			<?php foreach ($galeri as $value): ?>
 				<div class="col-md-4">
-				<a href="<?php echo base_url('uploads/galeri/'.$value->foto) ?>" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url("uploads/galeri/".$value->foto); ?>"></div></a>
-			</div>
+					<a href="<?php echo base_url('uploads/galeri/'.$value->foto) ?>" class="img-pop-up"><div class="single-gallery-image" style="background: url(<?php echo base_url("uploads/galeri/".$value->foto); ?>"></div></a>
+				</div>
 			<?php endforeach ?>
 		</div>
 	</div>
@@ -136,16 +136,16 @@
 	<div class="section-top-border">
 		<?php foreach ($berita as $key => $value): ?>
 			<h3 class="mb-30"><?php echo $value->judul ?></h3>
-		<div class="row">
-			<div class="col-md-3">
-				<img src="<?php echo base_url("uploads/berita/".$value->foto) ?>" alt="" class="img-fluid">
-			</div>
-			<div class="col-md-9 mt-sm-20">
-				<p><?php echo $value->konten ?></p>
+			<div class="row">
+				<div class="col-md-3">
+					<img src="<?php echo base_url("uploads/berita/".$value->foto) ?>" alt="" class="img-fluid">
+				</div>
+				<div class="col-md-9 mt-sm-20">
+					<p><?php echo $value->konten ?></p>
+				</div>
 			</div>
 		</div>
-	</div>
-		<?php endforeach ?>
+	<?php endforeach ?>
 
 
 
@@ -164,40 +164,31 @@
 		</div>							
 		<div class="row">
 			<div class="col-lg-6">
-				<div class="single-review">
-					<img src="<?php echo base_url("assets_home/") ?>img/c1.png" alt="">
-					<div class="title d-flex flex-row">
-						<a href="#"><h4>Fannie Rowe</h4></a>									
-						<div class="star">
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
+				<?php foreach ($review as $value): ?>
+					<div class="single-review">
+						<img src="<?php echo base_url("uploads/review/".$value->foto) ?>" alt="" width="200px">
+						<div class="title d-flex flex-row">
+							<a href="#"><h4><?php echo $value->nama ?></h4></a>									
+							<div class="star">
+
+								<?php
+								$jml = $value->rating; 
+								for($i = 0; $i<5;$i++){ 
+									?>
+									<span class="fa fa-star <?php echo (($jml) > 0 ? "checked" : "") ?>"></span>
+									<?php 
+									$jml--;
+								} 
+								?>
+							</div>
 						</div>
-					</div>
-					<p>
-						Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-					</p>
-				</div>	
-				<div class="single-review">
-					<img src="<?php echo base_url("assets_home/") ?>img/c3.png" alt="">
-					<div class="title d-flex flex-row">
-						<a href="#"><h4>Lillie Summers</h4></a>									
-						<div class="star">
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
-					</div>
-					<p>
-						Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
-					</p>
-				</div>															
+						<p>
+							<?php echo $value->keterangan ?>
+						</p>
+					</div>	
+				<?php endforeach ?>													
 			</div>
-			<div class="col-lg-6">
+			<!-- <div class="col-lg-6">
 				<div class="single-review">
 					<img src="<?php echo base_url("assets_home/") ?>img/c2.png" alt="">
 					<div class="title d-flex flex-row">
@@ -230,7 +221,7 @@
 						Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
 					</p>
 				</div>															
-			</div>							
+			</div> -->							
 		</div>	
 	</div>
 </section>

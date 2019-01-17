@@ -107,8 +107,9 @@ class Kategori extends CI_Controller {
           }
         }
       }else{
-          $this->load->view('admin/kategori/update',$data);
           $error = $this->Kategori_model->update_data($id,null);
+          $data['data'] = $this->Kategori_model->get_id($id);
+          $this->load->view('admin/kategori/update',$data);
           if ($error['code'] == 0) {
             echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
           }else{

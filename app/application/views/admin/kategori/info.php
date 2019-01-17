@@ -4,27 +4,26 @@
   <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 </div>
 <div class="modal-body">
-   <div class="form-group row">
-  <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
-  <div class="col-sm-10">
-   <input type="text" name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>" readonly>
-   <?php echo form_error('nama') ?>
- </div>
-</div>
-<div class="row mb-2">
-  <label for="input-foto" class="col-sm-2 col-form-label">Foto</label>
-  <div class="col-md-10">
-    <img src="<?php echo base_url('uploads/kategori/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('uploads/kategori/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('uploads/kategori/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+  <div class="row mb-2">
+    <div class="col-md-12 text-center">
+      <img src="<?php echo base_url('uploads/kategori/'.$data->foto) ?>" alt="" class="img-preview" width="500px">
+    </div>
   </div>
-</div>
-<div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
+  <div class="form-group row">
+    <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-     <input type="text" readonly class="form-control-plaintext" value="<?php echo $data->id ?>">
+     <input type="text" name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>" readonly>
+     <?php echo form_error('nama') ?>
    </div>
  </div>
+ <div class="form-group row">
+  <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
+  <div class="col-sm-10">
+   <input type="text" readonly class="form-control-plaintext" value="<?php echo $data->nama_desawisata ?>">
+ </div>
+</div>
+
+
 
 </div>
 <div class="modal-footer">

@@ -8,28 +8,28 @@
        <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo $data->judul ?>">
+            <input type="text" name="judul" class="form-control" id="input-judul" value="<?php echo $data->judul ?>">
             <?php echo form_error('judul') ?>
           </div>
      </div>
        <div class="form-group row">
-          <label for="input-konten" class="col-sm-2 col-form-label">konten</label>
+          <label for="input-konten" class="col-sm-2 col-form-label">Konten</label>
           <div class="col-sm-10">
             <textarea name="konten" class="form-control" id="input-konten" cols="30" rows="10"><?php echo $data->konten ?></textarea>
             <?php echo form_error('konten') ?>
           </div>
      </div>
       <div class="form-group row">
-          <label for="input-author" class="col-sm-2 col-form-label">author</label>
+          <label for="input-author" class="col-sm-2 col-form-label">Author</label>
           <div class="col-sm-10">
-            <input type="text" name="author" class="form-control" id="input-author" placeholder="author" value="<?php echo $data->author ?>">
+            <input type="text" name="author" class="form-control" id="input-author" value="<?php echo $data->author ?>">
             <?php echo form_error('author') ?>
           </div>
      </div>
       <div class="form-group row">
           <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
           <div class="col-sm-10">
-            <input type="datetime" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo $data->tanggal ?>">
+            <input type="date" name="tanggal" class="form-control" id="input-tanggal" value="<?php echo $data->tanggal ?>">
             <?php echo form_error('tanggal') ?>
           </div>
      </div>

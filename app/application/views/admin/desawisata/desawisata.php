@@ -51,11 +51,17 @@
             },
             { 
                 "title" : "Alamat",
-                "data": "alamat" 
+                "data": "alamat",
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
+                }
             },
             { 
                 "title" : "Deskripsi",
-                "data": "deskripsi" 
+                "data": "deskripsi",
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
+                } 
             },
             { 
                 "title" : "Lattitude",

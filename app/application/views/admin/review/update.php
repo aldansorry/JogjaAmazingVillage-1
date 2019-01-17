@@ -32,7 +32,13 @@
       <div class="form-group row">
           <label for="input-rating" class="col-sm-2 col-form-label">Rating</label>
           <div class="col-sm-10">
-           <input type="text" name="rating" class="form-control" id="input-rating" placeholder="rating" value="<?php echo $data->rating ?>">
+            <select name="rating" class="form-control">
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+           </select>
           <?php echo form_error('rating') ?>
       </div>
  </div>
@@ -40,7 +46,7 @@
       <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-           <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo $data->keterangan ?>">
+           <textarea name="keterangan" class="form-control" id="input-keterangan"><?php echo $data->keterangan ?></textarea>
           <?php echo form_error('keterangan') ?>
       </div>
  </div>

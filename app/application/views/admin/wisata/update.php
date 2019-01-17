@@ -59,9 +59,9 @@
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/wisata/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
+    <img src="<?php echo base_url('uploads/wisata/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
+    <img src="<?php echo base_url('uploads/wisata/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
   </div>
 </div>
 <div class="form-group row">
@@ -71,13 +71,6 @@
    <?php echo (isset($error) ? $error : "" ) ?>
  </div>
 </div>
-
-<div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
-    <div class="col-sm-10">
-     <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
-   </div>
- </div>
 
 
 <?php echo form_close(); ?>

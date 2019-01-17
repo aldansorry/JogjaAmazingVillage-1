@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 			'Agenda_model',
 			'Galeri_model',
 			'Berita_model',
+			'Review_model',
 		]);
 		$data = [
 			'c_name' => 'Home',
@@ -19,6 +20,7 @@ class Home extends CI_Controller {
 			'agenda' => $this->Agenda_model->get_data(),
 			'galeri' => $this->Galeri_model->get_data(),
 			'berita' => $this->Berita_model->get_data(),
+			'review' => $this->Review_model->get_data(),
 		];
 		$this->load->view('home/header');
 		$this->load->view('home/home',$data);

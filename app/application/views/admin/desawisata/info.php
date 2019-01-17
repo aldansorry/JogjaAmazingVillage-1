@@ -5,6 +5,11 @@
 </div>
 <div class="modal-body">
   <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
+  <div class="row mb-2">
+  <div class="col-md-12 text-center">
+    <img src="<?php echo base_url('uploads/desawisata/'.$data->foto) ?>" alt="" width="500px" class="img-preview">
+  </div>
+</div>
   <div class="form-group row">
     <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
@@ -30,21 +35,14 @@
     <label for="input-_lat" class="col-sm-2 col-form-label">Lat / Long</label>
     <div class="col-sm-10">
       <div class="input-group">
-      <input type="text" readonly name="_lat" class="form-control" id="input-_lat" placeholder="lattitude" value="<?php echo $data->_lat ?>">
-      <input type="text" readonly name="_long" class="form-control" id="input-_long" placeholder="longtitude" value="<?php echo $data->_long ?>">
+      <input type="number" step="any" name="_lat" class="form-control mr-2" id="input-_lat" placeholder="lattitude" value="<?php echo $data->_lat ?>">
+      <input type="number" step="any" name="_long" class="form-control ml-2" id="input-_long" placeholder="longtitude" value="<?php echo $data->_long ?>">
       </div>
       <?php echo form_error('_lat') ?>
       <?php echo form_error('_long') ?>
     </div>
   </div>
-  <div class="row mb-2">
-  <label for="input-foto" class="col-sm-2 col-form-label">Foto</label>
-  <div class="col-md-10">
-    <img src="<?php echo base_url('uploads/desawisata/'.$data->foto) ?>" alt="" width="100px" class="img-preview">
-    <img src="<?php echo base_url('uploads/desawisata/'.$data->foto) ?>" alt="" width="75px" class="img-preview align-bottom ml-3">
-    <img src="<?php echo base_url('uploads/desawisata/'.$data->foto) ?>" alt="" width="50px" class="img-preview align-bottom ml-3">
-  </div>
-</div>
+  
 
  
 

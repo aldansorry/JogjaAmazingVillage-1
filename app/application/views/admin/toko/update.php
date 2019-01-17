@@ -1,51 +1,49 @@
 <div class="modal-content bg-light">
-     <div class="modal-header bg-success">
-          <h5 class="modal-title text-white">Ubah Data</h5>
-          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-     </div>
-     <div class="modal-body">
-          <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
-      <div class="form-group row">
-          <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
-          <div class="col-sm-10">
-           <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
-          <?php echo form_error('nama') ?>
-      </div>
- </div>
-
-      <div class="form-group row">
-          <label for="input-alamat" class="col-sm-2 col-form-label">Alamat</label>
-          <div class="col-sm-10">
-           <input type="text" name="alamat" class="form-control" id="input-alamat" placeholder="alamat" value="<?php echo $data->alamat ?>">
-          <?php echo form_error('alamat') ?>
-      </div>
- </div>
-
-      <div class="form-group row">
-          <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
-          <div class="col-sm-10">
-           <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo $data->keterangan ?>">
-          <?php echo form_error('keterangan') ?>
-      </div>
- </div>
-      
-
-      <div class="form-group row">
-          <label for="input-jenis" class="col-sm-2 col-form-label">Jenis</label>
-          <div class="col-sm-10">
-           <input type="text" name="jenis" class="form-control" id="input-jenis" placeholder="jenis" value="<?php echo $data->jenis ?>">
-          <?php echo form_error('jenis') ?>
-      </div>
+ <div class="modal-header bg-success">
+  <h5 class="modal-title text-white">Ubah Data</h5>
+  <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+</div>
+<div class="modal-body">
+  <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
+  <div class="form-group row">
+    <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
+    <div class="col-sm-10">
+     <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>">
+     <?php echo form_error('nama') ?>
+   </div>
  </div>
 
  <div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
-    <div class="col-sm-10">
-     <input type="hidden" name="fk_desawisata" value="<?php echo $this->session->userdata('logged_in')['desawisata']['id'] ?>">
-     <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
-   </div>
+  <label for="input-alamat" class="col-sm-2 col-form-label">Alamat</label>
+  <div class="col-sm-10">
+   <textarea name="alamat" class="form-control" id="input-alamat"><?php echo $data->alamat ?></textarea>
+   <?php echo form_error('alamat') ?>
  </div>
- 
+</div>
+
+<div class="form-group row">
+  <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
+  <div class="col-sm-10">
+   <textarea name="keterangan" class="form-control" id="input-keterangan"><?php echo $data->keterangan ?></textarea>
+   <?php echo form_error('keterangan') ?>
+ </div>
+</div>
+
+
+<div class="form-group row">
+  <label for="input-jenis" class="col-sm-2 col-form-label">Jenis</label>
+  <div class="col-sm-10">
+
+   <select name="jenis" id="" class="form-control">
+     <option value="Oleh - oleh">Oleh - oleh</option>
+     <option value="Sovenir">Sovenir</option>
+
+   </select>
+   <?php echo form_error('jenis') ?>
+ </div>
+</div>
+
+
 <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
@@ -58,39 +56,39 @@
   <label for="input-foto" class="col-sm-2 col-form-label">Foto</label>
   <div class="col-sm-10">
     <input type="file" name="foto" class="form-control" id="input-foto" placeholder="foto" accept="image/*">
-   <?php echo (isset($error) ? $error : "" ) ?>
- </div>
+    <?php echo (isset($error) ? $error : "" ) ?>
+  </div>
 </div>
 
- <?php echo form_close(); ?>
+<?php echo form_close(); ?>
 </div>
 <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     <button type="submit" class="btn btn-success" form="formdata">Save changes</button>
+ <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ <button type="submit" class="btn btn-success" form="formdata">Save changes</button>
 </div>
 
 </div>
 <script>
-     $("form#formdata").submit(function(e) {
-      e.preventDefault();
+ $("form#formdata").submit(function(e) {
+  e.preventDefault();
 
-      var formData = new FormData(this);    
+  var formData = new FormData(this);    
 
-      $.ajax({
-          url: "<?php echo base_url('Admin/Toko/update/'.$data->id) ?>",
-          type: 'POST',
-          data: formData,
-          success: function (data) {
-             $('#modal-content').html(data);
-                    reload_table();
-        },
-        cache: false,
-        contentType: false,
-        processData: false
-   });
+  $.ajax({
+    url: "<?php echo base_url('Admin/Toko/update/'.$data->id) ?>",
+    type: 'POST',
+    data: formData,
+    success: function (data) {
+     $('#modal-content').html(data);
+     reload_table();
+   },
+   cache: false,
+   contentType: false,
+   processData: false
  });
+});
 
-     function readURL(input) {
+ function readURL(input) {
 
   if (input.files && input.files[0]) {
     var reader = new FileReader();

@@ -8,21 +8,21 @@
       <div class="form-group row">
           <label for="input-tanggal" class="col-sm-2 col-form-label">Tanggal</label>
           <div class="col-sm-10">
-            <input type="date" name="tanggal" class="form-control" id="input-tanggal" placeholder="tanggal" value="<?php echo set_value('tanggal') ?>">
+            <input type="date" name="tanggal" class="form-control" id="input-tanggal" value="<?php echo date('Y-m-d') ?>">
             <?php echo form_error('tanggal') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-judul" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-10">
-            <input type="text" name="judul" class="form-control" id="input-judul" placeholder="judul" value="<?php echo set_value('judul') ?>">
+            <input type="text" name="judul" class="form-control" id="input-judul" value="<?php echo set_value('judul') ?>">
             <?php echo form_error('judul') ?>
           </div>
      </div>
        <div class="form-group row">
           <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
           <div class="col-sm-10">
-            <textarea name="keterangan" class="form-control" id="input-keterangan" cols="30" rows="10"><?php echo set_value('keterangan') ?></textarea>
+            <textarea name="keterangan" class="form-control" id="input-keterangan"><?php echo set_value('keterangan') ?></textarea>
             <?php echo form_error('keterangan') ?>
           </div>
      </div>

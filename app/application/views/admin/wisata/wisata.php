@@ -45,48 +45,40 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                
-                { 
+            { 
                 "title" : "Nama",
                 "data": "nama" 
-                },
-
-                { 
-                "title" : "keterangan",
+            },
+            { 
+                "title" : "Keterangan",
                 "data": "keterangan" 
-                },
-
-                { 
-                "title" : "harga",
-                "data": "harga" 
-                },
-
-                { 
-                "title" : "jamkunjung",
+            },
+            { 
+                "title" : "Jam Kunjung",
                 "data": "jamkunjung" 
-                },
-
-                { 
-                "title" : "foto",
-                "data": "foto" 
-                },
-
-                {
-                    "title": "Actions",
-                    "width" : "120px",
-                    "data":'id',
-                    "visible":true,
-                    "class": "text-center",
-                    render: (data, type, row) => {
-                        let ret = "";
-                        ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                        ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                        ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
-                        return ret;
-                    }
+            },
+            { 
+                "title" : "Harga",
+                "data": "harga",
+                class: "text-right",
+                render: $.fn.dataTable.render.number( ',', '.',0 )
+            },
+            {
+                "title": "Actions",
+                "width" : "120px",
+                "data":'id',
+                "visible":true,
+                "class": "text-center",
+                render: (data, type, row) => {
+                    let ret = "";
+                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    return ret;
                 }
-                ]
-            } );
+            }
+            ]
+        } );
     });
 
     function reload_table() {

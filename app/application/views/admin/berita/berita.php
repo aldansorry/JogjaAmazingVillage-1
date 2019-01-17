@@ -46,23 +46,23 @@
                 }
             },
             { 
+                "title" : "Tanggal",
+                "data": "tanggal" 
+            },
+            { 
                 "title" : "Judul",
                 "data": "judul" 
             },
             { 
                 "title" : "konten",
-                "data": "konten" 
+                "data": "konten",
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
+                }
             },
             { 
                 "title" : "author",
                 "data": "author" 
-            },{ 
-                "title" : "Tanggal",
-                "data": "tanggal" 
-            },
-            { 
-                "title" : "Foto",
-                "data": "foto" 
             },
             {
                 "title": "Actions",

@@ -8,7 +8,7 @@
   <div class="form-group row">
     <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-      <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
+      <input type="text" name="nama" class="form-control" id="input-nama" placeholder="" value="<?php echo set_value('nama') ?>" autofocus>
       <?php echo form_error('nama') ?>
     </div>
   </div>
@@ -30,8 +30,8 @@
     <label for="input-_lat" class="col-sm-2 col-form-label">Lat / Long</label>
     <div class="col-sm-10">
       <div class="input-group">
-      <input type="text" name="_lat" class="form-control" id="input-_lat" placeholder="lattitude" value="<?php echo set_value('_lat') ?>">
-      <input type="text" name="_long" class="form-control" id="input-_long" placeholder="longtitude" value="<?php echo set_value('_long') ?>">
+      <input type="number" step="any" name="_lat" class="form-control mr-2" id="input-_lat" placeholder="lattitude" value="<?php echo set_value('_lat') ?>">
+      <input type="number" step="any" name="_long" class="form-control ml-2" id="input-_long" placeholder="longtitude" value="<?php echo set_value('_long') ?>">
       </div>
       <?php echo form_error('_lat') ?>
       <?php echo form_error('_long') ?>
@@ -70,7 +70,7 @@
   var formData = new FormData(this);    
 
   $.ajax({
-    url: "<?php echo base_url('Admin/Desawisata/insert') ?>",
+    url: "<?php echo base_url('Admin/'.$c_name.'/insert') ?>",
     type: 'POST',
     data: formData,
     success: function (data) {
@@ -96,6 +96,13 @@
 }
 
 $("#input-foto").change(function() {
-  readURL(this);
+
+  var size = this.files[0].size/1024/1024;
+  if (size >= 2) {
+    alert('File larger than 2 MB');
+    $('#input-foto').val(null);
+  }else{
+    readURL(this);
+  }
 });
 </script>

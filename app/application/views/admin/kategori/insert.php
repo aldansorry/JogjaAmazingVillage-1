@@ -1,18 +1,18 @@
 <div class="modal-content bg-light">
  <div class="modal-header bg-primary">
-  <h5 class="modal-title text-white">Tambah Data</h5>
+  <h5 class="modal-title text-white">Tambah Data <b><?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?></b></h5>
   <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 </div>
 <div class="modal-body">
   <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
-   <div class="form-group row">
-  <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
-  <div class="col-sm-10">
-   <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
-   <?php echo form_error('nama') ?>
+  <div class="form-group row">
+    <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
+    <div class="col-sm-10">
+     <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
+     <?php echo form_error('nama') ?>
+   </div>
  </div>
-</div>
-<div class="row mb-2">
+ <div class="row mb-2">
   <div class="col-sm-2"></div>
   <div class="col-md-10">
     <img src="<?php echo base_url('assets\assets\images\holder\holder.png') ?>" alt="" width="100px" class="img-preview">
@@ -24,15 +24,9 @@
   <label for="input-foto" class="col-sm-2 col-form-label">Foto</label>
   <div class="col-sm-10">
     <input type="file" name="foto" class="form-control" id="input-foto" placeholder="foto" accept="image/*">
-   <?php echo (isset($error) ? $error : "" ) ?>
- </div>
+    <?php echo (isset($error) ? $error : "" ) ?>
+  </div>
 </div>
-<div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
-    <div class="col-sm-10">
-     <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
-   </div>
- </div>
 
 <?php echo form_close(); ?>
 </div>
@@ -65,6 +59,7 @@
  function readURL(input) {
 
   if (input.files && input.files[0]) {
+
     var reader = new FileReader();
 
     reader.onload = function(e) {
@@ -72,10 +67,20 @@
     }
 
     reader.readAsDataURL(input.files[0]);
+
+    
+
   }
 }
 
 $("#input-foto").change(function() {
-  readURL(this);
+
+  var size = this.files[0].size/1024/1024;
+  if (size >= 2) {
+    alert('File larger than 2 MB');
+    $('#input-foto').val(null);
+  }else{
+    readURL(this);
+  }
 });
 </script>

@@ -46,23 +46,19 @@
                 }
             },
             { 
-                "title" : "no",
+                "title" : "No Kamar",
                 "data": "no" 
             },
             { 
-                "title" : "kategori",
+                "title" : "Kategori",
                 "data": "kategori" 
             },
             { 
-                "title" : "fasilitas",
+                "title" : "Fasilitas",
                 "data": "fasilitas" 
             },{ 
-                "title" : "status",
+                "title" : "Staus",
                 "data": "status" 
-            },
-            { 
-                "title" : "Foto",
-                "data": "foto" 
             },
             {
                 "title": "Actions",

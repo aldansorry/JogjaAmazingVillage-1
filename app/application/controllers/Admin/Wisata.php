@@ -97,8 +97,9 @@ class Wisata extends CI_Controller {
       }
       else{
         $upload_data = $this->upload->data();
-        $this->load->view('admin/wisata/update',$data);
         $error = $this->Wisata_model->update_data($id,$upload_data['file_name']);
+        $data['data'] = $this->Wisata_model->get_id($id);
+        $this->load->view('admin/wisata/update',$data);
         if ($error['code'] == 0) {
           echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
         }else{
@@ -107,8 +108,9 @@ class Wisata extends CI_Controller {
         }
       }
       }else{
-        $this->load->view('admin/wisata/update',$data);
         $error = $this->Wisata_model->update_data($id,null);
+        $data['data'] = $this->Wisata_model->get_id($id);
+        $this->load->view('admin/wisata/update',$data);
         if ($error['code'] == 0) {
           echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
         }else{

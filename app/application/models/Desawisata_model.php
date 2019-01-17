@@ -56,7 +56,8 @@ class Desawisata_model extends CI_Model {
     if ($foto != null) {
       $set['foto'] = $foto;
     }
-    $insert = $this->db->insert($this->table,$set);
+    $this->db->where('id',$id);
+    $insert = $this->db->update($this->table,$set);
     $error = $this->db->error();
     $this->db->db_debug = $db_debug;
     return $error;

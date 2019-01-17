@@ -6,25 +6,25 @@
 <div class="modal-body">
   <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
   <div class="form-group row">
-    <label for="input-nama" class="col-sm-2 col-form-label">nama</label>
+    <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-     <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
+     <input type="text" name="nama" class="form-control" id="input-nama" value="<?php echo set_value('nama') ?>">
      <?php echo form_error('nama') ?>
    </div>
  </div>
 
  <div class="form-group row">
-  <label for="input-keterangan" class="col-sm-2 col-form-label">keterangan</label>
+  <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
   <div class="col-sm-10">
-   <input type="text" name="keterangan" class="form-control" id="input-keterangan" placeholder="keterangan" value="<?php echo set_value('keterangan') ?>">
+   <textarea name="keterangan" class="form-control" id="input-keterangan"><?php echo set_value('keterangan') ?></textarea>
    <?php echo form_error('keterangan') ?>
  </div>
 </div>
 
 <div class="form-group row">
-  <label for="input-alamat" class="col-sm-2 col-form-label">alamat</label>
+  <label for="input-alamat" class="col-sm-2 col-form-label">Alamat</label>
   <div class="col-sm-10">
-   <input type="text" name="alamat" class="form-control" id="input-alamat" placeholder="alamat" value="<?php echo set_value('alamat') ?>">
+   <textarea name="alamat" class="form-control" id="input-alamat"><?php echo set_value('alamat') ?></textarea>
    <?php echo form_error('alamat') ?>
  </div>
 </div>

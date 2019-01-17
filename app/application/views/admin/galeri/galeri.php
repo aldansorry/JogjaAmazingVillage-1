@@ -49,17 +49,20 @@
                 "title" : "Judul",
                 "data": "judul" 
             },
-             { 
-                "title" : "Foto",
-                "data": "foto" 
-            },
             { 
-                "title" : "nourut",
+                "title" : "No Urut",
                 "data": "nourut" 
             },
-             { 
-                "title" : "ukuran",
+            { 
+                "title" : "Ukuran",
                 "data": "ukuran" 
+            },
+            { 
+                "title" : "Foto",
+                "data": "foto",
+                render: (data,type,row) => {
+                    return '<img src="<?php echo base_url('uploads/galeri/') ?>'+data+'" width="250px"></img>';
+                } 
             },
             {
                 "title": "Actions",

@@ -76,8 +76,7 @@ class Berita extends CI_Controller {
       'data' => $this->Berita_model->get_id($id),
     ];
     $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('keterangan','keterangan','required');
+
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/update',$data);
     }else{
@@ -96,8 +95,9 @@ class Berita extends CI_Controller {
         }
         else{
           $upload_data = $this->upload->data();
-          $this->load->view('admin/berita/update',$data);
           $error = $this->Berita_model->update_data($id,$upload_data['file_name']);
+          $data['data'] = $this->Berita_model->get_id($id);
+          $this->load->view('admin/berita/update',$data);
           if ($error['code'] == 0) {
             echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
           }else{
@@ -106,14 +106,15 @@ class Berita extends CI_Controller {
           }
         }
       }else{
+        $error = $this->Berita_model->update_data($id,null);
+        $data['data'] = $this->Berita_model->get_id($id);
         $this->load->view('admin/berita/update',$data);
-          $error = $this->Berita_model->update_data($id,null);
-          if ($error['code'] == 0) {
-            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
-          }else{
+        if ($error['code'] == 0) {
+          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+        }else{
 
-            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
-          }
+          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        }
       }
     }
   }

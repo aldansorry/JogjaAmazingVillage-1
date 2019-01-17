@@ -45,54 +45,44 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                
-                { 
+            { 
                 "title" : "Nama",
                 "data": "nama" 
-                },
-
-                { 
+            },
+            { 
                 "title" : "Alamat",
-                "data": "alamat" 
-                },
-
-                { 
+                "data": "alamat",
+                render: (data,type,row) =>{
+                    return data.substr(0,30)+"...";
+                }
+            },
+            { 
                 "title" : "Keterangan",
-                "data": "keterangan" 
-                },
-
-                { 
+                "data": "keterangan",
+                render: (data,type,row) =>{
+                    return data.substr(0,30)+"...";
+                }
+            },
+            { 
                 "title" : "Jenis",
                 "data": "jenis" 
-                },
-
-                { 
-                "title" : "Foto",
-                "data": "foto" 
-                },
-
-                { 
-                "title" : "Desawisata",
-                "data": "fk_desawisata" 
-                },
-
-
-                {
-                    "title": "Actions",
-                    "width" : "120px",
-                    "data":'id',
-                    "visible":true,
-                    "class": "text-center",
-                    render: (data, type, row) => {
-                        let ret = "";
-                        ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                        ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                        ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
-                        return ret;
-                    }
+            },
+            {
+                "title": "Actions",
+                "width" : "120px",
+                "data":'id',
+                "visible":true,
+                "class": "text-center",
+                render: (data, type, row) => {
+                    let ret = "";
+                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    return ret;
                 }
-                ]
-            } );
+            }
+            ]
+        } );
     });
 
     function reload_table() {

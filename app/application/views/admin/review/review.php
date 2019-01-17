@@ -71,16 +71,6 @@
                 "data": "keterangan" 
                 },
 
-                { 
-                "title" : "Foto",
-                "data": "foto" 
-                },
-
-                { 
-                "title" : "Desawisata",
-                "data": "fk_desawisata" 
-                },
-
                 {
                     "title": "Actions",
                     "width" : "120px",

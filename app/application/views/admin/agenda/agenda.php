@@ -55,11 +55,10 @@
             },
             { 
                 "title" : "Keterangan",
-                "data": "keterangan" 
-            },
-            { 
-                "title" : "Foto",
-                "data": "foto" 
+                "data": "keterangan",
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
+                }
             },
             {
                 "title": "Actions",

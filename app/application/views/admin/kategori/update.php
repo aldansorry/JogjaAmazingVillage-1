@@ -1,6 +1,6 @@
 <div class="modal-content bg-light">
  <div class="modal-header bg-success">
-  <h5 class="modal-title text-white">Edit Data</h5>
+  <h5 class="modal-title text-white">Edit Data <b><?php echo $data->nama_desawisata ?></b></h5>
   <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 </div>
 <div class="modal-body">
@@ -27,13 +27,6 @@
    <?php echo (isset($error) ? $error : "" ) ?>
  </div>
 </div>
-<div class="form-group row">
-    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
-    <div class="col-sm-10">
-     <input type="hidden" name="fk_desawisata" value="<?php echo $this->session->userdata('logged_in')['desawisata']['id'] ?>">
-     <input type="text" readonly class="form-control" value="<?php echo $this->session->userdata('logged_in')['desawisata']['nama'] ?>">
-   </div>
- </div>
 
 <?php echo form_close(); ?>
 </div>
@@ -77,6 +70,13 @@
 }
 
 $("#input-foto").change(function() {
-  readURL(this);
+
+  var size = this.files[0].size/1024/1024;
+  if (size >= 2) {
+    alert('File larger than 2 MB');
+    $('#input-foto').val(null);
+  }else{
+    readURL(this);
+  }
 });
 </script>

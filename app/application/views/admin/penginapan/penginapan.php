@@ -45,44 +45,45 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                
-                { 
+
+            { 
                 "title" : "Nama",
                 "data": "nama" 
-                },
+            },
 
-                { 
-                "title" : "keterangan",
-                "data": "keterangan" 
-                },
+            { 
+                "title" : "Keterangan",
+                "data": "keterangan", 
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
+                } 
+            },
 
-                { 
-                "title" : "alamat",
-                "data": "alamat" 
-                },
-
-                { 
-                "title" : "foto",
-                "data": "foto" 
-                },
-
-                {
-                    "title": "Actions",
-                    "width" : "120px",
-                    "data":'id',
-                    "visible":true,
-                    "class": "text-center",
-                    render: (data, type, row) => {
-                        let ret = "";
-                        ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                        ret += ' <a href="<?php echo base_url('Admin/Kamar/index/') ?>'+data+'" class="btn btn-xs btn-rounded btn-warning"> <i class="fa fa-exchange"></i> Detail</a>';
-                        ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                        ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
-                        return ret;
-                    }
+            { 
+                "title" : "Alamat",
+                "data": "alamat", 
+                render: (data,type,row) => {
+                    return data.substr(0,30)+"...";
                 }
-                ]
-            } );
+            },
+
+            {
+                "title": "Actions",
+                "width" : "120px",
+                "data":'id',
+                "visible":true,
+                "class": "text-center",
+                render: (data, type, row) => {
+                    let ret = "";
+                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    ret += ' <a href="<?php echo base_url('Admin/Kamar/index/') ?>'+data+'" class="btn btn-xs btn-rounded btn-warning"> <i class="fa fa-exchange"></i> Detail</a>';
+                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    return ret;
+                }
+            }
+            ]
+        } );
     });
 
     function reload_table() {
