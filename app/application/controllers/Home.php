@@ -26,4 +26,27 @@ class Home extends CI_Controller {
 		$this->load->view('home/home',$data);
 		$this->load->view('home/footer');
 	}
+	public function desawisata($id_desawisata)
+	{
+		$this->load->model([
+			'Kategori_model',
+			'Wisata_model',
+			'Agenda_model',
+			'Galeri_model',
+			'Berita_model',
+			'Review_model',
+		]);
+		$data = [
+			'c_name' => 'Home',
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
+		];
+		$this->load->view('home/header');
+		$this->load->view('home/home',$data);
+		$this->load->view('home/footer');
+	}
 }

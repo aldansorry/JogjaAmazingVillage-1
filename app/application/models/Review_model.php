@@ -13,6 +13,16 @@ class Review_model extends CI_Model {
     $this->db->order_by('nama');
     return $this->db->get()->result();
   }
+
+  public function get_by_desawisata($id_desawisata)
+  {
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $this->db->order_by('id');
+    $this->db->where('fk_desawisata',$id_desawisata);
+    return $this->db->get()->result();
+  }
+  
   public function get_id($id)
   {
     $this->db->select('*');
