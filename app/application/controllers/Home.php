@@ -22,9 +22,9 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/header');
-		$this->load->view('home/home',$data);
-		$this->load->view('home/footer');
+		$this->load->view('home/template2/header');
+		$this->load->view('home/template2/home',$data);
+		$this->load->view('home/template2/footer');
 	}
 	public function desawisata($id_desawisata)
 	{
@@ -45,8 +45,8 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/header');
-		$this->load->view('home/home',$data);
-		$this->load->view('home/footer');
+		$this->load->view('home/template2/header');
+		$this->load->view('home/template2/home',$data);
+		$this->load->view('home/template2/footer');
 	}
 }
