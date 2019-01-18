@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2019 at 04:14 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: 18 Jan 2019 pada 03.11
+-- Versi Server: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Struktur dari tabel `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -38,16 +36,17 @@ CREATE TABLE `agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `agenda`
+-- Dumping data untuk tabel `agenda`
 --
 
 INSERT INTO `agenda` (`id`, `tanggal`, `judul`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, '2019-02-01', 'Upacara skaten', 'akan diadakn upacara sekaten yang jatuh pada taggal 1 Frebruari 2019', 'images.jpg', 1);
+(1, '2019-02-01', 'Upacara skaten', 'akan diadakn upacara sekaten yang jatuh pada taggal 1 Frebruari 2019', 'images.jpg', 1),
+(2, '2019-01-31', 'Reog Ponorogo', 'Desa sambi akan merayakan ulang tahunnya. dan akan menampilkan Reog yang asli dari ponorogo Jawa timur', 'sejumlah-penari-menampilkan-kesenian-terkenal-reog-ponorogo1499925621.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -61,16 +60,17 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `konten`, `author`, `tanggal`, `foto`, `fk_desawisata`) VALUES
-(1, 'Peresmian Desa Wisata Tembi', 'Desawisata Tembi Telah diresmikan Oleh Gubernur DIY', 'Bagus Pogar', '2019-01-17', 'logocoding.png', 1);
+(1, 'Peresmian Desa Wisata Tembi', 'Desawisata Tembi Telah diresmikan Oleh Gubernur DIY', 'Bagus Pogar', '2019-01-17', 'logocoding.png', 1),
+(2, 'Desa wisata sambi dikunjungi gub', 'desa wisata sambi dikunjungi gubernur diy. gubernur Diy  ingin  tahu proses jalannya desa wisata tersebut', '', '2019-01-17', 'Rambu_stop.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desawisata`
+-- Struktur dari tabel `desawisata`
 --
 
 CREATE TABLE `desawisata` (
@@ -84,16 +84,17 @@ CREATE TABLE `desawisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `desawisata`
+-- Dumping data untuk tabel `desawisata`
 --
 
 INSERT INTO `desawisata` (`id`, `nama`, `alamat`, `deskripsi`, `_lat`, `_long`, `foto`) VALUES
-(1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, '1.jpg');
+(1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, '1.jpg'),
+(2, 'Desa wisata Sambi', 'Jl. Kaliurang KM. 19.2, Dusun Sambi, Desa Pakembinangun, Kec. Pakem, Purwodadi, Pakembinangun, Slema', 'Suasana khas pedesaan, pemandangannya bagus, banyak camping ground dan gazebo untuk pertemuan', -7.774297, 110.375128, 'dw_sambi_(1)_(Copy).jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galeri`
+-- Struktur dari tabel `galeri`
 --
 
 CREATE TABLE `galeri` (
@@ -106,16 +107,17 @@ CREATE TABLE `galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `galeri`
+-- Dumping data untuk tabel `galeri`
 --
 
 INSERT INTO `galeri` (`id`, `judul`, `foto`, `nourut`, `ukuran`, `fk_desawisata`) VALUES
-(1, 'Pengunjung belajar batik di desa tembi', 'desa-wisata-tembi_20180919_125221.jpg', '1', '2', 1);
+(1, 'Pengunjung belajar batik di desa tembi', 'desa-wisata-tembi_20180919_125221.jpg', '1', '2', 1),
+(2, 'Ritual yang diadakan sesepuh desa sambi', '105435_labuhanmerapi1.jpg', '2', '2', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kamar`
+-- Struktur dari tabel `kamar`
 --
 
 CREATE TABLE `kamar` (
@@ -129,7 +131,7 @@ CREATE TABLE `kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kamar`
+-- Dumping data untuk tabel `kamar`
 --
 
 INSERT INTO `kamar` (`id`, `no`, `kategori`, `foto`, `fasilitas`, `status`, `fk_penginapan`) VALUES
@@ -138,7 +140,7 @@ INSERT INTO `kamar` (`id`, `no`, `kategori`, `foto`, `fasilitas`, `status`, `fk_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -150,16 +152,17 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `nama`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, 'Wisata Alam', '', 'air-terjun-sri-gethuk.jpg', 1);
+(1, 'Wisata Alam', '', 'air-terjun-sri-gethuk.jpg', 1),
+(2, 'Edukasi', '', 'IMG-20120322-WA0001-732946.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `level`
+-- Struktur dari tabel `level`
 --
 
 CREATE TABLE `level` (
@@ -171,7 +174,7 @@ CREATE TABLE `level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `level`
+-- Dumping data untuk tabel `level`
 --
 
 INSERT INTO `level` (`id`, `nama`, `datecreated`, `createdby`, `editedby`) VALUES
@@ -184,7 +187,7 @@ INSERT INTO `level` (`id`, `nama`, `datecreated`, `createdby`, `editedby`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penginapan`
+-- Struktur dari tabel `penginapan`
 --
 
 CREATE TABLE `penginapan` (
@@ -197,16 +200,17 @@ CREATE TABLE `penginapan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penginapan`
+-- Dumping data untuk tabel `penginapan`
 --
 
 INSERT INTO `penginapan` (`id`, `nama`, `keterangan`, `alamat`, `foto`, `fk_desawisata`) VALUES
-(1, 'D omah ', 'home stay yang terletak di desa wisata tembi', 'desa Tembi, Sewon, Bantul, Yogyakarta,', '5587566764f8029e976fa07463837d0e.jpg', 1);
+(1, 'D omah ', 'home stay yang terletak di desa wisata tembi', 'desa Tembi, Sewon, Bantul, Yogyakarta,', '5587566764f8029e976fa07463837d0e.jpg', 1),
+(2, 'Rumah Joglo', 'Rumah Joglo terletak di desa sambi , merupakan salah satu penginapan resort dan spa. bagi para pengunjung yang ingin menginap di sini merupakan salah satu destinasi yang wajib di kunjungi. karena pemandangan khas pedesaan melekat di desa ini', 'Jl. Kaliurang Km. 19.2, Desa Wisata Sambi | Pakembinangun, Pakem, 55582, Indonesia', 'filename-img-2178-jpg.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `review`
+-- Struktur dari tabel `review`
 --
 
 CREATE TABLE `review` (
@@ -221,16 +225,17 @@ CREATE TABLE `review` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `review`
+-- Dumping data untuk tabel `review`
 --
 
 INSERT INTO `review` (`id`, `nama`, `email`, `telp`, `rating`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 1, 'desanya sangat bagus', '1.jpg', 1);
+(1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 1, 'desanya sangat bagus', '1.jpg', 1),
+(2, 'Budi hariyanto', 'budihariyanto@gmail.', 2147483647, 4, 'Pemandangannya susasana desanya sangat indah wajib untuk di kunjungi', 'dw_sambi_(1)_(Copy).jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `toko`
+-- Struktur dari tabel `toko`
 --
 
 CREATE TABLE `toko` (
@@ -244,16 +249,17 @@ CREATE TABLE `toko` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `toko`
+-- Dumping data untuk tabel `toko`
 --
 
 INSERT INTO `toko` (`id`, `nama`, `alamat`, `keterangan`, `jenis`, `foto`, `fk_desawisata`) VALUES
-(1, 'Jendela Jogja', 'Jalan Gedong Kuning A No.161, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198', 'Toko Oleh oleh khas jogja', 'Oleh oleh', '1145527JENDELA-JOGJA-5780x390.jpg', 1);
+(1, 'Jendela Jogja', 'Jalan Gedong Kuning A No.161, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198', 'Toko Oleh oleh khas jogja', 'Oleh oleh', '1145527JENDELA-JOGJA-5780x390.jpg', 1),
+(2, 'Wong batik', 'Jl. HOS Cokroaminoto No.149, Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244', 'Pusat oleh oleh jogja dan merchandise khas jogja', 'Sovenir', 'download.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -276,16 +282,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `nama`, `alamat`, `telp`, `email`, `username`, `password`, `status`, `ket_status`, `foto`, `fk_level`, `fk_desawisata`, `fk_penginapan`, `datecreated`, `createdby`, `editedby`) VALUES
-(1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, 1, NULL, '2019-01-14 09:16:22', NULL, NULL);
+(1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, 2, NULL, '2019-01-14 09:16:22', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wisata`
+-- Struktur dari tabel `wisata`
 --
 
 CREATE TABLE `wisata` (
@@ -300,11 +306,12 @@ CREATE TABLE `wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wisata`
+-- Dumping data untuk tabel `wisata`
 --
 
 INSERT INTO `wisata` (`id`, `nama`, `keterangan`, `harga`, `jamkunjung`, `foto`, `fk_desawisata`, `fk_kategori`) VALUES
-(1, 'Wisata alam Arum jeram', 'Arum jeram', 10000000, '10:00 - 20:00', '0800031karo-rafting780x390.JPG', 1, 1);
+(1, 'Wisata alam Arum jeram', 'Arum jeram', 10000000, '10:00 - 20:00', '0800031karo-rafting780x390.JPG', 1, 1),
+(2, 'Outboound', 'outbound', 10000000, '08.00', 'DSC001902.jpg', 2, 2);
 
 --
 -- Indexes for dumped tables
@@ -403,128 +410,116 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `desawisata`
 --
 ALTER TABLE `desawisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `penginapan`
 --
 ALTER TABLE `penginapan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `agenda`
+-- Ketidakleluasaan untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
   ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `berita`
+-- Ketidakleluasaan untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD CONSTRAINT `berita_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `galeri`
+-- Ketidakleluasaan untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
   ADD CONSTRAINT `galeri_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `kamar`
+-- Ketidakleluasaan untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
   ADD CONSTRAINT `kamar_ibfk_1` FOREIGN KEY (`fk_penginapan`) REFERENCES `penginapan` (`id`);
 
 --
--- Constraints for table `kategori`
+-- Ketidakleluasaan untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD CONSTRAINT `kategori_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `penginapan`
+-- Ketidakleluasaan untuk tabel `penginapan`
 --
 ALTER TABLE `penginapan`
   ADD CONSTRAINT `penginapan_ibfk_2` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `review`
+-- Ketidakleluasaan untuk tabel `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `toko`
+-- Ketidakleluasaan untuk tabel `toko`
 --
 ALTER TABLE `toko`
   ADD CONSTRAINT `toko_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
 
 --
--- Constraints for table `users`
+-- Ketidakleluasaan untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`fk_level`) REFERENCES `level` (`id`),
@@ -532,12 +527,11 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`fk_penginapan`) REFERENCES `penginapan` (`id`);
 
 --
--- Constraints for table `wisata`
+-- Ketidakleluasaan untuk tabel `wisata`
 --
 ALTER TABLE `wisata`
   ADD CONSTRAINT `wisata_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`),
   ADD CONSTRAINT `wisata_ibfk_2` FOREIGN KEY (`fk_kategori`) REFERENCES `kategori` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
