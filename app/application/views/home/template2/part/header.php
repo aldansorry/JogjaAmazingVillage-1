@@ -4,7 +4,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>img/fav.png">
+		<link rel="shortcut icon" href="<?php echo base_url('assets_template/template2/') ?>img/fav.png">
 		<!-- Author Meta -->
 		<meta name="author" content="codepixer">
 		<!-- Meta Description -->
@@ -20,14 +20,14 @@
 			<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/linearicons.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/font-awesome.min.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/bootstrap.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/magnific-popup.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/nice-select.css">					
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/animate.min.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/owl.carousel.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>css/main.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/linearicons.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/font-awesome.min.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/bootstrap.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/magnific-popup.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/nice-select.css">					
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/animate.min.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/owl.carousel.css">
+			<link rel="stylesheet" href="<?php echo base_url('assets_template/template2/') ?>css/main.css">
 		</head>
 		<body>
 
@@ -54,18 +54,18 @@
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="<?php echo base_url('assets_template/artmuseum/artmuseum/') ?>img/logo.png" alt="" title="" /></a>
+				        <a href="index.html"><img src="<?php echo base_url('assets_template/template2/') ?>img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
-				          <li><a href="about.html">About</a></li>
-				          <li><a href="gallery.html">Gallery</a></li>
-				          <li><a href="event.html">Events</a></li>
-				          <li><a href="ticket.html">Ticket</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact.html">Contact</a></li>
-				          <li class="menu-has-children"><a href="">Pages</a>
+				          <li><a href="<?php echo base_url('Home/about/1') ?>">About</a></li>
+				          <li><a href="<?php echo base_url('Home/galeri/1') ?>">Galeri</a></li>
+				          <li><a href="<?php echo base_url('Home/agenda/1') ?>">Agenda</a></li>
+				          <li><a href="<?php echo base_url('Home/wisata/1') ?>">Wisata</a></li>
+				          <li><a href="<?php echo base_url('Home/berita/1') ?>">Berita</a></li>
+				          <li><a href="<?php echo base_url('Home/kontak/1') ?>">Kontak</a></li>
+				          <li class="menu-has-children"><a href="">Link</a>
 				            <ul>
 				              <li><a href="blog-single.html">Blog Single</a></li>
 				              <li><a href="category.html">Category</a></li>
