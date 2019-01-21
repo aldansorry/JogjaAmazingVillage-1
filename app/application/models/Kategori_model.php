@@ -37,6 +37,7 @@ public function get_by_desawisata($id_desawisata)
     $this->db->db_debug = FALSE;
     $set = [
       'nama' => $this->input->post('nama'),
+      'keterangan' => $this->input->post('keterangan'),
       'foto' => $foto,
       'fk_desawisata' => $this->session->userdata('logged_in')['desawisata']['id'],
     ];
@@ -53,6 +54,7 @@ public function get_by_desawisata($id_desawisata)
     $this->db->db_debug = FALSE;
     $set = [
       'nama' => $this->input->post('nama'),
+      'keterangan' => $this->input->post('keterangan'),
       'fk_desawisata' => $this->session->userdata('logged_in')['desawisata']['id'],
     ];
 

@@ -57,6 +57,18 @@
                 }
             },
             { 
+                "title" : "Desa",
+                "data": "desa",
+            },
+            { 
+                "title" : "Kecamatan",
+                "data": "kecamatan",
+            },
+            { 
+                "title" : "Kabupaten",
+                "data": "kabupaten",
+            },
+            { 
                 "title" : "Deskripsi",
                 "data": "deskripsi",
                 render: (data,type,row) => {

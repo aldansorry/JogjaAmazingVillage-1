@@ -48,6 +48,9 @@
                 { 
                 "title" : "Nama",
                 "data": "nama" },
+                { 
+                "title" : "Keterangan",
+                "data": "keterangan" },
                 {
                     "title": "Actions",
                     "width" : "120px",

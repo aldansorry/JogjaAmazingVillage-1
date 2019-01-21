@@ -44,6 +44,11 @@ class Users extends CI_Controller {
       'level' => $this->Level_model->get_data(),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('alamat','alamat','required');
+    $this->form_validation->set_rules('telp','telp','required|numeric');
+    $this->form_validation->set_rules('email','email','required');
+    $this->form_validation->set_rules('username','username','required|min_length[6]');
+    $this->form_validation->set_rules('password','password','required|min_length[6]');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/users/insert',$data);
     }else{
@@ -82,6 +87,11 @@ class Users extends CI_Controller {
       'data' => $this->Users_model->get_id($id),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('alamat','alamat','required');
+    $this->form_validation->set_rules('telp','telp','required|numeric');
+    $this->form_validation->set_rules('email','email','required');
+    $this->form_validation->set_rules('username','username','required|min_length[6]');
+    $this->form_validation->set_rules('password','password','required|min_length[6]');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/users/update',$data);
     }else{

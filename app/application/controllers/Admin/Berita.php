@@ -40,6 +40,9 @@ class Berita extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('judul','judul','required');
+    $this->form_validation->set_rules('konten','konten','required');
+    $this->form_validation->set_rules('author','author','required');
+    $this->form_validation->set_rules('tanggal','tanggal','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/insert',$data);
     }else{
@@ -76,7 +79,9 @@ class Berita extends CI_Controller {
       'data' => $this->Berita_model->get_id($id),
     ];
     $this->form_validation->set_rules('judul','judul','required');
-
+    $this->form_validation->set_rules('konten','konten','required');
+    $this->form_validation->set_rules('author','author','required');
+    $this->form_validation->set_rules('tanggal','tanggal','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/berita/update',$data);
     }else{

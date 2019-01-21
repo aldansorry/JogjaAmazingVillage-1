@@ -57,7 +57,7 @@
                 "title" : "Fasilitas",
                 "data": "fasilitas" 
             },{ 
-                "title" : "Staus",
+                "title" : "Status",
                 "data": "status" 
             },
             {

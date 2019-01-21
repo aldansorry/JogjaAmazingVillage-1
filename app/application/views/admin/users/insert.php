@@ -43,7 +43,7 @@
 <div class="form-group row">
   <label for="input-password" class="col-sm-2 col-form-label">password</label>
   <div class="col-sm-10">
-   <input type="text" name="password" class="form-control" id="input-password" placeholder="password" value="<?php echo set_value('password') ?>">
+   <input type="password" name="password" class="form-control" id="input-password" placeholder="password" value="<?php echo set_value('password') ?>">
    <?php echo form_error('password') ?>
  </div>
 </div>

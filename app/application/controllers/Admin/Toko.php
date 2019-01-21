@@ -40,6 +40,8 @@ class Toko extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+      $this->form_validation->set_rules('alamat','alamat','required');
+        $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/toko/insert',$data);
     }else{
@@ -76,6 +78,8 @@ class Toko extends CI_Controller {
       'data' => $this->Toko_model->get_id($id),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+      $this->form_validation->set_rules('alamat','alamat','required');
+        $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/toko/update',$data);
     }else{

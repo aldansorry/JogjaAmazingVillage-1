@@ -20,6 +20,27 @@
     </div>
   </div>
   <div class="form-group row">
+    <label for="input-desa" class="col-sm-2 col-form-label">Desa</label>
+    <div class="col-sm-10">
+      <input type="text" name="desa" class="form-control" id="input-desa" placeholder="" value="<?php echo set_value('desa') ?>" autofocus>
+      <?php echo form_error('desa') ?>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input-kecamatan" class="col-sm-2 col-form-label">Kecamatan</label>
+    <div class="col-sm-10">
+      <input type="text" name="kecamatan" class="form-control" id="input-kecamatan" placeholder="" value="<?php echo set_value('kecamatan') ?>" autofocus>
+      <?php echo form_error('kecamatan') ?>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input-kabupaten" class="col-sm-2 col-form-label">Kabupaten</label>
+    <div class="col-sm-10">
+      <input type="text" name="kabupaten" class="form-control" id="input-kabupaten" placeholder="" value="<?php echo set_value('kabupaten') ?>" autofocus>
+      <?php echo form_error('kabupaten') ?>
+    </div>
+  </div>
+  <div class="form-group row">
     <label for="input-deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
     <div class="col-sm-10">
       <textarea name="deskripsi" id="input-deskripsi" rows="5" class="form-control"><?php echo set_value('deskripsi') ?></textarea>

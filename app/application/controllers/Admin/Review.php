@@ -40,6 +40,9 @@ class Review extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('email','email','required');
+    $this->form_validation->set_rules('telp','telp','required|numeric');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/review/insert',$data);
     }else{
@@ -76,6 +79,9 @@ class Review extends CI_Controller {
       'data' => $this->Review_model->get_id($id),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('email','email','required');
+    $this->form_validation->set_rules('telp','telp','required|numeric');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/review/update',$data);
     }else{

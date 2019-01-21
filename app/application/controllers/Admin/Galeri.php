@@ -40,8 +40,8 @@ class Galeri extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('nourut','nourut','required');
-    $this->form_validation->set_rules('ukuran','ukuran','required');
+    $this->form_validation->set_rules('nourut','nourut','required|numeric');
+    $this->form_validation->set_rules('ukuran','ukuran','required|numeric');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/galeri/insert',$data);
     }else{
@@ -78,8 +78,8 @@ class Galeri extends CI_Controller {
       'data' => $this->Galeri_model->get_id($id),
     ];
     $this->form_validation->set_rules('judul','judul','required');
-    $this->form_validation->set_rules('nourut','nourut','required');
-    $this->form_validation->set_rules('ukuran','ukuran','required');
+    $this->form_validation->set_rules('nourut','nourut','required|numeric');
+    $this->form_validation->set_rules('ukuran','ukuran','required|numeric');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/galeri/update',$data);
     }else{

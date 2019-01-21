@@ -40,6 +40,8 @@ class Penginapan extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
+    $this->form_validation->set_rules('alamat','alamat','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/penginapan/insert',$data);
     }else{
@@ -76,6 +78,8 @@ class Penginapan extends CI_Controller {
     'data' => $this->Penginapan_model->get_id($id),
   ];
   $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
+    $this->form_validation->set_rules('alamat','alamat','required');
   if ($this->form_validation->run() == false) {
     $this->load->view('admin/penginapan/update',$data);
   }else{

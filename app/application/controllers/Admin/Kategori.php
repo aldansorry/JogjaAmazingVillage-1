@@ -40,6 +40,7 @@ class Kategori extends CI_Controller {
       'c_name' => $this->c_name,
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/kategori/insert',$data);
     }else{
@@ -78,6 +79,7 @@ class Kategori extends CI_Controller {
       'data' => $this->Kategori_model->get_id($id),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/kategori/update',$data);
     }else{

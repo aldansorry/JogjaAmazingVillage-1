@@ -15,7 +15,11 @@
        <div class="form-group row">
           <label for="input-kategori" class="col-sm-2 col-form-label">Kategori</label>
           <div class="col-sm-10">
-            <textarea name="kategori" class="form-control" id="input-kategori" cols="30" rows="10"><?php echo set_value('kategori') ?></textarea>
+            <select name="kategori" class="form-control">
+              <option value="1">Biasa</option>
+              <option value="2">Keluarga</option>
+              <option value="2">Eksekutif</option>
+            </select>
             <?php echo form_error('kategori') ?>
           </div>
      </div>

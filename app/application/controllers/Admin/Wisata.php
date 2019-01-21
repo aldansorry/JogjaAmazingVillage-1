@@ -42,6 +42,9 @@ class Wisata extends CI_Controller {
       'datakategori' => $this->Kategori_model->get_data(),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
+    $this->form_validation->set_rules('harga','harga','required|numeric');
+    $this->form_validation->set_rules('jamkunjung','jamkunjung','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/wisata/insert',$data);
     }else{
@@ -79,6 +82,9 @@ class Wisata extends CI_Controller {
       'datakategori' => $this->Kategori_model->get_data(),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
+    $this->form_validation->set_rules('keterangan','keterangan','required');
+    $this->form_validation->set_rules('harga','harga','required|numeric');
+    $this->form_validation->set_rules('jamkunjung','jamkunjung','required');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/wisata/update',$data);
     }else{

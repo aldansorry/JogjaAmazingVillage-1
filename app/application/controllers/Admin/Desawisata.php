@@ -42,8 +42,8 @@ class Desawisata extends CI_Controller {
     $this->form_validation->set_rules('nama','nama','required');
     $this->form_validation->set_rules('alamat','alamat','required');
     $this->form_validation->set_rules('deskripsi','deskripsi','required');
-    $this->form_validation->set_rules('_lat','_lat','required');
-    $this->form_validation->set_rules('_long','_long','required');
+    $this->form_validation->set_rules('_lat','_lat','required|decimal');
+    $this->form_validation->set_rules('_long','_long','required|decimal');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/desawisata/insert',$data);
     }else{
@@ -82,8 +82,8 @@ class Desawisata extends CI_Controller {
     $this->form_validation->set_rules('nama','nama','required');
     $this->form_validation->set_rules('alamat','alamat','required');
     $this->form_validation->set_rules('deskripsi','deskripsi','required');
-    $this->form_validation->set_rules('_lat','_lat','required');
-    $this->form_validation->set_rules('_long','_long','required');
+    $this->form_validation->set_rules('_lat','_lat','required|decimal');
+    $this->form_validation->set_rules('_long','_long','required|decimal');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/desawisata/update',$data);
     }else{

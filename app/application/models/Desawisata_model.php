@@ -29,6 +29,9 @@ class Desawisata_model extends CI_Model {
     $set = [
       'nama' => $this->input->post('nama'),
       'alamat' => $this->input->post('alamat'),
+      'desa' => $this->input->post('desa'),
+      'kecamatan' => $this->input->post('kecamatan'),
+      'kabupaten' => $this->input->post('kabupaten'),
       'deskripsi' => $this->input->post('deskripsi'),
       '_lat' => $this->input->post('_lat'),
       '_long' => $this->input->post('_long'),
@@ -48,9 +51,13 @@ class Desawisata_model extends CI_Model {
     $set = [
       'nama' => $this->input->post('nama'),
       'alamat' => $this->input->post('alamat'),
+      'desa' => $this->input->post('desa'),
+      'kecamatan' => $this->input->post('kecamatan'),
+      'kabupaten' => $this->input->post('kabupaten'),
       'deskripsi' => $this->input->post('deskripsi'),
       '_lat' => $this->input->post('_lat'),
       '_long' => $this->input->post('_long'),
+      'foto' => $foto,
     ];
 
     if ($foto != null) {
