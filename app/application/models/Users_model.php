@@ -32,7 +32,7 @@ class Users_model extends CI_Model {
       'telp' => $this->input->post('telp'),
       'email' => $this->input->post('email'),
       'username' => $this->input->post('username'),
-      'password' => $this->input->post('password'),
+      'password' => md5($this->input->post('password')),
       'status' => $this->input->post('status'),
       'ket_status' => $this->input->post('ket_status'),
 

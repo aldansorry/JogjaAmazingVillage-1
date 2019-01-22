@@ -10,6 +10,10 @@ class Agenda extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Agenda_model");
+
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
+      p_error('403',"Access Tidak Tersedia");
+    }
   }
   public function index()
   {
@@ -109,13 +113,13 @@ class Agenda extends CI_Controller {
         }
       }else{
         $this->load->view('admin/agenda/update',$data);
-          $error = $this->Agenda_model->update_data($id,null);
-          if ($error['code'] == 0) {
-            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
-          }else{
+        $error = $this->Agenda_model->update_data($id,null);
+        if ($error['code'] == 0) {
+          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+        }else{
 
-            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
-          }
+          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        }
       }
     }
   }

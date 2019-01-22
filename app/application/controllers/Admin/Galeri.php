@@ -10,6 +10,9 @@ class Galeri extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Galeri_model");
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
+      p_error('403',"Access Tidak Tersedia");
+    }
   }
   public function index()
   {
@@ -85,28 +88,28 @@ class Galeri extends CI_Controller {
     }else{
       if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/galeri/';
-      $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size']  = '2000';
-      $config['max_width']  = '1024';
-      $config['max_height']  = '768';
-      
-      $this->load->library('upload', $config);
-      
-      if ( ! $this->upload->do_upload('foto')){
-        $data['error'] = $this->upload->display_errors();
-        $this->load->view('admin/galeri/update',$data);
-      }
-      else{
-        $upload_data = $this->upload->data();
-        $this->load->view('admin/Galeri/update',$data);
-        $error = $this->Galeri_model->update_data($id,$upload_data['file_name']);
-        if ($error['code'] == 0) {
-          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
-        }else{
-
-          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size']  = '2000';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        
+        $this->load->library('upload', $config);
+        
+        if ( ! $this->upload->do_upload('foto')){
+          $data['error'] = $this->upload->display_errors();
+          $this->load->view('admin/galeri/update',$data);
         }
-      }
+        else{
+          $upload_data = $this->upload->data();
+          $this->load->view('admin/Galeri/update',$data);
+          $error = $this->Galeri_model->update_data($id,$upload_data['file_name']);
+          if ($error['code'] == 0) {
+            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+          }else{
+
+            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+          }
+        }
       }else{
 
         $this->load->view('admin/Galeri/update',$data);

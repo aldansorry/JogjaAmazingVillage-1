@@ -55,25 +55,42 @@
                     <div class="menu-inner">
                         <nav>
                             <ul class="metismenu" id="menu">
-
                                 <li><a href="#"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
-                                <li><a href="<?php echo base_url('Admin/Users'); ?>"><i class="ti-user"></i> <span>Users</span></a></li>
-                                <li><a href="<?php echo base_url('Admin/Desawisata') ?>"><i class="ti-world"></i> <span>Desa Wisata</span></a></li>
+                                <?php if (onlyLevel(1) || onlyLevel(2) || onlyLevel(4)){ ?>
+                                    <li><a href="<?php echo base_url('Admin/Users'); ?>"><i class="ti-user"></i> <span>Users</span></a></li>
+                                <?php } ?>
+                                <?php if (onlyLevel(1) || onlyLevel(2)){ ?>
+                                    <li><a href="<?php echo base_url('Admin/Desawisata') ?>"><i class="ti-world"></i> <span>Desa Wisata</span></a></li>
+                                <?php } ?>
+                                <?php if (onlyLevel(4)){ ?>
+                                    <li><a href="<?php echo base_url('Admin/Configpage') ?>"><i class="ti-settings"></i> <span>Config Page</span></a></li>
+                                <?php } ?>
                                 <hr>
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-home"></i><span>Desa Wisata</span></a>
-                                    <ul class="collapse">
-                                        <li><a href="<?php echo base_url('Admin/Kategori'); ?>">Kategori</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Berita'); ?>">Berita</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Wisata'); ?>">Wisata</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Toko'); ?>">Toko</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Penginapan'); ?>">Penginapan</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Agenda'); ?>">Agenda</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Galeri'); ?>">Galeri</a></li>
-                                        <li><a href="<?php echo base_url('Admin/Review'); ?>">Review</a></li>
-                                    </ul>
-                                </li>
-
+                                <?php if (onlyLevel(1)){ ?>
+                                    <li>
+                                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-home"></i><span>Desa Wisata</span></a>
+                                        <ul class="collapse">
+                                            <li><a href="<?php echo base_url('Admin/Kategori'); ?>">Kategori</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Berita'); ?>">Berita</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Wisata'); ?>">Wisata</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Toko'); ?>">Toko</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Penginapan'); ?>">Penginapan</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Agenda'); ?>">Agenda</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Galeri'); ?>">Galeri</a></li>
+                                            <li><a href="<?php echo base_url('Admin/Review'); ?>">Review</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
+                                <?php if (onlyLevel(4)){ ?>
+                                    <li><a href="<?php echo base_url('Admin/Kategori') ?>"><i class="ti-dashboard"></i> <span>Kategori</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Berita') ?>"><i class="ti-dashboard"></i> <span>Berita</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Wisata') ?>"><i class="ti-dashboard"></i> <span>Wisata</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Toko') ?>"><i class="ti-dashboard"></i> <span>Toko</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Penginapan') ?>"><i class="ti-dashboard"></i> <span>Penginapan</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Agenda') ?>"><i class="ti-dashboard"></i> <span>Agenda</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Galeri') ?>"><i class="ti-dashboard"></i> <span>Galeri</span></a></li>
+                                    <li><a href="<?php echo base_url('Admin/Review') ?>"><i class="ti-dashboard"></i> <span>Review</span></a></li>
+                                <?php } ?>
                             </ul>
                         </nav>
                     </div>

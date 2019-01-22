@@ -10,6 +10,9 @@ class Penginapan extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Penginapan_model");
+     if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
+      p_error('403',"Access Tidak Tersedia");
+    }
   }
   public function index()
   {

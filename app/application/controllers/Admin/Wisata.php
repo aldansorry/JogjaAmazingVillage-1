@@ -11,6 +11,9 @@ class Wisata extends CI_Controller {
     $this->load->library('form_validation');
     $this->load->model("Wisata_model");
     $this->load->model('Kategori_model');
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
+      p_error('403',"Access Tidak Tersedia");
+    }
   }
   public function index()
   {
@@ -90,29 +93,29 @@ class Wisata extends CI_Controller {
     }else{
       if ($_FILES['foto']['name'] != "") {
         $config['upload_path'] = './uploads/wisata/';
-      $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size']  = '2000';
-      $config['max_width']  = '1024';
-      $config['max_height']  = '768';
-      
-      $this->load->library('upload', $config);
-      
-      if ( ! $this->upload->do_upload('foto')){
-        $data['error'] = $this->upload->display_errors();
-        $this->load->view('admin/wisata/update',$data);
-      }
-      else{
-        $upload_data = $this->upload->data();
-        $error = $this->Wisata_model->update_data($id,$upload_data['file_name']);
-        $data['data'] = $this->Wisata_model->get_id($id);
-        $this->load->view('admin/wisata/update',$data);
-        if ($error['code'] == 0) {
-          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
-        }else{
-
-          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size']  = '2000';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        
+        $this->load->library('upload', $config);
+        
+        if ( ! $this->upload->do_upload('foto')){
+          $data['error'] = $this->upload->display_errors();
+          $this->load->view('admin/wisata/update',$data);
         }
-      }
+        else{
+          $upload_data = $this->upload->data();
+          $error = $this->Wisata_model->update_data($id,$upload_data['file_name']);
+          $data['data'] = $this->Wisata_model->get_id($id);
+          $this->load->view('admin/wisata/update',$data);
+          if ($error['code'] == 0) {
+            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+          }else{
+
+            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+          }
+        }
       }else{
         $error = $this->Wisata_model->update_data($id,null);
         $data['data'] = $this->Wisata_model->get_id($id);

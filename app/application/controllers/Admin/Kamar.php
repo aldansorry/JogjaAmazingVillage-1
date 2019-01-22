@@ -10,6 +10,9 @@ class Kamar extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Kamar_model");
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4')) || onlyLevel('5')) {
+      p_error('403',"Access Tidak Tersedia");
+    }
   }
   public function index($id)
   {
@@ -81,10 +84,10 @@ class Kamar extends CI_Controller {
     'c_name' => $this->c_name,
     'data' => $this->Kamar_model->get_id($id),
   ];
-    $this->form_validation->set_rules('no','no','required');
-    $this->form_validation->set_rules('kategori','kategori','required');
-    $this->form_validation->set_rules('fasilitas','fasilitas','required');
-    $this->form_validation->set_rules('status','status','required');
+  $this->form_validation->set_rules('no','no','required');
+  $this->form_validation->set_rules('kategori','kategori','required');
+  $this->form_validation->set_rules('fasilitas','fasilitas','required');
+  $this->form_validation->set_rules('status','status','required');
   if ($this->form_validation->run() == false) {
     $this->load->view('admin/kamar/update',$data);
   }else{

@@ -11,6 +11,7 @@ class Penginapan_model extends CI_Model {
     $this->db->select('*');
     $this->db->from($this->table);
     $this->db->order_by('nama');
+    $this->db->where('fk_desawisata',$this->session->userdata('logged_in')['desawisata']['id']);
     return $this->db->get()->result();
   }
 
