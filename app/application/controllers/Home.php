@@ -22,7 +22,12 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/home',$data);
+
+		$this->load->view('home/template4/part/header',$data);
+	
+		$this->load->view('home/template4/part/home',$data);
+	
+		$this->load->view('home/template4/part/footer',$data);
 	}
 	public function homee($id_desawisata)
 	{
@@ -43,7 +48,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_home',$data);
+		$this->load->view('home/template4/p_home',$data);
 	}
 	public function about($id_desawisata)
 	{
@@ -64,7 +69,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_about',$data);
+		$this->load->view('home/template4/p_about',$data);
 	}
 	
 	public function galeri($id_desawisata)
@@ -86,7 +91,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_galeri',$data);
+		$this->load->view('home/template4/p_galeri',$data);
 	}
 	public function agenda($id_desawisata)
 	{
@@ -107,7 +112,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_agenda',$data);
+		$this->load->view('home/template4/p_agenda',$data);
 	}
 	public function wisata($id_desawisata)
 	{
@@ -128,7 +133,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_wisata',$data);
+		$this->load->view('home/template4/p_wisata',$data);
 	}
 	public function berita($id_desawisata)
 	{
@@ -149,7 +154,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_berita',$data);
+		$this->load->view('home/template4/p_berita',$data);
 	}
 	public function kontak($id_desawisata)
 	{
@@ -170,6 +175,6 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_data(),
 			'review' => $this->Review_model->get_data(),
 		];
-		$this->load->view('home/template2/p_kontak',$data);
+		$this->load->view('home/template4/p_kontak',$data);
 	}
 }
