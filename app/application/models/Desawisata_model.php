@@ -40,6 +40,15 @@ class Desawisata_model extends CI_Model {
 
     $insert = $this->db->insert($this->table,$set);
     $error = $this->db->error();
+    if ($error['code'] == 0) {
+      $recent_id = $this->db->insert_id();
+      $set_config_page = [
+        'fk_desawisata' => $recent_id,
+        'template'=> "template1",
+        'subdomain' => "Desa".$recent_id,
+      ];
+      $this->db->insert('config_page',$set_config_page);
+    }
     $this->db->db_debug = $db_debug;
     return $error;
   }

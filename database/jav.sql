@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2019 at 09:21 AM
+-- Generation Time: Jan 23, 2019 at 01:20 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -90,7 +90,8 @@ CREATE TABLE `config_page` (
 --
 
 INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`) VALUES
-(1, 1, 'template1', 'tembi2233');
+(1, 1, 'template1', 'tembi2233'),
+(2, 5, 'template1', 'Desa5');
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,9 @@ CREATE TABLE `desawisata` (
 INSERT INTO `desawisata` (`id`, `nama`, `alamat`, `desa`, `kecamatan`, `kabupaten`, `deskripsi`, `_lat`, `_long`, `foto`) VALUES
 (1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', '', '', '', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, '1.jpg'),
 (2, 'Desa wisata Sambi', 'Jl. Kaliurang KM. 19.2, Dusun Sambi, Desa Pakembinangun, Kec. Pakem, Purwodadi, Pakembinangun, Slema', '', '', '', 'Suasana khas pedesaan, pemandangannya bagus, banyak camping ground dan gazebo untuk pertemuan', -7.774297, 110.375128, 'dw_sambi_(1)_(Copy).jpg'),
-(3, 'Desa Wisata Tanjung', ' Tanjung, Donoharjo, Ngaglik, Ponason, Donoharjo, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yog', '', '', '', 'Desa wisata dengan wahana membajak sawah & melakukan aktivitas pedesaan.', -7.84435, 110.34329, 'download_(3).jpg');
+(3, 'Desa Wisata Tanjung', ' Tanjung, Donoharjo, Ngaglik, Ponason, Donoharjo, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yog', '', '', '', 'Desa wisata dengan wahana membajak sawah & melakukan aktivitas pedesaan.', -7.84435, 110.34329, 'download_(3).jpg'),
+(4, '1', '1', '1', '1', '1', '1', 1.2, 1.2, 'logoaldansorry4.png'),
+(5, '2', '21', '2', '2', '2', '21', 1.2, 1.2, 'logoaldansorry5.png');
 
 -- --------------------------------------------------------
 
@@ -242,6 +245,20 @@ INSERT INTO `penginapan` (`id`, `nama`, `keterangan`, `alamat`, `foto`, `fk_desa
 (3, 'D homestay', 'Homestay ini terdapat di Desa Wisata Tanjung', 'Desa wisata Tanjung yogyakarta', '132265845.jpg', 3),
 (4, ' Sakinah homestay', 'Home stay yang ada di daerah desawisata Tanjung', 'Desa wisata tanjung', '132265821.jpg', 3),
 (5, 'Tembi Village Home stay', 'fasilitas tidak perlu diragukan lagi', 'Desa wisata Tembi', '2c7d05d85a44be4ab3c810969431f278.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengunjung`
+--
+
+CREATE TABLE `pengunjung` (
+  `id` int(11) NOT NULL,
+  `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `domisili` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jeniskelamin` enum('L','P') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fk_desawisata` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -423,6 +440,13 @@ ALTER TABLE `penginapan`
   ADD KEY `fk_desawisata` (`fk_desawisata`);
 
 --
+-- Indexes for table `pengunjung`
+--
+ALTER TABLE `pengunjung`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_desawisata` (`fk_desawisata`);
+
+--
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
@@ -473,13 +497,13 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `config_page`
 --
 ALTER TABLE `config_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `desawisata`
 --
 ALTER TABLE `desawisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `galeri`
@@ -510,6 +534,12 @@ ALTER TABLE `level`
 --
 ALTER TABLE `penginapan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `pengunjung`
+--
+ALTER TABLE `pengunjung`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `review`

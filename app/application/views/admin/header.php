@@ -55,7 +55,7 @@
                     <div class="menu-inner">
                         <nav>
                             <ul class="metismenu" id="menu">
-                                <li><a href="#"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
+                                <li><a href="<?php echo base_url('Admin/Dashboard') ?>"><i class="ti-dashboard"></i> <span>Dashboard</span></a></li>
                                 <?php if (onlyLevel(1) || onlyLevel(2) || onlyLevel(4)){ ?>
                                     <li><a href="<?php echo base_url('Admin/Users'); ?>"><i class="ti-user"></i> <span>Users</span></a></li>
                                 <?php } ?>

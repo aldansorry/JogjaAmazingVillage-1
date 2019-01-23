@@ -85,9 +85,14 @@ class Users extends CI_Controller {
 
   public function update($id)
   {
+    
+    $this->load->model('Level_model');
+    $this->load->model('Desawisata_model');
     $data = [
       'c_name' => $this->c_name,
       'data' => $this->Users_model->get_id($id),
+      'desawisata' => $this->Desawisata_model->get_data(),
+      'level' => $this->Level_model->get_data(),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
     $this->form_validation->set_rules('alamat','alamat','required');

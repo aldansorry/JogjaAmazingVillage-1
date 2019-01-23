@@ -12,6 +12,12 @@ class Dashboard extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data = [
+			'c_name' => "Dashboard",
+			'isDashboard' => true,
+		];
+		$this->load->view('admin/header');
+		$this->load->view('admin/dashboard',$data);
+		$this->load->view('admin/footer',$data);
 	}
 }
