@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Portfolio</title>
+		<title>Jogja Amazing Village</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -45,12 +45,13 @@
 
 						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 						    <ul class="navbar-nav">
-								<li><a href="#home">Home</a></li>
-								<li><a href="#portfolio">Portfiolio</a></li>
-								<li><a href="#service">Services</a></li>
-								<li><a href="#galeri">Galeri</a></li>
-								<li><a href="#news">News</a></li>
-								<li><a href="#testimonial">Testimonial</a></li>
+								<li><a href="<?php echo base_url('Home/homee/'.$this->uri->segment(3)) ?>">Home</a></li>
+								<li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
+								<li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
+								<li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+								<li><a href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
+								<li><a href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
+								<li><a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Kontak</a></li>
 							   <!-- Dropdown -->
 							    <li class="dropdown">
 							      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
