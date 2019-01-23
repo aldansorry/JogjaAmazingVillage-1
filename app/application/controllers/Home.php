@@ -5,32 +5,15 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model([
-			'Kategori_model',
-			'Wisata_model',
-			'Agenda_model',
-			'Galeri_model',
-			'Berita_model',
-			'Review_model',
-		]);
-		$data = [
-			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
-		];
-
-		$this->load->view('home/template4/part/header',$data);
-	
-		$this->load->view('home/template4/part/home',$data);
-	
-		$this->load->view('home/template4/part/footer',$data);
+		p_error("404","Halaman tidak ditemukan");
 	}
-	public function homee($id_desawisata)
+	public function homee($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -41,17 +24,22 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_home',$data);
 	}
-	public function about($id_desawisata)
+	public function about($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -62,18 +50,23 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_about',$data);
 	}
 	
-	public function galeri($id_desawisata)
+	public function galeri($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -84,17 +77,22 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_galeri',$data);
 	}
-	public function agenda($id_desawisata)
+	public function agenda($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -105,17 +103,22 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_agenda',$data);
 	}
-	public function wisata($id_desawisata)
+	public function wisata($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -126,17 +129,22 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_wisata',$data);
 	}
-	public function berita($id_desawisata)
+	public function berita($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -147,17 +155,22 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_berita',$data);
 	}
-	public function kontak($id_desawisata)
+	public function kontak($subdomain)
 	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
 		$this->load->model([
 			'Kategori_model',
 			'Wisata_model',
@@ -168,12 +181,12 @@ class Home extends CI_Controller {
 		]);
 		$data = [
 			'c_name' => 'Home',
-			'kategori' => $this->Kategori_model->get_data(),
-			'objekwisata' => $this->Wisata_model->get_data(),
-			'agenda' => $this->Agenda_model->get_data(),
-			'galeri' => $this->Galeri_model->get_data(),
-			'berita' => $this->Berita_model->get_data(),
-			'review' => $this->Review_model->get_data(),
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
 		$this->load->view('home/template4/p_kontak',$data);
 	}
