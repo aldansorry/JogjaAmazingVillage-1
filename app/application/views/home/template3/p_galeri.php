@@ -4,10 +4,6 @@
 <?php $this->load->view('home/template3/part/bannerpage') ?>
 <!-- End banner Area -->	
 
-<!-- Start service Area -->
-<?php $this->load->view('home/template3/part/subdeskripsi') ?>
-<!-- End service Area -->
-
 <!-- Start quote Area -->
 <?php $this->load->view('home/template3/part/galeri_list') ?>
 <!-- End quote Area -->

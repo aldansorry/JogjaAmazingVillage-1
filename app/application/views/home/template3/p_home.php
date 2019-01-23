@@ -9,7 +9,7 @@
 <!-- End service Area -->
 
 <!-- Start quote Area -->
-<?php $this->load->view('home/template3/part/subdeskripsi') ?>
+<?php $this->load->view('home/template3/part/deskripsi') ?>
 <!-- End quote Area -->
 
 <!-- Start exibition Area -->

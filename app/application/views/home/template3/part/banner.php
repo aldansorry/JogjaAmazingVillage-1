@@ -1,17 +1,61 @@
-<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>	
-				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-center">
-						<div class="banner-content col-lg-8">
-							<h6 class="text-white">Openning on 21st February, 2018</h6>
-							<h1 class="text-white">
-								Exhibition on Modern Era				
-							</h1>
-							<p class="pt-20 pb-20 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.  sed do eiusmod tempor incididunt..
-							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
-						</div>											
-					</div>
-				</div>					
-			</section>
+    <!--WELCOME SLIDER AREA-->
+    <div class="welcome-slider-area white">
+        <div class="welcome-single-slide">
+            <div class="slide-bg-one slide-bg-overlay"></div>
+            <div class="welcome-area">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
+                            <div class="welcome-text">
+                                <h4>We are</h4>
+                                <h1>Business Theme Creator</h1>
+                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
+                                <div class="home-button">
+                                    <a href="#">see our project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-single-slide">
+            <div class="slide-bg-two slide-bg-overlay"></div>
+            <div class="welcome-area">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
+                            <div class="welcome-text">
+                                <h4>We are</h4>
+                                <h1>Business Theme Creator</h1>
+                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
+                                <div class="home-button">
+                                    <a href="#">see our project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-single-slide">
+            <div class="slide-bg-three slide-bg-overlay"></div>
+            <div class="welcome-area">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
+                            <div class="welcome-text">
+                                <h4>We are</h4>
+                                <h1>Business Theme Creator</h1>
+                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
+                                <div class="home-button">
+                                    <a href="#">see our project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--WELCOME SLIDER AREA END-->

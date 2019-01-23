@@ -1,77 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
-	<title>HALO - Photography Portfolio Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="HALO photography portfolio template">
-	<meta name="keywords" content="photography, portfolio, onepage, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="<?php echo base_url('assets_template/halo/halo/') ?>img/favicon.ico" rel="shortcut icon"/>
+    <!--====== USEFULL META ======-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creative Portfolio & Agency Template is a simple Smooth Personal Portfolio and Agency Based Template" />
+    <meta name="keywords" content="Personal, Portfolio, Agency, Onepage, Html, Business" />
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!--====== TITLE TAG ======-->
+    <title>OnePro Html5 Template</title>
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/flaticon.css"/>
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/animate.css"/>
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/owl.carousel.css"/>
-	<link rel="stylesheet" href="<?php echo base_url('assets_template/halo/halo/') ?>css/style.css"/>
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="<?php echo base_url('assets_template/onepro/onepro/') ?>img/favicon.png" />
 
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/normalize.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/animate.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/stellarnav.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/progressbar.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/owl.carousel.css">
+    <link href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/font-awesome.min.css" rel="stylesheet">
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="<?php echo base_url('assets_template/onepro/onepro/') ?>style.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets_template/onepro/onepro/') ?>css/responsive.css" rel="stylesheet">
 
+    <script src="<?php echo base_url('assets_template/onepro/onepro/') ?>js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
-<body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<!-- Header section start -->
-	<header class="header-section sp-pad">
-		<h3 class="site-logo">HALO</h3>
-		<form class="search-top">
-			<button class="se-btn"><i class="fa fa-search"></i></button>
-			<input type="text" placeholder="Search.....">
-		</form>
-		<div class="nav-switch">
-			<i class="fa fa-bars"></i>
-		</div>
-		<nav class="main-menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">about us</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="portfolio.html">Portfolio</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<!-- Header section end -->
+<body data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
 
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-	<!-- Hero section start -->
-	<section class="hero-section">
-		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg sp-pad" data-setbg="<?php echo base_url('assets_template/halo/halo/') ?>img/hero-slider/1.jpg">
-				<div class="hs-text">
-					<h2 class="hs-title">Halo</h2>
-					<p class="hs-des">We Create Awesome <br>Photographies and more</p>
-				</div>
-			</div>
-			<div class="hs-item set-bg sp-pad" data-setbg="<?php echo base_url('assets_template/halo/halo/') ?>img/hero-slider/2.jpg">
-				<div class="hs-text">
-					<h2 class="hs-title">Halo</h2>
-					<p class="hs-des">We Create Awesome <br>Photographies and more</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end -->
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="top-bar-area gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="call-to-action">
+                            <p><i class="fa fa-phone"></i> <a href="callto:+8801744430440">+880 1911 854 378</a></p>
+                            <p><i class="fa fa-envelope-o"></i> <a href="mailto:backpiper.com@gmail.com">backpiper.com@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-social-bookmark">
+                            <ul class="social-bookmark">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="#home" class="navbar-brand"><img src="img/logo.png" alt="logo"></a>
+                        </div>
+                        <div id="main-nav" class="stellarnav">
+                            <ul id="nav" class="nav navbar-nav">
+                                <li class="active"><a href="#home">home</a></li>
+                                <li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
+                                <li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
+                                <li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+                                <li><a href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
+                                <li><a href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
+                                <li><a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--END MAINMENU AREA END-->
+        </div>
+    </header>
+    <!--END TOP AREA-->

@@ -37,12 +37,12 @@
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 								<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/about/4') ?>">About</a></li> 
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/galeri/4') ?>">Galeri</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/agenda/4') ?>">Agenda</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/wisata/4') ?>">Wisata</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/berita/4') ?>">Berita</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/kontak/4') ?>">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li> 
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Contact</a></li>
 							</ul>
 						</div> 
 					</div>
