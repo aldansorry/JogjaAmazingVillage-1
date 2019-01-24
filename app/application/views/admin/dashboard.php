@@ -5,49 +5,43 @@
             <div class="col-md-4">
                 <div class="single-report mb-xs-30">
                     <div class="s-report-inner pr--20 pt--30 mb-3">
-                        <div class="icon"><i class="fa fa-btc"></i></div>
+                        <div class="icon"><i class="fa fa-users"></i></div>
                         <div class="s-report-title d-flex justify-content-between">
-                            <h4 class="header-title mb-0">Bitcoin</h4>
-                            <p>24 H</p>
+                            <h4 class="header-title mb-0">Pengunjung</h4>
+                            <p>Total</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2>$ 4567809,987</h2>
-                            <span>- 45.87</span>
+                            <h2><?php echo $this->db->select('count(id) as jml')->get('pengunjung')->row(0)->jml ?></h2>
                         </div>
                     </div>
-                    <canvas id="coin_sales1" height="100"></canvas>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-report mb-xs-30">
                     <div class="s-report-inner pr--20 pt--30 mb-3">
-                        <div class="icon"><i class="fa fa-btc"></i></div>
+                        <div class="icon"><i class="fa fa-users"></i></div>
                         <div class="s-report-title d-flex justify-content-between">
-                            <h4 class="header-title mb-0">Bitcoin Dash</h4>
-                            <p>24 H</p>
+                            <h4 class="header-title mb-0">Pengunjung</h4>
+                            <p>Last Year</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2>$ 4567809,987</h2>
-                            <span>- 45.87</span>
+                            <h2><?php echo $this->db->select('count(id) as jml')->where('year(tanggal)',date('Y'))->get('pengunjung')->row(0)->jml ?></h2>
                         </div>
                     </div>
-                    <canvas id="coin_sales2" height="100"></canvas>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="single-report">
+                <div class="single-report mb-xs-30">
                     <div class="s-report-inner pr--20 pt--30 mb-3">
-                        <div class="icon"><i class="fa fa-eur"></i></div>
+                        <div class="icon"><i class="fa fa-users"></i></div>
                         <div class="s-report-title d-flex justify-content-between">
-                            <h4 class="header-title mb-0">Euthorium</h4>
-                            <p>24 H</p>
+                            <h4 class="header-title mb-0">Pengunjung</h4>
+                            <p>Last Month</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2>$ 4567809,987</h2>
-                            <span>- 45.87</span>
+                            <h2><?php echo $this->db->select('count(id) as jml')->where('year(tanggal)',date('Y'))->where('month(tanggal)',date('m'))->get('pengunjung')->row(0)->jml ?></h2>
                         </div>
                     </div>
-                    <canvas id="coin_sales3" height="100"></canvas>
                 </div>
             </div>
         </div>
