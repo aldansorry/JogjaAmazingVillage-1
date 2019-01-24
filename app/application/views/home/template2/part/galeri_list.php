@@ -3,8 +3,8 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Our Exhibition Gallery</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+								<h1 class="mb-10">Galeri</h1>
+								<p></p>
 							</div>
 						</div>
 					</div>						

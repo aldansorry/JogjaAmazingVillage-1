@@ -221,7 +221,8 @@ $(document).ready(function(){
             // When the window has finished loading create our google map below
 
             if(document.getElementById("map")){
-            
+            var lat = $('#map').data('lat');
+            var long = $('#map').data('long');
             google.maps.event.addDomListener(window, 'load', init);
         
             function init() {
@@ -232,7 +233,7 @@ $(document).ready(function(){
                     zoom: 11,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+                    center: new google.maps.LatLng(parseFloat(lat), parseFloat(long)), // New York
 
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.

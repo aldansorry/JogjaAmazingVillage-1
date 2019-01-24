@@ -3,18 +3,18 @@
    <div class="row">
     <div class="col-lg-8 post-list blog-post-list">
      <div class="single-post">
-      <img class="img-fluid" src="<?php echo base_url('uploads/berita/'.$berita_on->foto) ?>" alt="">
+      <img class="img-fluid" src="<?php echo base_url('uploads/penginapan/'.$penginapan->foto) ?>" alt="">
 <ul class="tags">
-                  <li><a href="#"><?php echo $berita_on->author ?></a></li>
+                  <li><a href="#"><?php echo $penginapan->nama ?></a></li>
                 </ul>
       <a href="#">
        <h1>
-        <?php echo $berita_on->judul ?>
+        <?php echo $penginapan->nama ?>
       </h1>
     </a>
     <div class="content-wrap">
      <p>
-      <?php echo $berita_on->konten ?>
+      <?php echo $penginapan->keterangan ?>
     </p>
   </div>
 </div>																		

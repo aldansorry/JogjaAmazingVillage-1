@@ -1,4 +1,4 @@
-<section class="quote-area section-gap">
+<!-- <section class="quote-area section-gap">
 				<div class="container">				
 					<div class="row">
 						<div class="col-lg-6 quote-left">
@@ -15,4 +15,4 @@
 						</div>
 					</div>
 				</div>	
-			</section>
+			</section> -->

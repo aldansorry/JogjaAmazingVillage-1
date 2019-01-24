@@ -6,10 +6,10 @@
 			<?php foreach ($agenda as $key => $value): ?>
 				<div class="col-lg-4">
 					<div class="single-service">
-						<span class="lnr lnr-clock"></span>
+						<img src="<?php echo base_url('uploads/agenda/'.$value->foto) ?>" alt="" style="max-width: 200px;min-width:200px;max-height: 150px; min-height: 150px">
 						<a href="">
-                                                        <h1><?php echo $value->judul ?></h1>
-                                                </a>
+							  <h4><?php echo $value->judul ?></h4>
+						</a>
 						<p>
 							<?php echo $value->tanggal ?>
 						</p>						 	
@@ -25,8 +25,8 @@
 					</div>							
 				</div>
 				<?php if (($key+1)%3 == 0): ?>
-					</div>
-					<div class="row mt-3">					
+				</div>
+				<div class="row mt-3">					
 				<?php endif ?>						
 			<?php endforeach ?>										
 		</div>

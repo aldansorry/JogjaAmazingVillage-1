@@ -18,7 +18,7 @@ class Wisata_model extends CI_Model {
 
 public function get_by_desawisata($id_desawisata)
   {
-    $this->db->select('*');
+    $this->db->select('*,(select nama from kategori where id=wisata.fk_kategori) as nama_kategori');
     $this->db->from($this->table);
     $this->db->order_by('id');
     $this->db->where('fk_desawisata',$id_desawisata);
