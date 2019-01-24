@@ -16,7 +16,8 @@
 								<p>
 									<?php echo $value->keterangan ?>
 								</p>
-								<a href="#" class="text-uppercase primary-btn">Buy ticket</a>
+
+								<a href="https://api.whatsapp.com/send?phone=081522099788&text=SampleText" target="_blank" class="text-uppercase primary-btn">Buy ticket</a>
 							</div>
 						</div>
 					</div>							

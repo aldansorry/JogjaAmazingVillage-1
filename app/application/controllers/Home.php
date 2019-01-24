@@ -31,7 +31,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_home',$data);
+		$this->load->view('home/template2/p_home',$data);
 	}
 	public function about($subdomain)
 	{
@@ -57,7 +57,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_about',$data);
+		$this->load->view('home/template2/p_about',$data);
 	}
 	
 	public function galeri($subdomain)
@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_galeri',$data);
+		$this->load->view('home/template2/p_galeri',$data);
 	}
 	public function agenda($subdomain)
 	{
@@ -110,7 +110,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_agenda',$data);
+		$this->load->view('home/template2/p_agenda',$data);
 	}
 	public function wisata($subdomain)
 	{
@@ -136,7 +136,7 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_wisata',$data);
+		$this->load->view('home/template2/p_wisata',$data);
 	}
 	public function berita($subdomain)
 	{
@@ -162,7 +162,33 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_berita',$data);
+		$this->load->view('home/template2/p_berita',$data);
+	}
+	public function beritadetail($subdomain,$id_berita)
+	{
+		$config_page = getConfigPage($subdomain);
+		if ($config_page == null) {
+			p_error("404","Halaman tidak ditemukan");
+		}
+		$id_desawisata = $config_page->fk_desawisata;
+		$this->load->model([
+			'Kategori_model',
+			'Wisata_model',
+			'Agenda_model',
+			'Galeri_model',
+			'Berita_model',
+			'Review_model',
+		]);
+		$data = [
+			'c_name' => 'Home',
+			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
+			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
+			'agenda' => $this->Agenda_model->get_by_desawisata($id_desawisata),
+			'galeri' => $this->Galeri_model->get_by_desawisata($id_desawisata),
+			'berita' => $this->Berita_model->get_id($id_berita),
+			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
+		];
+		$this->load->view('home/template2/p_berita_detail',$data);
 	}
 	public function kontak($subdomain)
 	{
@@ -188,6 +214,6 @@ class Home extends CI_Controller {
 			'berita' => $this->Berita_model->get_by_desawisata($id_desawisata),
 			'review' => $this->Review_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template4/p_kontak',$data);
+		$this->load->view('home/template2/p_kontak',$data);
 	}
 }

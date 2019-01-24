@@ -10,7 +10,7 @@
 							<li><a href="#">Technology, </a></li>
 							<li><a href="#">Fashion</a></li>
 						</ul>
-						<a href="blog-single.html">
+						<a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>">
 							<h1><?php echo $value->judul ?></h1>
 						</a>
 						<p>

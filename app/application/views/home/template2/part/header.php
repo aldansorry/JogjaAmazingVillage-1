@@ -59,12 +59,12 @@
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
-				          <li><a href="<?php echo base_url('Home/about/1') ?>">About</a></li>
-				          <li><a href="<?php echo base_url('Home/galeri/1') ?>">Galeri</a></li>
-				          <li><a href="<?php echo base_url('Home/agenda/1') ?>">Agenda</a></li>
-				          <li><a href="<?php echo base_url('Home/wisata/1') ?>">Wisata</a></li>
-				          <li><a href="<?php echo base_url('Home/berita/1') ?>">Berita</a></li>
-				          <li><a href="<?php echo base_url('Home/kontak/1') ?>">Kontak</a></li>
+				          <li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
+				          <li><a href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
+				          <li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
+				          <li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+				          <li><a href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
+				          <li><a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Kontak</a></li>
 				          <li class="menu-has-children"><a href="">Link</a>
 				            <ul>
 				              <li><a href="blog-single.html">Blog Single</a></li>
