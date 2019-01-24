@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2019 at 01:20 PM
+-- Generation Time: Jan 24, 2019 at 09:52 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -255,10 +255,41 @@ INSERT INTO `penginapan` (`id`, `nama`, `keterangan`, `alamat`, `foto`, `fk_desa
 CREATE TABLE `pengunjung` (
   `id` int(11) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `domisili` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `domisili` enum('lokal','regional','internasional') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `umur` enum('anak','remaja','dewasa') COLLATE utf8mb4_unicode_ci NOT NULL,
   `jeniskelamin` enum('L','P') COLLATE utf8mb4_unicode_ci NOT NULL,
   `fk_desawisata` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pengunjung`
+--
+
+INSERT INTO `pengunjung` (`id`, `tanggal`, `domisili`, `umur`, `jeniskelamin`, `fk_desawisata`) VALUES
+(1, '2019-01-24 09:20:31', 'lokal', 'anak', 'L', 1),
+(2, '2019-01-24 09:28:55', 'lokal', 'anak', 'L', 1),
+(3, '2019-01-24 09:35:11', 'lokal', 'anak', 'L', 1),
+(4, '2019-01-24 09:35:18', 'regional', 'remaja', 'L', 1),
+(5, '2019-01-24 09:35:26', 'internasional', 'dewasa', 'L', 1),
+(6, '2019-01-24 09:39:00', 'internasional', 'dewasa', 'L', 1),
+(7, '2019-01-24 09:39:06', 'lokal', 'anak', 'L', 1),
+(8, '2019-01-24 09:39:10', 'regional', 'dewasa', 'L', 1),
+(9, '2019-01-24 09:39:16', 'internasional', 'dewasa', 'L', 1),
+(10, '2019-01-24 09:39:21', 'lokal', 'dewasa', 'L', 1),
+(11, '2019-01-24 09:42:40', 'regional', 'anak', 'L', 1),
+(12, '2019-01-24 09:44:49', 'regional', 'anak', 'L', 1),
+(13, '2019-01-24 09:45:16', 'regional', 'remaja', 'P', 1),
+(14, '2019-01-24 09:45:31', 'regional', 'anak', 'P', 1),
+(15, '2019-01-24 09:45:40', 'regional', 'anak', 'L', 1),
+(16, '2019-01-24 09:46:44', 'lokal', 'anak', 'P', 1),
+(17, '2019-01-24 09:47:00', 'regional', 'remaja', 'L', 1),
+(18, '2019-01-24 09:47:07', 'regional', 'remaja', 'L', 1),
+(19, '2019-01-24 09:47:09', 'regional', 'dewasa', 'L', 1),
+(20, '2019-01-24 09:48:25', 'regional', 'remaja', 'L', 1),
+(21, '2019-01-24 09:48:34', 'regional', 'dewasa', 'L', 1),
+(22, '2019-01-24 09:48:41', 'regional', 'remaja', 'L', 1),
+(23, '2019-01-24 09:48:45', 'regional', 'remaja', 'L', 1),
+(24, '2019-01-24 09:48:49', 'regional', 'anak', 'L', 1);
 
 -- --------------------------------------------------------
 
@@ -539,7 +570,7 @@ ALTER TABLE `penginapan`
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `review`
