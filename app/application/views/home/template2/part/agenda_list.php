@@ -7,7 +7,9 @@
 				<div class="col-lg-4">
 					<div class="single-service">
 						<span class="lnr lnr-clock"></span>
-						<h4><?php echo $value->judul ?></h4>
+						<a href="">
+                                                        <h1><?php echo $value->judul ?></h1>
+                                                </a>
 						<p>
 							<?php echo $value->tanggal ?>
 						</p>						 	
@@ -17,7 +19,7 @@
 									<?php echo $value->keterangan ?>
 								</p>
 
-								<a href="https://api.whatsapp.com/send?phone=081522099788&text=SampleText" target="_blank" class="text-uppercase primary-btn">Buy ticket</a>
+								<a href="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>" target="_blank" class="text-uppercase primary-btn">View Detail</a>
 							</div>
 						</div>
 					</div>							

@@ -13,7 +13,7 @@
 							  	<?php echo $value->tanggal ?>
 							 </p>	
         					<p><?php echo $value->keterangan ?></p>
-        					<a class="main_btn" href="#">View Details</a>
+        					<a class="main_btn" href="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>">View Details</a>
         				</div>
         			</div>
 				<?php if (($key+1)%3 == 0): ?>

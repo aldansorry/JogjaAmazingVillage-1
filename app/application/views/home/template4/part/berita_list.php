@@ -27,7 +27,9 @@
                                     <div class="blog_post">
                                         <img src="<?php echo base_url('uploads/berita/'.$value->foto) ?>" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2><?php echo $value->judul ?></h2></a>
+                                            <a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>">
+                            <h1><?php echo $value->judul ?></h1>
+                        </a>
                                             <p><?php echo $value->konten ?></p>
                                             <a href="single-blog.html" class="blog_btn">View More</a>
                                         </div>

@@ -14,7 +14,7 @@
                         <h3><?php echo $value->judul ?></h3>
                         <p><?php echo $value->keterangan ?></p>
                         <p><?php echo $value->tanggal ?></p>
-                        <a href="#" class="read-more">Learn More</a>
+                        <a href="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>" class="read-more">Learn More</a>
                     </div>
                 </div>
 				<?php endforeach ?>

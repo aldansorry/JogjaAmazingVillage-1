@@ -1,4 +1,4 @@
-<section class="blog-posts-area section-gap">
+<section class="blog-posts-area section-gap mt-5">
     <div class="container">
        <div class="row">
           <div class="col-lg-8 post-list blog-post-list">

@@ -13,9 +13,12 @@
         						<img class="img-fluid mt-4" src="<?php echo base_url('uploads/agenda/'.$value->foto) ?>" alt="" style="width: 100%;height: 100%;max-height:200px;min-height: 200px;">
         					</div>
         				</div>
+                                        <a href="">
+                                                        <h1><?php echo $value->judul ?></h1>
+                                                </a>
                                         <?php echo $value->keterangan ?>
                                         <br>
-                                        <button class="btn btn-primary" href ="">Lihat</button>
+                                        <button class="btn btn-primary" href ="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>">Lihat</button>
         			</div>
 					<?php endforeach ?>
         		</div>
