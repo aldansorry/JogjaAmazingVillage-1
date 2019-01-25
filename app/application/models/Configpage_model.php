@@ -13,14 +13,20 @@ class Configpage_model extends CI_Model {
     return $query->row(0);
   }
 
-  public function update_data()
+  public function update_data($banner_img = null)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
     $set = [
       'subdomain' => $this->input->post('subdomain'),
       'template' => $this->input->post('template'),
+      'telp' => $this->input->post('telp'),
+      'email' => $this->input->post('email'),
     ];
+
+    if ($banner_img != null) {
+      $set['banner_img'] = $banner_img;
+    }
 
     $this->db->where('fk_desawisata',$this->session->userdata('logged_in')['desawisata']['id']);
     $update = $this->db->update($this->table,$set);

@@ -49,7 +49,7 @@
     <!-- sales report area end -->
     <!-- overview area start -->
     <div class="row">
-        <div class="col-xl-9 col-lg-8">
+        <!-- <div class="col-xl-9 col-lg-8">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -62,12 +62,49 @@
                     <div id="verview-shart"></div>
                 </div>
             </div>
+        </div> -->
+        <div class="col-xl-3 col-lg-4 coin-distribution">
+            <div class="card h-full">
+                <div class="card-body">
+                    <h4 class="header-title mb-0">Menurut Domisili</h4>
+                    <div id="coin_distribution" 
+                    data-lokal="<?php echo $this->db->select('count(id) as jml')->where('domisili','lokal')->get('pengunjung')->row(0)->jml ?>" 
+                    data-regional="<?php echo $this->db->select('count(id) as jml')->where('domisili','regional')->get('pengunjung')->row(0)->jml ?>" 
+                    data-internasional="<?php echo $this->db->select('count(id) as jml')->where('domisili','internasional')->get('pengunjung')->row(0)->jml ?>"></div>
+                </div>
+            </div>
         </div>
         <div class="col-xl-3 col-lg-4 coin-distribution">
             <div class="card h-full">
                 <div class="card-body">
-                    <h4 class="header-title mb-0">Coin Distribution</h4>
-                    <div id="coin_distribution"></div>
+                    <h4 class="header-title mb-0">Menurut Umur</h4>
+                    <div id="donut-usia" 
+                    data-anak="<?php echo $this->db->select('count(id) as jml')->where('umur','anak')->get('pengunjung')->row(0)->jml ?>" 
+                    data-remaja="<?php echo $this->db->select('count(id) as jml')->where('umur','remaja')->get('pengunjung')->row(0)->jml ?>" 
+                    data-dewasa="<?php echo $this->db->select('count(id) as jml')->where('umur','dewasa')->get('pengunjung')->row(0)->jml ?>"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Pengunjung per Desa Wisata</h4>
+                    <div class="cripto-live mt-5">
+                        <ul>
+                            <?php 
+                            $this->db->select('desawisata.*,count(pengunjung.id) as jml_pengunjung');
+                            $this->db->join('pengunjung','desawisata.id = pengunjung.fk_desawisata');
+                            $this->db->group_by('desawisata.nama');
+                            $query = $this->db->get('desawisata');
+                            $data_desawisata = $query->result();
+                             ?>
+                            <?php foreach ($data_desawisata as $value): ?>
+                                <li>
+                                    <div class="icon b">b</div> <?php echo $value->nama ?><span>Total : <?php echo $value->jml_pengunjung ?></span>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

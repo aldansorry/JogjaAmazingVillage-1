@@ -17,8 +17,8 @@
 									<span class="lnr lnr-phone-handset"></span>
 								</div>
 								<div class="contact-details">
-									<h5>00 (880) 9865 562</h5>
-									<p>Mon to Fri 9am to 6 pm</p>
+									<h5><?php echo $config_page->telp ?></h5>
+									<p>Call Sms or Wa</p>
 								</div>
 							</div>
 							<div class="single-contact-address d-flex flex-row">
@@ -26,13 +26,13 @@
 									<span class="lnr lnr-envelope"></span>
 								</div>
 								<div class="contact-details">
-									<h5>support@codethemes.com</h5>
-									<p>Send us your query anytime!</p>
+									<h5><?php echo $config_page->email ?></h5>
+									<p>Kirim Email</p>
 								</div>
 							</div>														
 						</div>
 						<div class="col-lg-8">
-							<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+							<form class="form-area " id="myForm" action="" method="post" class="contact-form text-right">
 								<div class="row">	
 									<div class="col-lg-6 form-group">
 										<input name="nama" placeholder="Masukan Nama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
@@ -43,7 +43,7 @@
 										<div class="mt-20 alert-msg" style="text-align: left;"></div>
 									</div>
 									<div class="col-lg-6 form-group">
-										<select name="" class="form-control mb-3">
+										<select name="rating" class="form-control mb-3">
 											<option value="5">Sangat Baik</option>
 											<option value="4">Baik</option>
 											<option value="3" selected="">Biasa</option>

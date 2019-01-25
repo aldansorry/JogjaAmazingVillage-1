@@ -4,7 +4,7 @@
 			<div class="menu-content pb-70 col-lg-8">
 				<div class="title text-center">
 					<h1 class="mb-10">Wisata</h1>
-					<p>Objek Wisata , Penginapan , Toko</p>
+					<p></p>
 				</div>
 			</div>
 		</div>						
@@ -21,7 +21,21 @@
 								<p class="price"><?php echo 'Rp. '.number_format($value->harga) ?></p>
 							</div>									
 						</div>
-			<?php endforeach ?>	
+			<?php endforeach ?>															
+		</div>
+	</div>	
+</section>
+<section class="upcoming-exibition-area section-gap">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="menu-content pb-70 col-lg-8">
+				<div class="title text-center">
+					<h1 class="mb-10">Penginapan</h1>
+					<p></p>
+				</div>
+			</div>
+		</div>						
+		<div class="row">
 			<?php foreach ($penginapan as $value): ?>
 				<div class="col-lg-4 col-md-6 single-exhibition">
 							<div class="thumb">
@@ -33,7 +47,22 @@
 
 								<p><?php echo $value->alamat ?></p>
 						</div>
-			<?php endforeach ?>	
+			<?php endforeach ?>														
+		</div>
+	</div>	
+</section>
+<section class="upcoming-exibition-area section-gap">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="menu-content pb-70 col-lg-8">
+				<div class="title text-center">
+					<h1 class="mb-10">Toko</h1>
+					<p></p>
+				</div>
+			</div>
+		</div>						
+		<div class="row">
+	
 			<?php foreach ($toko as $value): ?>
 				<div class="col-lg-4 col-md-6 single-exhibition">
 							<div class="thumb">

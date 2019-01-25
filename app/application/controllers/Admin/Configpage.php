@@ -28,11 +28,28 @@ class Configpage extends CI_Controller {
 			$this->load->view('admin/config/page',$data);
 			$this->load->view('admin/footer');
 		}else{
-			$error = $this->Configpage_model->update_data();
-			$data['data'] = $this->Configpage_model->get_data();
-			$this->load->view('admin/header');
-			$this->load->view('admin/config/page',$data);
-			$this->load->view('admin/footer');
+			$config['upload_path'] = './uploads/banner/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']  = '2000';
+			$config['max_width']  = '10240';
+			$config['max_height']  = '7680';
+			
+			$this->load->library('upload', $config);
+			
+			if ( ! $this->upload->do_upload('banner_img')){
+				$error = array('error' => $this->upload->display_errors());
+				$data['error'] = $error['error'];
+				$this->load->view('admin/header');
+				$this->load->view('admin/config/page',$data);
+				$this->load->view('admin/footer');
+			}
+			else{
+				$error = $this->Configpage_model->update_data($this->upload->data('file_name'));
+				$data['data'] = $this->Configpage_model->get_data();
+				$this->load->view('admin/header');
+				$this->load->view('admin/config/page',$data);
+				$this->load->view('admin/footer');
+			}
 			
 		}
 	}

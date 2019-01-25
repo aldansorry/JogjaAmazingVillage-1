@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2019 at 09:52 AM
+-- Generation Time: Jan 25, 2019 at 10:40 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -82,16 +82,19 @@ CREATE TABLE `config_page` (
   `id` int(11) NOT NULL,
   `fk_desawisata` int(11) NOT NULL,
   `template` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subdomain` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL
+  `subdomain` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telp` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner_img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `config_page`
 --
 
-INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`) VALUES
-(1, 1, 'template1', 'tembi2233'),
-(2, 5, 'template1', 'Desa5');
+INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`, `telp`, `email`, `banner_img`) VALUES
+(1, 1, 'template2', 'tembi2233', '2', '2', 'samuraiwall2.png'),
+(2, 5, 'template1', 'Desa5', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -266,7 +269,7 @@ CREATE TABLE `pengunjung` (
 --
 
 INSERT INTO `pengunjung` (`id`, `tanggal`, `domisili`, `umur`, `jeniskelamin`, `fk_desawisata`) VALUES
-(1, '2019-01-24 09:20:31', 'lokal', 'anak', 'L', 1),
+(1, '2010-01-24 09:20:31', 'lokal', 'anak', 'L', 1),
 (2, '2019-01-24 09:28:55', 'lokal', 'anak', 'L', 1),
 (3, '2019-01-24 09:35:11', 'lokal', 'anak', 'L', 1),
 (4, '2019-01-24 09:35:18', 'regional', 'remaja', 'L', 1),
@@ -289,7 +292,7 @@ INSERT INTO `pengunjung` (`id`, `tanggal`, `domisili`, `umur`, `jeniskelamin`, `
 (21, '2019-01-24 09:48:34', 'regional', 'dewasa', 'L', 1),
 (22, '2019-01-24 09:48:41', 'regional', 'remaja', 'L', 1),
 (23, '2019-01-24 09:48:45', 'regional', 'remaja', 'L', 1),
-(24, '2019-01-24 09:48:49', 'regional', 'anak', 'L', 1);
+(24, '2019-02-24 09:48:49', 'regional', 'anak', 'L', 1);
 
 -- --------------------------------------------------------
 
@@ -305,17 +308,19 @@ CREATE TABLE `review` (
   `rating` int(5) NOT NULL,
   `keterangan` text NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `fk_desawisata` int(11) NOT NULL
+  `fk_desawisata` int(11) NOT NULL,
+  `datecraeted` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`id`, `nama`, `email`, `telp`, `rating`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 1, 'desanya sangat bagus', '1.jpg', 1),
-(2, 'Budi hariyanto', 'budihariyanto@gmail.', 2147483647, 4, 'Pemandangannya susasana desanya sangat indah wajib untuk di kunjungi', 'dw_sambi_(1)_(Copy).jpg', 2),
-(3, 'Yahya Hartanto', 'yahya89720837', 2147483647, 5, 'Desawisata Tanjung cocok untuk beredukasi bagi keluarga , bagaimana caranya bercocok tanam', '86d27-desa-tanjung.jpg', 3);
+INSERT INTO `review` (`id`, `nama`, `email`, `telp`, `rating`, `keterangan`, `foto`, `fk_desawisata`, `datecraeted`) VALUES
+(1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 1, 'desanya sangat bagus', '1.jpg', 1, '2019-01-24 13:58:07'),
+(2, 'Budi hariyanto', 'budihariyanto@gmail.', 2147483647, 4, 'Pemandangannya susasana desanya sangat indah wajib untuk di kunjungi', 'dw_sambi_(1)_(Copy).jpg', 2, '2019-01-24 13:58:07'),
+(3, 'Yahya Hartanto', 'yahya89720837', 2147483647, 5, 'Desawisata Tanjung cocok untuk beredukasi bagi keluarga , bagaimana caranya bercocok tanam', '86d27-desa-tanjung.jpg', 3, '2019-01-24 13:58:07'),
+(4, 'a', 'b@c.d', 0, 3, 'f', '', 1, '2019-01-25 10:39:00');
 
 -- --------------------------------------------------------
 
@@ -576,7 +581,7 @@ ALTER TABLE `pengunjung`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `toko`

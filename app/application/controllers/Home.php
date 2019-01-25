@@ -28,6 +28,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -38,7 +39,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_home',$data);
+		$this->load->view('home/'.$config_page->template.'/p_home',$data);
 	}
 	public function about($subdomain)
 	{
@@ -61,6 +62,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "About",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -71,7 +73,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_about',$data);
+		$this->load->view('home/'.$config_page->template.'/p_about',$data);
 	}
 	
 	public function galeri($subdomain)
@@ -95,6 +97,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Galeri",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -105,7 +108,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_galeri',$data);
+		$this->load->view('home/'.$config_page->template.'/p_galeri',$data);
 	}
 	public function agenda($subdomain)
 	{
@@ -128,6 +131,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Agenda",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -138,7 +142,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_agenda',$data);
+		$this->load->view('home/'.$config_page->template.'/p_agenda',$data);
 	}
 	public function wisata($subdomain)
 	{
@@ -161,6 +165,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Wisata",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -171,7 +176,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_wisata',$data);
+		$this->load->view('home/'.$config_page->template.'/p_wisata',$data);
 	}
 	public function berita($subdomain)
 	{
@@ -194,6 +199,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Berita",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -204,7 +210,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_berita',$data);
+		$this->load->view('home/'.$config_page->template.'/p_berita',$data);
 	}
 	public function beritadetail($subdomain,$id_berita)
 	{
@@ -227,6 +233,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Berita Detail",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'id_berita' => $id_berita,
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
@@ -239,7 +246,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_berita_detail',$data);
+		$this->load->view('home/'.$config_page->template.'/p_berita_detail',$data);
 	}
 	public function kontak($subdomain)
 	{
@@ -262,6 +269,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Kontak",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -272,7 +280,22 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_kontak',$data);
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('keterangan',"Keterangan","required");
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('home/'.$config_page->template.'/p_kontak',$data);
+		}else{
+			$set = [
+				'nama' => $this->input->post('nama'),
+				'email' => $this->input->post('email'),
+				'telp' => $this->input->post('telp'),
+				'rating' => $this->input->post('rating'),
+				'keterangan' => $this->input->post('keterangan'),
+				'fk_desawisata' => $id_desawisata,
+			];
+			$this->db->insert('review',$set);
+			redirect('Home/Kontak/'.$subdomain,'refresh');
+		}
 	}
 	public function agendadetail($subdomain,$id_agenda)
 	{
@@ -295,6 +318,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Agenda Detail",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -305,7 +329,7 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 		];
-		$this->load->view('home/template2/p_agenda_detail',$data);
+		$this->load->view('home/'.$config_page->template.'/p_agenda_detail',$data);
 	}
 	public function penginapandetail($subdomain,$id_penginapan)
 	{
@@ -329,6 +353,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Penginapan Detail",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -340,7 +365,7 @@ class Home extends CI_Controller {
 			'toko' => $this->Toko_model->get_by_desawisata($id_desawisata),
 			'kamar' => $this->Kamar_model->get_by_penginapan($id_penginapan),
 		];
-		$this->load->view('home/template2/p_penginapan_detail',$data);
+		$this->load->view('home/'.$config_page->template.'/p_penginapan_detail',$data);
 	}
 	public function tokodetail($subdomain,$id_toko)
 	{
@@ -364,6 +389,7 @@ class Home extends CI_Controller {
 		$data = [
 			'c_name' => 'Home',
 			'banner_title' => "Penginapan Detail",
+			'config_page' => $config_page,
 			'desawisata' => $this->Desawisata_model->get_id($id_desawisata),
 			'kategori' => $this->Kategori_model->get_by_desawisata($id_desawisata),
 			'objekwisata' => $this->Wisata_model->get_by_desawisata($id_desawisata),
@@ -374,6 +400,6 @@ class Home extends CI_Controller {
 			'penginapan' => $this->Penginapan_model->get_by_desawisata($id_desawisata),
 			'toko' => $this->Toko_model->get_id($id_toko),
 		];
-		$this->load->view('home/template2/p_toko_detail',$data);
+		$this->load->view('home/'.$config_page->template.'/p_toko_detail',$data);
 	}
 }

@@ -1,6 +1,9 @@
 /*--------------  coin distrubution chart END ------------*/
 if ($('#coin_distribution').length) {
-
+    var jml_lokal = $('#coin_distribution').data('lokal');
+    var jml_regional = $('#coin_distribution').data('regional');
+    var jml_internasional = $('#coin_distribution').data('internasional');
+    var jml_total = parseInt(jml_lokal)+parseInt(jml_regional)+parseInt(jml_internasional);
     zingchart.THEME = "classic";
 
     var myConfig = {
@@ -33,7 +36,7 @@ if ($('#coin_distribution').length) {
                     "x": "45%",
                     "y": "47%",
                     "width": "10%",
-                    "text": "340 Coin",
+                    "text": jml_total+" Org",
                     "font-size": 17,
                     "font-weight": 700
                 }],
@@ -47,24 +50,24 @@ if ($('#coin_distribution').length) {
                         "visible": true
                     },
                     "tooltip": {
-                        "text": "%v USD",
+                        "text": "%v Orang",
                         "shadow": false,
                         "border-radius": 2
                     }
                 },
                 "series": [{
-                        "values": [1355460],
-                        "text": "Bitcoin",
+                        "values": [jml_lokal],
+                        "text": "Lokal",
                         "background-color": "#4cff63"
                     },
                     {
-                        "values": [1585218],
-                        "text": "LiteCoin",
+                        "values": [jml_regional],
+                        "text": "Regional",
                         "background-color": "#fd9c21"
                     },
                     {
-                        "values": [1064598],
-                        "text": "Euthorium",
+                        "values": [jml_internasional],
+                        "text": "Internasional",
                         "background-color": "#2c13f8"
                     }
                 ]
@@ -75,6 +78,88 @@ if ($('#coin_distribution').length) {
 
     zingchart.render({
         id: 'coin_distribution',
+        data: myConfig,
+    });
+}
+if ($('#donut-usia').length) {
+    var jml_anak = $('#donut-usia').data('anak');
+    var jml_remaja = $('#donut-usia').data('remaja');
+    var jml_dewasa = $('#donut-usia').data('dewasa');
+    var jml_total = parseInt(jml_anak)+parseInt(jml_remaja)+parseInt(jml_dewasa);
+    zingchart.THEME = "classic";
+
+    var myConfig = {
+        "globals": {
+            "font-family": "Roboto"
+        },
+        "graphset": [{
+                "type": "pie",
+                "background-color": "#fff",
+                "legend": {
+                    "background-color": "none",
+                    "border-width": 0,
+                    "shadow": false,
+                    "layout": "float",
+                    "margin": "auto auto 16% auto",
+                    "marker": {
+                        "border-radius": 3,
+                        "border-width": 0
+                    },
+                    "item": {
+                        "color": "%backgroundcolor"
+                    }
+                },
+                "plotarea": {
+                    "background-color": "#FFFFFF",
+                    "border-color": "#DFE1E3",
+                    "margin": "25% 8%"
+                },
+                "labels": [{
+                    "x": "45%",
+                    "y": "47%",
+                    "width": "10%",
+                    "text": jml_total+" Org",
+                    "font-size": 17,
+                    "font-weight": 700
+                }],
+                "plot": {
+                    "size": 70,
+                    "slice": 90,
+                    "margin-right": 0,
+                    "border-width": 0,
+                    "shadow": 0,
+                    "value-box": {
+                        "visible": true
+                    },
+                    "tooltip": {
+                        "text": "%v Orang",
+                        "shadow": false,
+                        "border-radius": 2
+                    }
+                },
+                "series": [{
+                        "values": [jml_anak],
+                        "text": "Anak - anak",
+                        "background-color": "#4cff63"
+                    },
+                    {
+                        "values": [jml_remaja],
+                        "text": "Remaja",
+                        "background-color": "#fd9c21"
+                    },
+                    {
+                        "values": [jml_dewasa],
+                        "text": "Dewasa",
+                        "background-color": "#2c13f8"
+                    }
+                ]
+            }
+
+        ]
+    };
+
+    zingchart.render({
+        id: 'donut-usia',
         data: myConfig,
     });
 }
