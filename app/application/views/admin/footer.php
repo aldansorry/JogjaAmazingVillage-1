@@ -230,6 +230,7 @@
     <script src="<?php echo base_url('assets/') ?>assets/js/scripts.js"></script>
 
 <?php endif ?>
+<?php echo $this->session->flashdata('msg_js'); ?>
 </body>
 
 </html>

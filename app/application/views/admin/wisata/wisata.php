@@ -13,7 +13,7 @@
                 <button type="button" class="btn btn-sm btn-primary btn-flat float-right mb-3" onclick="input_form();"><i class="fa fa-plus"></i> Tambah Data</button>
             </h4>
 
-            <div class="data-tables datatable-dark">
+            <div class="data-tables datatable-dark table-responsive">
                 <table id="product-table" class="display nowrap table table-striped table-bordered" cellspacing="0" width="100%"></table>
             </div>
         </div>

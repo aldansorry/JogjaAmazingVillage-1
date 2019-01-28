@@ -13,7 +13,7 @@
                 <button type="button" class="btn btn-sm btn-primary btn-flat float-right mb-3" onclick="input_form();"><i class="fa fa-plus"></i> Tambah Data</button>
             </h4>
 
-            <div class="data-tables datatable-dark">
+            <div class="data-tables datatable-dark table-responsive">
                 <table id="product-table" class="display nowrap table table-striped table-bordered" cellspacing="0" width="100%"></table>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 "title" : "Lattitude",
                 "data": "_lat" 
             },
-             { 
+            { 
                 "title" : "Longtitude",
                 "data": "_long" 
             },
@@ -160,9 +160,13 @@
                 data: null,
                 success: function(data)
                 {
-                    swal("Data berhasil di hapus", {
-                        icon: "success",
-                    });
+                    if (data = "error1451") {
+                        swal("Delete Gagal", "Foreign Key error", "error");
+                    }else{
+                        swal("Data berhasil di hapus", {
+                            icon: "success",
+                        });
+                    }
                     reload_table();
                 }
             });

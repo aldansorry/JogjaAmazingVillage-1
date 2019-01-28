@@ -117,7 +117,6 @@ class Agenda extends CI_Controller {
         if ($error['code'] == 0) {
           echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
         }else{
-
           echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
         }
       }

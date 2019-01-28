@@ -81,7 +81,12 @@ class Desawisata_model extends CI_Model {
 
   public function delete_data($id)
   {
+    $db_debug = $this->db->db_debug;
+    $this->db->db_debug = FALSE;
     $this->db->where('id',$id);
-    $this->db->delete($this->table);
+    $delete = $this->db->delete($this->table);
+    $error = $this->db->error();
+    $this->db->db_debug = $db_debug;
+    return $error;
   }
 }

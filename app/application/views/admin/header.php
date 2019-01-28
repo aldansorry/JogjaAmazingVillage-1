@@ -91,6 +91,9 @@
                                     <li><a href="<?php echo base_url('Admin/Galeri') ?>"><i class="ti-gallery"></i> <span>Galeri</span></a></li>
                                     <li><a href="<?php echo base_url('Admin/Review') ?>"><i class="ti-write"></i> <span>Review</span></a></li>
                                 <?php } ?>
+                                <?php if (onlyLevel(5)): ?>
+                                    <li><a href="<?php echo base_url('Admin/Kamar/index/'.$this->session->userdata('logged_in')['penginapan']['id']) ?>"><i class="ti-home"></i> <span>Kamar</span></a></li>
+                                <?php endif ?>
                             </ul>
                         </nav>
                     </div>

@@ -150,6 +150,10 @@ class Users extends CI_Controller {
 
   public function delete($id)
   {
-    $this->Users_model->delete_data($id);
+    $error = $this->Users_model->delete_data($id);
+    if ($error['code'] == 1451) {
+      echo 'error1451';
+      echo '<script>swal("Delete Gagal", "Foreign Key error", "error");</script>';
+    }
   }
 }

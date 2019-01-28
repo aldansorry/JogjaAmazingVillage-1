@@ -10,8 +10,15 @@ class Kamar extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Kamar_model");
-    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4')) || onlyLevel('5')) {
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4') || onlyLevel('5'))) {
       p_error('403',"Access Tidak Tersedia");
+    }
+    if (onlyLevel(5)) {
+      $id = $this->uri->segment(4);
+      if ($id != $this->session->userdata('logged_in')['penginapan']['id']) {
+        p_error('403',"Access Tidak Tersedia");
+        
+      }
     }
   }
   public function index($id)
