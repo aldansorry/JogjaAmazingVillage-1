@@ -7,7 +7,7 @@
                     <div class="row flex-v-center">
                         <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
                             <div class="welcome-text">
-                                <h4>We are</h4>
+                                <h4>Jogja Amazing Village</h4>
                                 <h1>Business Theme Creator</h1>
                                 <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
                                 <div class="home-button">

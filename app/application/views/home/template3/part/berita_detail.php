@@ -1,196 +1,31 @@
-<section class="blog-posts-area section-gap">
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 post-list blog-post-list">
-             <div class="single-post">
-                <img class="img-fluid" src="<?php echo base_url('uploads/berita/'.$berita->foto) ?>" alt="">
-                <ul class="tags">
-                   <li><a href="#">Art</a></li>
-                   <li><a href="#">Technology</a></li>
-                   <li><a href="#">Fashion</a></li>
-               </ul>
-               <a href="#">
-                   <h1>
-                      <?php echo $berita->judul ?>
-                  </h1>
-              </a>
-              <div class="content-wrap">
-               <p>
-                  <?php echo $berita->konten ?>
-              </p>
-
-
-
-          </div>
-
-
-          <!-- Start nav Area -->
-          <section class="nav-area pt-50 pb-100">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-sm-6 nav-left justify-content-start d-flex">
-                        <div class="thumb">
-                            <img src="" alt="">
-                        </div>
-                        <div class="post-details">
-                            <p>Prev Post</p>
-                            <h4 class="text-uppercase"><a href="#">A Discount Toner</a></h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 nav-right justify-content-end d-flex">
-                        <div class="post-details">
-                            <p>Prev Post</p>
-                            <h4 class="text-uppercase"><a href="#">A Discount Toner</a></h4>
-                        </div>             
-                        <div class="thumb">
-                            <img src="img/blog/next.jpg" alt="">
-                        </div>                         
-                    </div>
-                </div>
-            </div>    
-        </section>
-        <!-- End nav Area -->
-
-        <!-- Start comment-sec Area -->
-
-
-    </div>                                                                      
+<section class="blog-posts-area section-gap" style="margin-top: 100px; margin-bottom: 100px">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 post-list blog-post-listmt-5 my-5 text-center">
+     <div class="single-post">
+      <div class="content-wrap">
+       <h1>
+        <?php echo $berita_on->judul ?>
+      </h1>
+    </div>>
+    <img class="img-fluid" src="<?php echo base_url('uploads/berita/'.$berita_on->foto) ?>" alt="">
+    <div class="content-wrap">
+     <p>
+      <?php echo $berita_on->konten ?>
+    </p>
+  </div>
+  <div class="content-wrap">
+   <p>
+    <?php echo $berita_on->tanggal ?>
+  </p>
 </div>
-<div class="col-lg-4 sidebar">
- <div class="single-widget search-widget">
-    <form class="example" action="#" style="margin:auto;max-width:300px">
-      <input type="text" placeholder="Search Posts" name="search2">
-      <button type="submit"><i class="fa fa-search"></i></button>
-  </form>                               
+<div class="content-wrap">
+   <p>
+    Author :<?php echo $berita_on->author ?>
+  </p>
 </div>
-
-<div class="single-widget protfolio-widget">
-    <img src="img/blog/user2.jpg" alt="">
-    <a href="#"><h4>Adele Gonzalez</h4></a>
-    <p>
-       MCSE boot camps have its supporters and
-       its detractors. Some people do not understand why you should have to spend money
-       on boot camp when you can get.
-   </p>
-   <ul>
-       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-       <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-       <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-       <li><a href="#"><i class="fa fa-behance"></i></a></li>
-   </ul>                                
 </div>
-
-<div class="single-widget category-widget">
-    <h4 class="title">Post Categories</h4>
-    <ul>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Techlology</h6> <span>37</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Lifestyle</h6> <span>24</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Fashion</h6> <span>59</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Art</h6> <span>29</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Food</h6> <span>15</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Architecture</h6> <span>09</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Adventure</h6> <span>44</span></a></li>
-   </ul>
-</div>
-
-<div class="single-widget recent-posts-widget">
-    <h4 class="title">Recent Posts</h4>
-    <div class="blog-list ">
-        <div class="single-recent-post d-flex flex-row">
-            <div class="recent-thumb">
-                <img class="img-fluid" src="img/blog/r1.jpg" alt="">
-            </div>
-            <div class="recent-details">
-                <a href="blog-single.html">
-                    <h4>
-                        Home Audio Recording
-                        For Everyone
-                    </h4>
-                </a>
-                <p>
-                    02 hours ago
-                </p>
-            </div>
-        </div>  
-        <div class="single-recent-post d-flex flex-row">
-            <div class="recent-thumb">
-                <img class="img-fluid" src="img/blog/r2.jpg" alt="">
-            </div>
-            <div class="recent-details">
-                <a href="blog-single.html">
-                    <h4>
-                        Home Audio Recording
-                        For Everyone
-                    </h4>
-                </a>
-                <p>
-                    02 hours ago
-                </p>
-            </div>
-        </div>  
-        <div class="single-recent-post d-flex flex-row">
-            <div class="recent-thumb">
-                <img class="img-fluid" src="img/blog/r3.jpg" alt="">
-            </div>
-            <div class="recent-details">
-                <a href="blog-single.html">
-                    <h4>
-                        Home Audio Recording
-                        For Everyone
-                    </h4>
-                </a>
-                <p>
-                    02 hours ago
-                </p>
-            </div>
-        </div>  
-        <div class="single-recent-post d-flex flex-row">
-            <div class="recent-thumb">
-                <img class="img-fluid" src="img/blog/r4.jpg" alt="">
-            </div>
-            <div class="recent-details">
-                <a href="blog-single.html">
-                    <h4>
-                        Home Audio Recording
-                        For Everyone
-                    </h4>
-                </a>
-                <p>
-                    02 hours ago
-                </p>
-            </div>
-        </div>                                                                                                                                                  
-    </div>                              
-</div>
-
-<div class="single-widget category-widget">
-    <h4 class="title">Post Archive</h4>
-    <ul>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Dec '17</h6> <span>37</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Nov '17</h6> <span>24</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Oct '17</h6> <span>59</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Sep '17</h6> <span>29</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Aug '17</h6> <span>15</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jul '17</h6> <span>09</span></a></li>
-       <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jun '17</h6> <span>44</span></a></li>
-   </ul>
-</div>          
-
-<div class="single-widget tags-widget">
-    <h4 class="title">Tag Clouds</h4>
-    <ul>
-      <li><a href="#">Lifestyle</a></li>
-      <li><a href="#">Art</a></li>
-      <li><a href="#">Adventure</a></li>
-      <li><a href="#">Food</a></li>
-      <li><a href="#">Techlology</a></li>
-      <li><a href="#">Fashion</a></li>
-      <li><a href="#">Architecture</a></li>
-      <li><a href="#">Food</a></li>
-      <li><a href="#">Technology</a></li>
-  </ul>
-</div>              
-
 </div>
 </div>
 </div>  

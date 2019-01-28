@@ -36,7 +36,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="<?php echo base_url('Home/homee/'.$this->uri->segment(3)) ?>">Home</a></li> 
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li> 
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>

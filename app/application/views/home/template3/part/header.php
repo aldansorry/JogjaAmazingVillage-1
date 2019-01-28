@@ -56,29 +56,6 @@
 
     <!--START TOP AREA-->
     <header class="top-area" id="home">
-        <div class="top-bar-area gray-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="call-to-action">
-                            <p><i class="fa fa-phone"></i> <a href="callto:+8801744430440">+880 1911 854 378</a></p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="mailto:backpiper.com@gmail.com">backpiper.com@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="header-social-bookmark">
-                            <ul class="social-bookmark">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="header-top-area">
             <!--MAINMENU AREA-->
             <div class="mainmenu-area" id="mainmenu-area">
@@ -90,7 +67,7 @@
                         </div>
                         <div id="main-nav" class="stellarnav">
                             <ul id="nav" class="nav navbar-nav">
-                                <li class="active"><a href="#home">home</a></li>
+                                <li class="active"><a href="<?php echo base_url('Home/homee/'.$this->uri->segment(3)) ?>">home</a></li>
                                 <li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
                                 <li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
                                 <li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>

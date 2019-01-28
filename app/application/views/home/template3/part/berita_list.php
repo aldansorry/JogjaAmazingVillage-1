@@ -56,8 +56,8 @@
                                     <a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>">
                             <h1><?php echo $value->judul ?></h1>
                         </a>
-                                    <p><?php echo $value->konten ?><a href="#">Read More</a></p>
-                                    <p class="blog-meta">Posted by <a href="#"><?php echo $value->author ?></a> at <a href="#"><?php echo $value->tanggal ?></a></p>
+                                    <p><?php echo $value->konten ?><a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>" style="color: blue"> Read More</a></p>
+                                    <p class="blog-meta">Posted by <a href=""><?php echo $value->author ?></a> at <a href="#"><?php echo $value->tanggal ?></a></p>
                                 </div>
                             </div>
 							<?php endforeach ?>

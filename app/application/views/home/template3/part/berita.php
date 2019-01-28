@@ -5,7 +5,6 @@
                 <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
                     <div class="area-title text-center wow fadeIn">
                         <h2>Berita</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
                     </div>
                 </div>
             </div>
@@ -35,16 +34,15 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
                     <div class="feed-widget blog-feed mb50 wow fadeIn">
-                        <h4>Blog Feed</h4>
+                        <h4>Berita Hangat</h4>
                         <div class="blog-list">
                             <div class="single-blog">
                                 <div class="blog-thumb">
                                     <img src="img/blog/blog-3.jpg" alt="">
                                 </div>
                                 <div class="blog-details">
-                                    <h4><a href="#">Berita Hangat</a></h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis... <a href="#">Read More</a></p>
-                                    <p class="blog-meta">Posted by <a href="#">admin</a> at <a href="#">04 Feb, 2017</a></p>
+                                    <h4><a href="#">Trending Topik</a></h4>
+                                    <p>Berita ini berisikan topik - topik hangat yang menyajian informasi terkini</p>
                                 </div>
                             </div>
 							<?php foreach ($berita as $key => $value): ?>

@@ -5,12 +5,11 @@
 <!-- End banner Area -->	
 
 <!-- Start quote Area -->
-<?php $this->load->view('home/template3/part/agenda_list') ?>
+<?php $this->load->view('home/template3/part/wisata_detail') ?>
 <!-- End quote Area -->
 
-<!-- Start service Area -->
-<?php $this->load->view('home/template3/part/berita') ?>
-<!-- End service Area -->
-
+<!-- Start exibition Area -->
+<?php $this->load->view('home/template3/part/berita'); ?>
+<!-- End exibition Area -->			
 
 <?php $this->load->view('home/template3/part/footer') ?>
