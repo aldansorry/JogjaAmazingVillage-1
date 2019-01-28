@@ -6,13 +6,23 @@
      <div class="single-post">
       <a href="#">
      <h1>
-      <?php echo $agenda->judul ?>
+      <?php echo $toko->nama ?>
     </h1>
   </a>
-      <img class="img-fluid" src="<?php echo base_url('uploads/agenda/'.$agenda->foto) ?>" alt="">
+      <img class="img-fluid" src="<?php echo base_url('uploads/toko/'.$toko->foto) ?>" alt="">
   <div class="content-wrap">
    <p>
-    <?php echo $agenda->keterangan ?>
+    <?php echo $toko->keterangan ?>
+  </p>
+</div>
+<div class="content-wrap">
+   <p>
+    <?php echo $toko->alamat ?>
+  </p>
+</div>
+<div class="content-wrap">
+   <p>
+    <?php echo $toko->jenis ?>
   </p>
 </div>
 </div>

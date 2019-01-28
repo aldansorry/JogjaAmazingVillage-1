@@ -3,7 +3,6 @@
         	<div class="container">
         		<div class="main_title mt-5">
         			<h2>Agenda</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
         		</div>
         		<div class="feature_inner row">
         			
@@ -16,7 +15,6 @@
 							  	<?php echo $value->tanggal ?>
 							 </p>	
         					<p><?php echo $value->keterangan ?></p>
-        					<a class="main_btn" href="#">View Details</a>
         				</div>
         			</div>
 					<?php endforeach ?>

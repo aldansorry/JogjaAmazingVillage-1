@@ -1,10 +1,10 @@
         <!--================Home Banner Area =================-->
-        <section class="home_banner_area" id="home">
+        <section class="home_banner_area relative" id="home" style="background: url(<?php echo base_url('uploads/desawisata/'.$desawisata->foto); ?>) !important;background-size:cover !important;">
             <div class="banner_inner">
 				<div class="container">
 					<div class="banner_content">
-						<h2>Precise concept design <br />for stylish living</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
+						<h2>Desa Wisata <br /><?php echo $desawisata->nama ?></h2>
+						<p><?php echo $desawisata->deskripsi ?></p>
 						<a class="banner_btn" href="#">Get Started</a>
 					</div>
 				</div>

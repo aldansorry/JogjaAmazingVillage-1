@@ -19,6 +19,9 @@
 							<p><a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>"><h4><?php echo $value->judul ?></h4></a></p>
 							<p>
 								<?php echo $value->konten ?>
+							</p>	
+							<p>
+								<?php echo $value->author ?>
 							</p>								
 						</div>
 						<?php endforeach ?>

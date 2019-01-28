@@ -6,13 +6,18 @@
      <div class="single-post">
       <a href="#">
      <h1>
-      <?php echo $agenda->judul ?>
+      <?php echo $penginapan->nama ?>
     </h1>
   </a>
-      <img class="img-fluid" src="<?php echo base_url('uploads/agenda/'.$agenda->foto) ?>" alt="">
+      <img class="img-fluid" src="<?php echo base_url('uploads/penginapan/'.$penginapan->foto) ?>" alt="">
   <div class="content-wrap">
    <p>
-    <?php echo $agenda->keterangan ?>
+    <?php echo $penginapan->keterangan ?>
+  </p>
+</div>
+<div class="content-wrap">
+   <p>
+    <?php echo $penginapan->alamat ?>
   </p>
 </div>
 </div>

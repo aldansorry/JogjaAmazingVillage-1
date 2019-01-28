@@ -20,7 +20,7 @@
 					</div>
 					<div class="row mt-3">					
 				<?php endif ?>						
-			<?php endforeach ?>										
+			<?php endforeach ?>								
 		</div>
 	</div>	
 </section>

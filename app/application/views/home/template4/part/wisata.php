@@ -2,8 +2,7 @@
         <section class="post_slider_area">
         	<div class="main_title mt-5">
 				<h2>Wisata</h2>
-				<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-			</div>
+							</div>
 			<div class="post_slider_inner owl-carousel">
 				
 				<?php foreach ($objekwisata as $key => $value): ?>

@@ -40,7 +40,7 @@
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li> 
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata/Penginapan/Toko</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Contact</a></li>
 							</ul>
