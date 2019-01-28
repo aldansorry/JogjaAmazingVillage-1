@@ -6,33 +6,34 @@
      <div class="modal-body">
           <?php echo form_open_multipart('',array('id'=>'formdata')) ?>
        <div class="form-group row">
-          <label for="input-no" class="col-sm-2 col-form-label">no</label>
+          <label for="input-no" class="col-sm-2 col-form-label">No Kamar</label>
           <div class="col-sm-10">
             <input type="text" name="no" class="form-control" id="input-no" placeholder="no" value="<?php echo $data->no ?>">
             <?php echo form_error('no') ?>
           </div>
      </div>
        <div class="form-group row">
-          <label for="input-kategori" class="col-sm-2 col-form-label">kategori</label>
+          <label for="input-kategori" class="col-sm-2 col-form-label">Kategori</label>
           <div class="col-sm-10">
             <textarea name="kategori" class="form-control" id="input-kategori" cols="30" rows="10"><?php echo $data->kategori ?></textarea>
             <?php echo form_error('kategori') ?>
           </div>
      </div>
       <div class="form-group row">
-          <label for="input-fasilitas" class="col-sm-2 col-form-label">fasilitas</label>
+          <label for="input-fasilitas" class="col-sm-2 col-form-label">Fasilitas</label>
           <div class="col-sm-10">
             <input type="text" name="fasilitas" class="form-control" id="input-fasilitas" placeholder="fasilitas" value="<?php echo $data->fasilitas ?>">
             <?php echo form_error('fasilitas') ?>
           </div>
      </div>
       <div class="form-group row">
-          <label for="input-status" class="col-sm-2 col-form-label">status</label>
+          <label for="input-status" class="col-sm-2 col-form-label">Status</label>
           <div class="col-sm-10">
             <select name="status" class="form-control">
               <option value="Ada">Ada</option>
               <option value="Penuh">Penuh</option>
             </select>
+            <script>$('select[name="status"]').val('<?php echo $data->status ?>');</script>
             <?php echo form_error('status') ?>
           </div>
      </div>

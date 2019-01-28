@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('login');
 		} else {
-			redirect('Admin/Kategori','refresh');
+			redirect('Admin/Dashboard','refresh');
 		}
 	}
 	public function cekDB($username)
@@ -51,6 +51,21 @@ class Login extends CI_Controller {
 					'foto' => $res_desawisata->foto,
 				);
 				$userdata['desawisata'] = $desawisata_data;
+			}else{
+				$userdata['desawisata'] = null;
+			}
+			if ($data->fk_penginapan != null) {
+				$res_penginapan = $this->db->where('id',$data->fk_penginapan)->get('penginapan')->row(0);
+				$penginapan_data = array(
+					'id' => $res_penginapan->id,
+					'nama' => $res_penginapan->nama,
+					'keterangan' => $res_penginapan->keterangan,
+					'alamat' => $res_penginapan->alamat,
+					'foto' => $res_penginapan->foto,
+				);
+				$userdata['penginapan'] = $penginapan_data;
+			}else{
+				$userdata['penginapan'] = null;
 			}
 			$this->session->set_userdata('logged_in',$userdata);
 			return true;

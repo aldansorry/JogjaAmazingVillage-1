@@ -8,7 +8,7 @@
   <div class="form-group row">
     <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-     <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo set_value('nama') ?>">
+     <input type="text" name="nama" class="form-control" id="input-nama" value="<?php echo set_value('nama') ?>">
      <?php echo form_error('nama') ?>
    </div>
  </div>

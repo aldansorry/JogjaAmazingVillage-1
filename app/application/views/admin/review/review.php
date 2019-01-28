@@ -45,48 +45,55 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                
-                { 
+            
+            { 
                 "title" : "Nama",
                 "data": "nama" 
-                },
+            },
 
-                { 
+            { 
                 "title" : "Email",
                 "data": "email" 
-                },
+            },
 
-                { 
+            { 
                 "title" : "Telephone",
                 "data": "telp" 
-                },
+            },
 
-                { 
+            { 
                 "title" : "Rating",
                 "data": "rating" 
-                },
+            },
 
-                { 
+            { 
                 "title" : "Keterangan",
-                "data": "keterangan" 
-                },
-
-                {
-                    "title": "Actions",
-                    "width" : "120px",
-                    "data":'id',
-                    "visible":true,
-                    "class": "text-center",
-                    render: (data, type, row) => {
-                        let ret = "";
-                        ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                        ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                        ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
-                        return ret;
+                "data": "keterangan",
+                render: (data,type,row) => {
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
                     }
+                    return data.substr(0,30)+isLong;
+                } 
+            },
+
+            {
+                "title": "Actions",
+                "width" : "120px",
+                "data":'id',
+                "visible":true,
+                "class": "text-center",
+                render: (data, type, row) => {
+                    let ret = "";
+                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    return ret;
                 }
-                ]
-            } );
+            }
+            ]
+        } );
     });
 
     function reload_table() {

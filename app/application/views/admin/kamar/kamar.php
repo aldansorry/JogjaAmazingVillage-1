@@ -55,10 +55,28 @@
             },
             { 
                 "title" : "Fasilitas",
-                "data": "fasilitas" 
+                "data": "fasilitas",
+                render: (data,type,row) => {
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
+                }
             },{ 
                 "title" : "Status",
-                "data": "status" 
+                "data": (data, type, row) => {
+                    let ret = "";
+                    switch(data.status){
+                        case 'Ada':
+                        ret += '<span class="badge badge-pill badge-primary">Ada</span>';
+                        break;
+                        case 'Penuh':
+                        ret += '<span class="badge badge-pill badge-danger">Penuh</span>';
+                        break;
+                    }
+                    return ret;
+                },
             },
             {
                 "title": "Actions",

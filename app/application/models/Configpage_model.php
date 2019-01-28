@@ -6,14 +6,14 @@ class Configpage_model extends CI_Model {
   var $table = "config_page";
   var $primary_key = "id";
   
-  public function get_data()
+  public function get_data($id_desawisata)
   {
-    $this->db->where('fk_desawisata',$this->session->userdata('logged_in')['desawisata']['id']);
+    $this->db->where('fk_desawisata',$id_desawisata);
     $query = $this->db->get('config_page');
     return $query->row(0);
   }
 
-  public function update_data($banner_img = null)
+  public function update_data($id_desawisata,$banner_img = null)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
@@ -28,7 +28,7 @@ class Configpage_model extends CI_Model {
       $set['banner_img'] = $banner_img;
     }
 
-    $this->db->where('fk_desawisata',$this->session->userdata('logged_in')['desawisata']['id']);
+    $this->db->where('fk_desawisata',$id_desawisata);
     $update = $this->db->update($this->table,$set);
     $error = $this->db->error();
     $this->db->db_debug = $db_debug;

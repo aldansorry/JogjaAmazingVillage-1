@@ -12,21 +12,19 @@
   <div class="form-group row">
     <label for="input-nama" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-     <input type="text" name="nama" class="form-control-plaintext" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>" readonly>
-     <?php echo form_error('nama') ?>
+     <input type="text" name="nama" class="form-control" id="input-nama" placeholder="nama" value="<?php echo $data->nama ?>" readonly>
    </div>
  </div>
  <div class="form-group row">
     <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
     <div class="col-sm-10">
-      <textarea name="keterangan" id="input-keterangan" rows="3" class="form-control"><?php echo set_value('keterangan') ?></textarea>
-      <?php echo form_error('keterangan') ?>
+      <textarea name="keterangan" id="input-keterangan" class="form-control" disabled=""><?php echo set_value('keterangan') ?></textarea>
     </div>
   </div>
  <div class="form-group row">
   <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
   <div class="col-sm-10">
-   <input type="text" readonly class="form-control-plaintext" value="<?php echo $data->nama_desawisata ?>">
+   <input type="text" readonly class="form-control" value="<?php echo $data->nama_desawisata ?>">
  </div>
 </div>
 

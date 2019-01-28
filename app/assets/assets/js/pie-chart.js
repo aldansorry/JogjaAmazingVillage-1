@@ -163,6 +163,82 @@ if ($('#donut-usia').length) {
         data: myConfig,
     });
 }
+if ($('#donut-jeniskelamin').length) {
+    var jml_l = $('#donut-jeniskelamin').data('l');
+    var jml_p = $('#donut-jeniskelamin').data('p');
+    var jml_total = parseInt(jml_l)+parseInt(jml_p)
+    zingchart.THEME = "classic";
+
+    var myConfig = {
+        "globals": {
+            "font-family": "Roboto"
+        },
+        "graphset": [{
+                "type": "pie",
+                "background-color": "#fff",
+                "legend": {
+                    "background-color": "none",
+                    "border-width": 0,
+                    "shadow": false,
+                    "layout": "float",
+                    "margin": "auto auto 16% auto",
+                    "marker": {
+                        "border-radius": 3,
+                        "border-width": 0
+                    },
+                    "item": {
+                        "color": "%backgroundcolor"
+                    }
+                },
+                "plotarea": {
+                    "background-color": "#FFFFFF",
+                    "border-color": "#DFE1E3",
+                    "margin": "25% 8%"
+                },
+                "labels": [{
+                    "x": "45%",
+                    "y": "47%",
+                    "width": "10%",
+                    "text": jml_total+" Org",
+                    "font-size": 17,
+                    "font-weight": 700
+                }],
+                "plot": {
+                    "size": 70,
+                    "slice": 90,
+                    "margin-right": 0,
+                    "border-width": 0,
+                    "shadow": 0,
+                    "value-box": {
+                        "visible": true
+                    },
+                    "tooltip": {
+                        "text": "%v Orang",
+                        "shadow": false,
+                        "border-radius": 2
+                    }
+                },
+                "series": [{
+                        "values": [jml_l],
+                        "text": "Laki - laki",
+                        "background-color": "#0f9fff"
+                    },
+                    {
+                        "values": [jml_p],
+                        "text": "Perempuan",
+                        "background-color": "#ff66aa"
+                    },
+                ]
+            }
+
+        ]
+    };
+
+    zingchart.render({
+        id: 'donut-jeniskelamin',
+        data: myConfig,
+    });
+}
 /*--------------  coin distrubution chart END ------------*/
 
 /*-------------- 1 Pie chart amchart start ------------*/

@@ -50,123 +50,163 @@
                 "data": "nama" 
             },
             { 
-                "title" : "alamat",
-                "data": "alamat" 
+                "title" : "Alamat",
+                "data": "alamat",
+                render: (data,type,row) => {
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
+                } 
             },
             { 
-                "title" : "telp",
+                "title" : "Telp",
                 "data": "telp" 
             },
             { 
-                "title" : "email",
+                "title" : "Email",
                 "data": "email" 
             },
             { 
-                "title" : "username",
+                "title" : "Username",
                 "data": "username" 
             },
             { 
-                "title" : "status",
-                "data": "status" 
+                "title" : "Status",
+                "data": (data, type, row) => {
+                    let ret = "";
+                    switch(data.status){
+                        case '1':
+                        ret += '<span class="badge badge-pill badge-primary">Status</span>';
+                        break;
+                        case '2':
+                        ret += '<span class="badge badge-pill badge-danger">Inactive</span>';
+                        break;
+                    }
+                    return ret;
+                },
             },
             { 
-                "title" : "ket_status",
-                "data": "ket_status" 
+                "title" : "Level",
+                "data": (data, type, row) => {
+                    let ret = "";
+                    switch(data.fk_level){
+                        case '1':
+                        ret += '<span class="badge badge-pill badge-dark">Super Admin</span>';
+                        break;
+                        case '2':
+                        ret += '<span class="badge badge-pill badge-primary">Admin</span>';
+                        break;
+                        case '3':
+                        ret += '<span class="badge badge-pill badge-success">Super Admin</span>';
+                        break;
+                        case '4':
+                        ret += '<span class="badge badge-pill badge-info">Admin Desawisata</span>';
+                        break;
+                        case '5':
+                        ret += '<span class="badge badge-pill badge-warning">Operator Kamar : '+data.fk_penginapan+'</span>';
+                        break;
+                    }
+                    return ret;
+                },
             },
             { 
-                "title" : "fk_level",
-                "data": "fk_level" 
-            },
-            { 
-                "title" : "fk_desawisata",
-                "data": "fk_desawisata" 
+                "title" : "Desa Wisata",
+                "data": (data, type, row) => {
+                    let ret = "";
+                    ret += '<span class="badge badge-info">'+data.nama_desawisata+'</span>';
+                    return ret;
+                }
             },
             {
                 "title": "Actions",
                 "width" : "120px",
-                "data":'id',
                 "visible":true,
                 "class": "text-center",
-                render: (data, type, row) => {
+                "data": (data, type, row) => {
                     let ret = "";
-                    ret += ' <a href="#" onclick="info_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
-                    ret += ' <a href="#" onclick="update_form('+data+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
-                    ret += ' <a href="#" onclick="delete_form('+data+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    ret += ' <a href="#" onclick="info_form('+data.id+'); return false;" class="btn btn-xs btn-rounded btn-info"> <i class="fa fa-info-circle"></i> Lihat</a>';
+                    var level = "<?php echo $this->session->userdata('logged_in')['fk_level'] ?>";
+                    if (data.fk_level != level) {
+                        ret += ' <a href="#" onclick="update_form('+data.id+'); return false;" class="btn btn-xs btn-rounded btn-success"> <i class="fa fa-pencil"></i> Edit</a>';
+                        ret += ' <a href="#" onclick="delete_form('+data.id+')" class="btn btn-xs btn-rounded btn-danger"> <i class="fa fa-trash"></i> Hapus</a>';
+                    }
                     return ret;
                 }
             }
             ]
         } );
-    });
+});
 
-    function reload_table() {
-        $('#product-table').DataTable().ajax.reload(null,false);
-    }
+function reload_table() {
+    $('#product-table').DataTable().ajax.reload(null,false);
+}
 
-    function info_form(id) {
-        $('#modal').modal('show');
+function info_form(id) {
+    $('#modal').modal('show');
 
-        $.ajax({
-            url: "<?php echo base_url('Admin/'.$c_name.'/info/') ?>"+id,
-            data: null,
-            success: function(data)
-            {
-                $('#modal-content').html(data);
-            }
-        });
-    }
-
-    function input_form() {
-        $('#modal').modal('show');
-        $.ajax({
-            url: "<?php echo base_url('Admin/'.$c_name.'/insert') ?>",
-            data: null,
-            success: function(data)
-            {
-                $('#modal-content').html(data);
-            }
-        });
-    }
-    function update_form(id) {
-        $('#modal').modal('show');
-        $.ajax({
-            url: "<?php echo base_url('Admin/'.$c_name.'/update/') ?>"+id,
-            data: null,
-            success: function(data)
-            {
-                $('#modal-content').html(data);
-            }
-        });
-    }
-    function delete_form(id) {
-        swal({
-          title: "Apakah anda yakin?",
-          text: "Setelah anda menghapus, data ini tidak dapat kembali",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true,
-      })
-        .then((willDelete) => {
-          if (willDelete) {
-            $.ajax({
-                url: "<?php echo base_url('Admin/'.$c_name.'/delete/') ?>"+id,
-                data: null,
-                success: function(data)
-                {
-                    swal("Data berhasil di hapus", {
-                        icon: "success",
-                    });
-                    reload_table();
-                }
-            });
-            
-        } else {
-            swal("Data aman", {
-                icon: "info",
-            });
+    $.ajax({
+        url: "<?php echo base_url('Admin/'.$c_name.'/info/') ?>"+id,
+        data: null,
+        success: function(data)
+        {
+            $('#modal-content').html(data);
         }
     });
+}
 
+function input_form() {
+    $('#modal').modal('show');
+    $.ajax({
+        url: "<?php echo base_url('Admin/'.$c_name.'/insert') ?>",
+        data: null,
+        success: function(data)
+        {
+            $('#modal-content').html(data);
+        }
+    });
+}
+function update_form(id) {
+    $('#modal').modal('show');
+    $.ajax({
+        url: "<?php echo base_url('Admin/'.$c_name.'/update/') ?>"+id,
+        data: null,
+        success: function(data)
+        {
+            $('#modal-content').html(data);
+        }
+    });
+}
+function delete_form(id) {
+    swal({
+      title: "Apakah anda yakin?",
+      text: "Setelah anda menghapus, data ini tidak dapat kembali",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+  })
+    .then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+            url: "<?php echo base_url('Admin/'.$c_name.'/delete/') ?>"+id,
+            data: null,
+            success: function(data)
+            {
+                swal("Data berhasil di hapus", {
+                    icon: "success",
+                });
+                reload_table();
+            }
+        });
 
+    } else {
+        swal("Data aman", {
+            icon: "info",
+        });
     }
+});
+
+
+}
 </script>

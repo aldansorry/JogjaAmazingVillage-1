@@ -53,17 +53,25 @@
 
             { 
                 "title" : "Keterangan",
-                "data": "keterangan", 
+                "data": "keterangan",
                 render: (data,type,row) => {
-                    return data.substr(0,30)+"...";
-                } 
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
+                }
             },
 
             { 
                 "title" : "Alamat",
-                "data": "alamat", 
+                "data": "alamat",
                 render: (data,type,row) => {
-                    return data.substr(0,30)+"...";
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
                 }
             },
 

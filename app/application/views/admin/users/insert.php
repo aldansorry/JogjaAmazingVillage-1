@@ -83,7 +83,31 @@
     <label for="input-fk_level" class="col-sm-2 col-form-label">Level</label>
     <div class="col-sm-10">
       <select name="fk_level" class="form-control">
+        <option selected disabled>Pilih Level</option>
         <?php foreach ($level as $value): ?>
+          <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+        <?php endforeach ?>
+      </select>
+      <script>
+        $('select[name="fk_level"]').change(function(){
+          if ($(this).val() == 5) {
+            $('#container-input-penginapan').fadeIn();
+            $('#fk_penginapan').attr('disabled',false);
+          }else{
+            $('#container-input-penginapan').fadeOut();
+            $('#fk_penginapan').attr('disabled',true);
+          }
+        });
+      </script>
+   </div>
+ </div>
+
+<div class="form-group row" style="display: none" id="container-input-penginapan">
+    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Penginapan</label>
+    <div class="col-sm-10">
+      <select name="fk_penginapan" class="form-control" id="fk_penginapan">
+        <option selected disabled>Pilih Penginapan</option>
+        <?php foreach ($penginapan as $value): ?>
           <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
         <?php endforeach ?>
       </select>
@@ -94,6 +118,7 @@
     <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Desa Wisata</label>
     <div class="col-sm-10">
       <select name="fk_desawisata" class="form-control">
+        <option selected disabled>Pilih Desawisata</option>
         <?php foreach ($desawisata as $value): ?>
           <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
         <?php endforeach ?>

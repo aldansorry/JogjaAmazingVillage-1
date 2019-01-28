@@ -51,7 +51,14 @@
             },
             { 
                 "title" : "Keterangan",
-                "data": "keterangan" 
+                "data": "keterangan" ,
+                render: (data,type,row) => {
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
+                }
             },
             { 
                 "title" : "Jam Kunjung",

@@ -15,7 +15,7 @@
 <div class="form-group row">
     <label for="input-keterangan" class="col-sm-2 col-form-label">Keterangan</label>
     <div class="col-sm-10">
-      <textarea name="keterangan" id="input-keterangan" rows="3" class="form-control"><?php echo set_value('keterangan') ?></textarea>
+      <textarea name="keterangan" id="input-keterangan" rows="3" class="form-control"><?php echo $data->keterangan ?></textarea>
       <?php echo form_error('keterangan') ?>
     </div>
   </div>

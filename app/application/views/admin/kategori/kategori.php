@@ -45,12 +45,20 @@
                     return meta.row + meta.settings._iDisplayStart + 1;
                 }
             },
-                { 
+            { 
                 "title" : "Nama",
                 "data": "nama" },
                 { 
-                "title" : "Keterangan",
-                "data": "keterangan" },
+                    "title" : "Keterangan",
+                    "data": "keterangan",
+                    render: (data,type,row) => {
+                        isLong = "";
+                        if (data.length > 30) {
+                            isLong = "...";
+                        }
+                        return data.substr(0,30)+isLong;
+                    }
+                },
                 {
                     "title": "Actions",
                     "width" : "120px",

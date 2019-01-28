@@ -54,14 +54,18 @@
                 "data": "judul" 
             },
             { 
-                "title" : "konten",
+                "title" : "Konten",
                 "data": "konten",
                 render: (data,type,row) => {
-                    return data.substr(0,30)+"...";
+                    isLong = "";
+                    if (data.length > 30) {
+                        isLong = "...";
+                    }
+                    return data.substr(0,30)+isLong;
                 }
             },
             { 
-                "title" : "author",
+                "title" : "Pengarang",
                 "data": "author" 
             },
             {

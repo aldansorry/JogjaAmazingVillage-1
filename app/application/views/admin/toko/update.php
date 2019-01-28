@@ -39,6 +39,7 @@
      <option value="Sovenir">Sovenir</option>
 
    </select>
+   <script>$('select[name="jenis"]').val('<?php echo $data->jenis ?>')</script>
    <?php echo form_error('jenis') ?>
  </div>
 </div>

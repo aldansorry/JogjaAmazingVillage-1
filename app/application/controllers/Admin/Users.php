@@ -10,7 +10,7 @@ class Users extends CI_Controller {
     parent::__construct();
     $this->load->library('form_validation');
     $this->load->model("Users_model");
-     if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
+    if (!(onlyLevel('1') || onlyLevel('2') || onlyLevel('4'))) {
       p_error('403',"Access Tidak Tersedia");
     }
   }
@@ -40,9 +40,11 @@ class Users extends CI_Controller {
   public function insert()
   {
     $this->load->model('Level_model');
+    $this->load->model('Penginapan_model');
     $this->load->model('Desawisata_model');
     $data = [
       'c_name' => $this->c_name,
+      'penginapan' => $this->Penginapan_model->get_data(),
       'desawisata' => $this->Desawisata_model->get_data(),
       'level' => $this->Level_model->get_data(),
     ];
@@ -88,10 +90,12 @@ class Users extends CI_Controller {
     
     $this->load->model('Level_model');
     $this->load->model('Desawisata_model');
+    $this->load->model('Penginapan_model');
     $data = [
       'c_name' => $this->c_name,
       'data' => $this->Users_model->get_id($id),
       'desawisata' => $this->Desawisata_model->get_data(),
+      'penginapan' => $this->Penginapan_model->get_data(),
       'level' => $this->Level_model->get_data(),
     ];
     $this->form_validation->set_rules('nama','Nama','required');
@@ -99,7 +103,9 @@ class Users extends CI_Controller {
     $this->form_validation->set_rules('telp','telp','required|numeric');
     $this->form_validation->set_rules('email','email','required');
     $this->form_validation->set_rules('username','username','required|min_length[6]');
-    $this->form_validation->set_rules('password','password','required|min_length[6]');
+    if ($this->input->post('password') != "") {
+      $this->form_validation->set_rules('password','password','min_length[6]');
+    }
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/users/update',$data);
     }else{
@@ -129,14 +135,14 @@ class Users extends CI_Controller {
           }
         }
       }else{
-          $this->load->view('admin/users/update',$data);
-          $error = $this->Users_model->update_data($id,null);
-          if ($error['code'] == 0) {
-            echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
-          }else{
+        $this->load->view('admin/users/update',$data);
+        $error = $this->Users_model->update_data($id,null);
+        if ($error['code'] == 0) {
+          echo '<script>swal("Berhasil", "Data berhasil diubah", "success");</script>';
+        }else{
 
-            echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
-          }
+          echo '<script>swal("Gagal", "'.$error['message'].'", "error");</script>';
+        }
       }
     }
   }

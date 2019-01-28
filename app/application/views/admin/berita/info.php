@@ -20,7 +20,7 @@
   <div class="form-group row">
     <label for="input-konten" class="col-sm-2 col-form-label">Konten</label>
     <div class="col-sm-10">
-      <textarea name="konten" readonly class="form-control" id="input-konten" cols="30" rows="10"><?php echo $data->konten ?></textarea>
+      <textarea name="konten" readonly class="form-control" id="input-konten"><?php echo $data->konten ?></textarea>
       <?php echo form_error('konten') ?>
     </div>
   </div>

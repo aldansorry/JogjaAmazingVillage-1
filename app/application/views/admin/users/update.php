@@ -87,6 +87,37 @@
           <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
         <?php endforeach ?>
       </select>
+      <script>
+        $('select[name="fk_level"]').val('<?php echo $data->fk_level ?>');
+        if ($('select[name="fk_level"]').val() == 5) {
+            $('#container-input-penginapan').fadeIn();
+            $('#fk_penginapan').attr('disabled',false);
+          }else{
+            $('#container-input-penginapan').fadeOut();
+            $('#fk_penginapan').attr('disabled',true);
+          }
+
+        $('select[name="fk_level"]').change(function(){
+          if ($(this).val() == 5) {
+            $('#container-input-penginapan').fadeIn();
+            $('#fk_penginapan').attr('disabled',false);
+          }else{
+            $('#container-input-penginapan').fadeOut();
+            $('#fk_penginapan').attr('disabled',true);
+          }
+        });
+    </script>
+   </div>
+ </div>
+ <div class="form-group row" style="display: none" id="container-input-penginapan">
+    <label for="input-fk_desawisata" class="col-sm-2 col-form-label">Penginapan</label>
+    <div class="col-sm-10">
+      <select name="fk_penginapan" class="form-control" id="fk_penginapan">
+        <?php foreach ($penginapan as $value): ?>
+          <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+        <?php endforeach ?>
+      </select>
+      <script>$('select[name="fk_penginapan"]').val('<?php echo $data->fk_penginapan ?>')</script>
    </div>
  </div>
 
@@ -97,7 +128,9 @@
         <?php foreach ($desawisata as $value): ?>
           <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
         <?php endforeach ?>
+        <option value="">Null</option>
       </select>
+      <script>$('select[name="fk_desawisata"]').val('<?php echo $data->fk_desawisata ?>')</script>
    </div>
  </div>
 
@@ -116,7 +149,7 @@
   var formData = new FormData(this);    
 
   $.ajax({
-    url: "<?php echo base_url('Admin/'.$c_name.'/insert') ?>",
+    url: "<?php echo base_url('Admin/'.$c_name.'/update/'.$data->id) ?>",
     type: 'POST',
     data: formData,
     success: function (data) {
