@@ -64,3 +64,29 @@
 </div>
 </div>
 
+
+<script>
+  function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.img-preview').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#input-foto").change(function() {
+
+  var size = this.files[0].size/1024/1024;
+  if (size >= 2) {
+    alert('File larger than 2 MB');
+    $('#input-foto').val(null);
+  }else{
+    readURL(this);
+  }
+});
+</script>
