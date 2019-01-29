@@ -78,7 +78,7 @@
                     let ret = "";
                     switch(data.status){
                         case '1':
-                        ret += '<span class="badge badge-pill badge-primary">Status</span>';
+                        ret += '<span class="badge badge-pill badge-primary">Active</span>';
                         break;
                         case '2':
                         ret += '<span class="badge badge-pill badge-danger">Inactive</span>';
@@ -193,10 +193,14 @@ function delete_form(id) {
             data: null,
             success: function(data)
             {
-                swal("Data berhasil di hapus", {
-                    icon: "success",
-                });
-                reload_table();
+                if (data == "error1451") {
+                        swal("Delete Gagal", "Foreign Key error", "error");
+                    }else{
+                        swal("Data berhasil di hapus", {
+                            icon: "success",
+                        });
+                    }
+                    reload_table();
             }
         });
 

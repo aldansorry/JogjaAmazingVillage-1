@@ -13,7 +13,7 @@ class Configpage_model extends CI_Model {
     return $query->row(0);
   }
 
-  public function update_data($id_desawisata,$banner_img = null)
+  public function update_data($id_desawisata,$banner_img)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;

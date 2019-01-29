@@ -148,7 +148,7 @@
                 data: null,
                 success: function(data)
                 {
-                    if (data = "error1451") {
+                    if (data == "error1451") {
                         swal("Delete Gagal", "Foreign Key error", "error");
                     }else{
                         swal("Data berhasil di hapus", {

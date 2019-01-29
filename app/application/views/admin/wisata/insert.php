@@ -28,7 +28,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Rp</span>
       </div>
-      <input type="number" step="1000" min="0" name="harga" class="form-control" id="input-harga" value="<?php echo set_value('harga') ?>">
+      <input type="number" step="100" min="0" name="harga" class="form-control" id="input-harga" value="<?php echo set_value('harga') ?>">
     </div>
     <?php echo form_error('harga') ?>
   </div>

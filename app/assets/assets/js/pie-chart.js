@@ -58,17 +58,17 @@ if ($('#coin_distribution').length) {
                 "series": [{
                         "values": [jml_lokal],
                         "text": "Lokal",
-                        "background-color": "#4cff63"
+                        "background-color": "#7ccc06"
                     },
                     {
                         "values": [jml_regional],
                         "text": "Regional",
-                        "background-color": "#fd9c21"
+                        "background-color": "#c206cc"
                     },
                     {
                         "values": [jml_internasional],
                         "text": "Internasional",
-                        "background-color": "#2c13f8"
+                        "background-color": "#f2091f"
                     }
                 ]
             }

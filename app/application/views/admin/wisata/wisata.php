@@ -70,6 +70,10 @@
                 class: "text-right",
                 render: $.fn.dataTable.render.number( ',', '.',0 )
             },
+            { 
+                "title" : "Kategori",
+                "data": "nama_kategori" 
+            },
             {
                 "title": "Actions",
                 "width" : "120px",
