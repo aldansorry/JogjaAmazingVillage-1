@@ -11,7 +11,7 @@
                             <p>Total</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2><?php echo $this->db->select('count(id) as jml')->get('pengunjung')->row(0)->jml ?></h2>
+                            <h2><?php echo $pengunjung_total ?></h2>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                             <p>Last Year</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2><?php echo $this->db->select('count(id) as jml')->where('year(tanggal)',date('Y'))->get('pengunjung')->row(0)->jml ?></h2>
+                            <h2><?php echo $pengunjung_tahun ?></h2>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             <p>Last Month</p>
                         </div>
                         <div class="d-flex justify-content-between pb-2">
-                            <h2><?php echo $this->db->select('count(id) as jml')->where('year(tanggal)',date('Y'))->where('month(tanggal)',date('m'))->get('pengunjung')->row(0)->jml ?></h2>
+                            <h2><?php echo $pengunjung_bulan ?></h2>
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                 <div class="card-body">
                     <h4 class="header-title mb-0">Menurut Domisili</h4>
                     <div id="coin_distribution" 
-                    data-lokal="<?php echo $this->db->select('count(id) as jml')->where('domisili','lokal')->get('pengunjung')->row(0)->jml ?>" 
-                    data-regional="<?php echo $this->db->select('count(id) as jml')->where('domisili','regional')->get('pengunjung')->row(0)->jml ?>" 
-                    data-internasional="<?php echo $this->db->select('count(id) as jml')->where('domisili','internasional')->get('pengunjung')->row(0)->jml ?>"></div>
+                    data-lokal="<?php echo $domisili['lokal'] ?>" 
+                    data-regional="<?php echo $domisili['regional'] ?>" 
+                    data-internasional="<?php echo $domisili['internasional'] ?>"></div>
                 </div>
             </div>
         </div>
@@ -79,9 +79,9 @@
                 <div class="card-body">
                     <h4 class="header-title mb-0">Menurut Umur</h4>
                     <div id="donut-usia" 
-                    data-anak="<?php echo $this->db->select('count(id) as jml')->where('umur','anak')->get('pengunjung')->row(0)->jml ?>" 
-                    data-remaja="<?php echo $this->db->select('count(id) as jml')->where('umur','remaja')->get('pengunjung')->row(0)->jml ?>" 
-                    data-dewasa="<?php echo $this->db->select('count(id) as jml')->where('umur','dewasa')->get('pengunjung')->row(0)->jml ?>"></div>
+                    data-anak="<?php echo $umur['anak'] ?>" 
+                    data-remaja="<?php echo $umur['remaja'] ?>" 
+                    data-dewasa="<?php echo $umur['dewasa'] ?>"></div>
                 </div>
             </div>
         </div>
@@ -90,8 +90,8 @@
                 <div class="card-body">
                     <h4 class="header-title mb-0">Menurut Jenis Kelamin</h4>
                     <div id="donut-jeniskelamin" 
-                    data-l="<?php echo $this->db->select('count(id) as jml')->where('jeniskelamin','L')->get('pengunjung')->row(0)->jml ?>" 
-                    data-p="<?php echo $this->db->select('count(id) as jml')->where('jeniskelamin','P')->get('pengunjung')->row(0)->jml ?>" 
+                    data-l="<?php echo $jeniskelamin['l'] ?>" 
+                    data-p="<?php echo $jeniskelamin['p'] ?>" 
                     ></div>
                 </div>
             </div>
@@ -138,20 +138,15 @@
                                             <td>in days</td>
                                             <td>in month</td>
                                             <td>in year</td>
+                                            <?php if (onlyLevel('1') || onlyLevel('2') || onlyLevel('3')): ?>
+                                            <td>Aksi</td>
+                                            <?php endif ?>
                                         </tr>
 
                                         <?php 
-                                        $this->db->select('
-                                            desawisata.*,
-                                            (select count(id) from pengunjung where fk_desawisata=desawisata.id AND DATE(tanggal) = CURDATE()) as in_day,
-                                            (select count(id) from pengunjung where fk_desawisata=desawisata.id AND MONTH(tanggal) = MONTH(CURDATE())) as in_month,
-                                            (select count(id) from pengunjung where fk_desawisata=desawisata.id AND year(tanggal) = year(CURDATE())) as in_year,
-                                            (select count(id) from pengunjung where fk_desawisata=desawisata.id) as total
-                                            ');
-                                        $query = $this->db->get('desawisata');
-                                        $data_desawisata = $query->result();
+                                        
                                         ?>
-                                        <?php foreach ($data_desawisata as $value): ?>
+                                        <?php foreach ($desawisata_tabel as $value): ?>
 
                                             <tr>
                                                 <td><?php echo $value->nama ?></td>
@@ -161,6 +156,10 @@
                                                 <td><?php echo $value->in_day ?></td>
                                                 <td><?php echo $value->in_month ?></td>
                                                 <td><?php echo $value->in_year ?></td>
+
+                                            <?php if (onlyLevel('1') || onlyLevel('2') || onlyLevel('3')): ?>
+                                                <td><a href="<?php echo base_url('Admin/Dashboard/index/'.$value->id) ?>" class="btn btn-sm btn-success">Detail</a></td>
+                                                <?php endif ?>
                                             </tr>
                                         <?php endforeach ?>
                                     </table>

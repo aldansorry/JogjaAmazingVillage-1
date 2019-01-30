@@ -10,12 +10,26 @@ class Dashboard extends CI_Controller {
 			p_error('403',"Access Tidak Tersedia");
 		}
 	}
-	public function index()
+	public function index($id_desawisata = null)
 	{
-		$data = [
-			'c_name' => "Dashboard",
-			'isDashboard' => true,
-		];
+		$this->load->model('Dashboard_model');
+		$data = null;
+		if ($id_desawisata == null) {
+			if (onlyLevel('1') || onlyLevel('2') || onlyLevel('3')) {
+				$data = $this->Dashboard_model->pusat_data();
+			}else{
+				$id_desawisata = $this->session->userdata('logged_in')['desawisata']['id'];
+				$data = $this->Dashboard_model->desawisata_data($id_desawisata);
+			}
+		}else{
+			if (onlyLevel('1') || onlyLevel('2') || onlyLevel('3')) {
+				$data = $this->Dashboard_model->desawisata_data($id_desawisata);
+			}else{				
+				p_error('403',"Access Tidak Tersedia");
+			}
+		}
+		$data['c_name'] = "Dashboard";
+		$data['isDashboard'] = true;
 		$this->load->view('admin/header');
 		$this->load->view('admin/dashboard',$data);
 		$this->load->view('admin/footer',$data);
