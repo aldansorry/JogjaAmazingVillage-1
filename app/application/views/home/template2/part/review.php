@@ -37,6 +37,12 @@
 						</div>
 						<?php endforeach ?>
 													
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>" class="btn btn-primary">Berikan Tanggapanmu</a>
+							</div>
 						</div>							
 					</div>	
+
 			</section>

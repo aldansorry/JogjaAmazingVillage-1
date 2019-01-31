@@ -1,69 +1,85 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="<?php echo base_url('assets_home/') ?>img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="codepixer">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Jogja Amazing Village</title>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/linearicons.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/font-awesome.min.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/bootstrap.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/magnific-popup.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/nice-select.css">					
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/animate.min.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/owl.carousel.css">
-			<link rel="stylesheet" href="<?php echo base_url('assets_home/') ?>css/main.css">
-		</head>
-		<body>
-			<div class="protfolio-wrap">
+<head>
+    <!--====== USEFULL META ======-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creative Portfolio & Agency Template is a simple Smooth Personal Portfolio and Agency Based Template" />
+    <meta name="keywords" content="Personal, Portfolio, Agency, Onepage, Html, Business" />
 
-			<!-- Start Header Area -->
-			<header class="default-header">
-				<nav class="navbar navbar-expand-lg  navbar-light">
-					<div class="container">
-						  <a class="navbar-brand" href="index.html">
-						  	<img src="<?php echo base_url('assets_home/') ?>img/logo.png" alt="">
-						  </a>
-						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						    <span class="text-white lnr lnr-menu"></span>
-						  </button>
+    <!--====== TITLE TAG ======-->
+    <title><?php echo $desawisata->nama ?></title>
 
-						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-						    <ul class="navbar-nav">
-								<li><a href="<?php echo base_url('Home/homee/'.$this->uri->segment(3)) ?>">Home</a></li>
-								<li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
-								<li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
-								<li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
-								<li><a href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
-								<li><a href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
-								<li><a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Kontak</a></li>
-							   <!-- Dropdown -->
-							    <li class="dropdown">
-							      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-							        Pages
-							      </a>
-							      <div class="dropdown-menu">
-							        <a class="dropdown-item" href="generic.html">Generic</a>
-							        <a class="dropdown-item" href="elements.html">Elements</a>
-							      </div>
-							    </li>	
-						    </ul>
-						  </div>						
-					</div>
-				</nav>
-			</header>
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="<?php echo base_url('assets_template/template1/') ?>img/favicon.png" />
+
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/template1/') ?>css/normalize.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/template1/') ?>css/animate.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/template1/') ?>css/stellarnav.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/template1/') ?>css/progressbar.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets_template/template1/') ?>css/owl.carousel.css">
+    <link href="<?php echo base_url('assets_template/template1/') ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets_template/template1/') ?>css/font-awesome.min.css" rel="stylesheet">
+
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="<?php echo base_url('assets_template/template1/') ?>style.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets_template/template1/') ?>css/responsive.css" rel="stylesheet">
+
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area" data-offset="90">
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="#home" class="navbar-brand"><img src="<?php echo base_url('uploads/logo/'.$config_page->logo_img) ?>" alt="logo" style="max-height: 50px"></a>
+                        </div>
+                        <div id="main-nav" class="stellarnav">
+                            <ul id="nav" class="nav navbar-nav">
+                                <li class="active"><a href="<?php echo base_url('Home/homee/'.$this->uri->segment(3)) ?>">home</a></li>
+                                <li><a href="<?php echo base_url('Home/about/'.$this->uri->segment(3)) ?>">About</a></li>
+                                <li><a href="<?php echo base_url('Home/agenda/'.$this->uri->segment(3)) ?>">Agenda</a></li>
+                                <li><a href="<?php echo base_url('Home/wisata/'.$this->uri->segment(3)) ?>">Wisata</a></li>
+                                <li><a href="<?php echo base_url('Home/galeri/'.$this->uri->segment(3)) ?>">Galeri</a></li>
+                                <li><a href="<?php echo base_url('Home/berita/'.$this->uri->segment(3)) ?>">Berita</a></li>
+                                <li><a href="<?php echo base_url('Home/kontak/'.$this->uri->segment(3)) ?>">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--END MAINMENU AREA END-->
+        </div>
+    </header>
+    <!--END TOP AREA-->

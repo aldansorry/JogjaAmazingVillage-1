@@ -1,4 +1,4 @@
-<section class="portfolio_details_area p_120" style="margin-top: 100px">
+<section class="portfolio_details_area p_120">
         	<div class="container">
         		<div class="portfolio_details_inner">
 					<div class="row">

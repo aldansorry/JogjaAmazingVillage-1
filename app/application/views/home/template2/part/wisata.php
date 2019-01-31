@@ -18,7 +18,7 @@
 								</ul>
 								<a href="#"><h4><?php echo $value->nama ?></h4></a>
 								<p>
-									<?php echo $value->keterangan ?>
+									<?php echo substr($value->keterangan, 0,50) ?>
 								</p>
 								<h6 class="date"><?php echo $value->jamkunjung ?></h6>
 							</div>
@@ -31,7 +31,7 @@
 								</ul>
 								<a href="<?php echo base_url('Home/penginapandetail/'.$this->uri->segment(3)."/".$value->id) ?>"><h4><?php echo $value->nama ?></h4></a>
 								<p>
-									<?php echo $value->keterangan ?>
+									<?php echo substr($value->keterangan, 0,50) ?>
 								</p>
 								<h6 class="date"><?php echo $value->alamat ?></h6>
 							</div>
@@ -45,7 +45,7 @@
 								</ul>
 								<a href="<?php echo base_url('Home/tokodetail/'.$this->uri->segment(3)."/".$value->id) ?>"><h4><?php echo $value->nama ?></h4></a>
 								<p>
-									<?php echo $value->keterangan ?>
+									<?php echo substr($value->keterangan, 0,50) ?>
 								</p>
 								<h6 class="date"><?php echo $value->alamat ?></h6>
 							</div>

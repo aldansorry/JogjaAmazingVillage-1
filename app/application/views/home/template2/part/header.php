@@ -42,10 +42,10 @@
 				  		</div>
 				  		<div class="col-6 top-head-right">
 				  			<ul>
-		  						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
+		  						<li><a href="<?php echo $config_page->sosial_facebook ?>"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="<?php echo $config_page->sosial_instagram ?>"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="<?php echo $config_page->sosial_twitter ?>"><i class="fa fa-twitter"></i></a></li>
+								
 				  			</ul>
 				  		</div>			  			
 			  		</div>
@@ -54,7 +54,7 @@
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="<?php echo base_url('assets_template/template2/') ?>img/logo.png" alt="" title="" /></a>
+				        <a href=""><img src="<?php echo base_url('uploads/logo/'.$config_page->logo_img) ?>" alt="" title="" style="max-height: 50px"/></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">

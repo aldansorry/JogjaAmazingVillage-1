@@ -30,9 +30,9 @@
                 <div class="col-sm-10">
                     <select name="template" class="form-control" id="input-template">
                         <option value="" default>Pilih Template</option>
-                        <option value="template2">Template 1</option>
-                        <option value="template3">Template 2</option>
-                        <option value="template4">Template 3</option>
+                        <option value="template1">Template 1</option>
+                        <option value="template2">Template 2</option>
+                        <option value="template3">Template 3</option>
                     </select>
                     <?php echo form_error('template') ?>
                     <script>$('#input-template').val('<?php echo $data->template ?>')</script>

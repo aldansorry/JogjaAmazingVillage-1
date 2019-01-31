@@ -1,24 +1,26 @@
-<!--SERVICE TOP AREA-->
-    <section class="service-top-area padding-100-50" id="features">
-        <div class="container">
-            <div class="row">
-                <div class="text-center mb-4">
-                <h1>Agenda</h1>
-                </div>
-				<?php foreach ($agenda as $key => $value): ?>
-					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single-service">
-                      
-                            <img src="<?php echo base_url('uploads/agenda/'.$value->foto) ?>" alt="" style="width: 100%;height: 100%;max-height:200px;min-height: 200px;">
-                        
-                        <h3><?php echo $value->judul ?></h3>
-                        <p><?php echo $value->keterangan ?></p>
-                        <p><?php echo $value->tanggal ?></p>
-                        <a href="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>" class="read-more">Learn More</a>
-                    </div>
-                </div>
-				<?php endforeach ?>
-            </div>
-        </div>
-    </section>
-    <!--SERVICE TOP AREA END-->
+<section class="service-area pt-100" id="about">
+	<div class="container">
+		<h2 class="text-center my-3">Agenda</h2>
+
+		<div class="feature_inner row">
+        			
+					<?php foreach ($agenda as $key => $value): ?>
+						<div class="col-lg-4">
+        				<div class="feature_item">
+        					<img src="<?php echo base_url('uploads/agenda/'.$value->foto) ?>" alt="" style="width: 100%;height: 100%;max-height:200px;min-height: 200px;">
+        					<h4><?php echo $value->judul ?></h4>
+        					<p>
+							  	<?php echo $value->tanggal ?>
+							 </p>	
+        					<p><?php echo substr($value->keterangan, 0,30)."..."; ?></p>
+        					<a class="main_btn" href="<?php echo base_url('Home/agendadetail/'.$this->uri->segment(3)."/".$value->id) ?>">View Details</a>
+        				</div>
+        			</div>
+				<?php if (($key+1)%3 == 0): ?>
+					</div>
+					<div class="row mt-3">					
+				<?php endif ?>						
+			<?php endforeach ?>								
+		</div>
+	</div>	
+</section>

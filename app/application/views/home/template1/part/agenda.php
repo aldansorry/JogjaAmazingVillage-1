@@ -1,30 +1,24 @@
-<section class="service-area section-gap relative mt-5" id="news">
-	<div class="overlay overlay-bg"></div>	
-	<div class="container">
-		<div class="row d-flex justify-content-center">
-			<div class="menu-content pb-60 col-lg-10">
-				<div class="title text-center">
-					<h1 class="mb-10 text-white">Agenda</h1>
-					<p>Dinas Pariwisata Provinsi DIY.</p>
-				</div>
-			</div>
-		</div>	
-	</div>	
-</section>
-
-<div class="container">
-	<div class="section-top-border">
-		<?php foreach ($agenda as $key => $value): ?>
-			<h3 class="mb-30"><?php echo $value->judul ?></h3>
-			<div class="row">
-				<div class="col-md-3">
-					<img src="<?php echo base_url("uploads/agenda/".$value->foto) ?>" alt="" class="img-fluid">
-				</div>
-				<div class="col-md-9 mt-sm-20">
-					<p><?php echo $value->keterangan ?></p>
-					<a class="button" href="#">View Details</a>
-				</div>
-			</div>
-		</div>
-	<?php endforeach ?>
-</div>
+<!--SERVICE TOP AREA-->
+    <section class="service-top-area padding-100-50" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="text-center mb-4">
+                <h1>Agenda</h1>
+                </div>
+				<?php foreach ($agenda as $key => $value): ?>
+					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-service">
+                      
+                            <img src="<?php echo base_url('uploads/agenda/'.$value->foto) ?>" alt="" style="width: 100%;height: 100%;max-height:200px;min-height: 200px;">
+                        
+                        <h3><?php echo $value->judul ?></h3>
+                        <p><?php echo $value->keterangan ?></p>
+                        <p><?php echo $value->tanggal ?></p>
+                        <a href="#" class="read-more">Learn More</a>
+                    </div>
+                </div>
+				<?php endforeach ?>
+            </div>
+        </div>
+    </section>
+    <!--SERVICE TOP AREA END-->

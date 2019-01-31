@@ -1,66 +1,61 @@
-<footer class="footer-area section-gap mt-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-5 col-md-6 col-sm-6">
-				<div class="single-footer-widget">
-					<h6>About Us</h6>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
-					</p>
-					<p class="footer-text">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>	
-				</div>
-			</div>
-			<div class="col-lg-5  col-md-6 col-sm-6">
-				<div class="single-footer-widget">
-					<h6>Newsletter</h6>
-					<p>Stay update with our latest</p>
-					<div class="" id="mc_embed_signup">
-						<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-							<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-							<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-							<div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
+<!--FOOER AREA-->
+    <div class="footer-area white">
+        <div class="footer-top-area padding-100-50 dark-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="footer-social-bookmark text-center wow fadeIn">
+                            <h2>Sosial Media</h2>
+                            <ul class="social-bookmark">
+                                <li><a class="facebook" href="<?php echo $config_page->sosial_facebook ?>"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="<?php echo $config_page->sosial_twitter ?>"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="instagram" href="<?php echo $config_page->sosial_instagram ?>"><i class="fa fa-instagram"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area deep-dark-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="footer-copyright text-center wow fadeIn">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOER AREA END-->
 
-							<div class="info"></div>
-						</form>
-					</div>
-				</div>
-			</div>						
-			<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-				<div class="single-footer-widget">
-					<h6>Follow Us</h6>
-					<p>Let us be social</p>
-					<div class="footer-social d-flex align-items-center">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
-					</div>
-				</div>
-			</div>							
-		</div>
-	</div>
-</footer>	
-<!-- End footer Area -->					
-</div>
-<script src="<?php echo base_url('assets_home/') ?>js/vendor/jquery-2.2.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="<?php echo base_url('assets_home/') ?>js/vendor/bootstrap.min.js"></script>			
-<script src="<?php echo base_url('assets_home/') ?>js/easing.min.js"></script>			
-<script src="<?php echo base_url('assets_home/') ?>js/jquery.ajaxchimp.min.js"></script>
-<script src="<?php echo base_url('assets_home/') ?>js/jquery.magnific-popup.min.js"></script>	
-<script src="<?php echo base_url('assets_home/') ?>js/owl.carousel.min.js"></script>			
-<script src="<?php echo base_url('assets_home/') ?>js/jquery.sticky.js"></script>			
-<script src="<?php echo base_url('assets_home/') ?>js/jquery.nice-select.min.js"></script>			
-<script src="<?php echo base_url('assets_home/') ?>js/parallax.min.js"></script>	
-<script src="<?php echo base_url('assets_home/') ?>js/mail-script.js"></script>
-<script src="<?php echo base_url('assets_home/') ?>js/isotope.pkgd.min.js"></script>	
-<script src="<?php echo base_url('assets_home/') ?>js/main.js"></script>	
+
+    <!--====== SCRIPTS JS ======-->
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/bootstrap.min.js"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/jquery.easing.1.3.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/vendor/jquery.appear.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/owl.carousel.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/stellar.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/imagesloaded.pkgd.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/isotope.pkgd.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/wow.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/stellarnav.min.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/contact-form.js"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/jquery.sticky.js"></script>
+
+    <!--===== ACTIVE JS=====-->
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/main.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTS_KEDfHXYBslFTI_qPJIybDP3eceE-A&sensor=false"></script>
+    <script src="<?php echo base_url('assets_template/template1/') ?>js/maps.active.js"></script>
 </body>
-</html>
 
+</html>

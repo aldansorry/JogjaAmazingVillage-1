@@ -1,61 +1,13 @@
-    <!--WELCOME SLIDER AREA-->
-    <div class="welcome-slider-area white">
-        <div class="welcome-single-slide">
-            <div class="slide-bg-one slide-bg-overlay"></div>
-            <div class="welcome-area">
-                <div class="container">
-                    <div class="row flex-v-center">
-                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
-                            <div class="welcome-text">
-                                <h4>Jogja Amazing Village</h4>
-                                <h1>Business Theme Creator</h1>
-                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
-                                <div class="home-button">
-                                    <a href="#">see our project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--================Home Banner Area =================-->
+        <section class="home_banner_area relative" id="home" style="background: url(<?php echo base_url('uploads/banner/'.$config_page->banner_img); ?>) !important;background-size:cover !important;">
+            <div class="banner_inner" style="background-color: black;opacity: 0.5">
+				<div class="container">
+					<div class="banner_content">
+						<h2>Jogja Amazing Village <br /><?php echo $desawisata->nama ?></h2>
+						<p><?php echo $config_page->short_about ?></p>
+						<a class="banner_btn" href="#">Get Started</a>
+					</div>
+				</div>
             </div>
-        </div>
-        <div class="welcome-single-slide">
-            <div class="slide-bg-two slide-bg-overlay"></div>
-            <div class="welcome-area">
-                <div class="container">
-                    <div class="row flex-v-center">
-                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
-                            <div class="welcome-text">
-                                <h4>We are</h4>
-                                <h1>Business Theme Creator</h1>
-                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
-                                <div class="home-button">
-                                    <a href="#">see our project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="welcome-single-slide">
-            <div class="slide-bg-three slide-bg-overlay"></div>
-            <div class="welcome-area">
-                <div class="container">
-                    <div class="row flex-v-center">
-                        <div class="col-md-7 col-lg-6 col-sm-12 col-xs-12">
-                            <div class="welcome-text">
-                                <h4>We are</h4>
-                                <h1>Business Theme Creator</h1>
-                                <p>At vero eos et accusamus iusto odio dignissimos ducmus qui blanditiis praesentium voluptatum deleniti</p>
-                                <div class="home-button">
-                                    <a href="#">see our project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--WELCOME SLIDER AREA END-->
+        </section>
+        <!--================End Home Banner Area =================-->

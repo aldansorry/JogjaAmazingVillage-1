@@ -7,7 +7,7 @@
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-									<?php echo $desawisata->deskripsi ?>
+									<?php echo $config_page->short_about ?>
 								</p>
 								<p class="footer-text">
 									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -38,10 +38,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<h6>Follow Us</h6>
 								<p>Let us be social</p>
 								<div class="footer-social d-flex align-items-center">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-dribbble"></i></a>
-									<a href="#"><i class="fa fa-behance"></i></a>
+									<li><a href="<?php echo $config_page->sosial_facebook ?>"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="<?php echo $config_page->sosial_instagram ?>"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="<?php echo $config_page->sosial_twitter ?>"><i class="fa fa-twitter"></i></a></li>
+								
 								</div>
 							</div>
 						</div>							

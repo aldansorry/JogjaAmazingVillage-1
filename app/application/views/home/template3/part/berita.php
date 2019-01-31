@@ -1,137 +1,27 @@
-<!--BLOG AND FEED AREA-->
-    <section class="blog-and-feed-area section-padding white-gray-bg" id="news">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
-                    <div class="area-title text-center wow fadeIn">
-                        <h2>Berita</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12 hidden-sm">
-                    <div class="feed-widget twitter-feed mb50 wow fadeIn">
-                        <h4>Twitter Feed</h4>
-                        <ul>
-                            <li>
-                                <div class="twitter-icon"><i class="fa fa-twitter"></i></div>
-                                <a href="#">@_sumonrahman</a>: Lorem ipsum dolors sit amets sums consectetur adipicing elit sed do eiusmod eset tempor incididunt ut labore.
-                            </li>
-                            <li>
-                                <div class="twitter-icon"><i class="fa fa-twitter"></i></div>
-                                <a href="#">@_sumonrahman</a>: Lorem ipsum dolors sit amets sums consectetur adipicing elit sed do eiusmod eset tempor incididunt ut labore.
-                            </li>
-                            <li>
-                                <div class="twitter-icon"><i class="fa fa-twitter"></i></div>
-                                <a href="#">@_sumonrahman</a>: Lorem ipsum dolors sit amets sums consectetur adipicing elit sed do eiusmod eset tempor incididunt ut labore.
-                            </li>
-                            <li>
-                                <div class="twitter-icon"><i class="fa fa-twitter"></i></div>
-                                <a href="#">@_sumonrahman</a>: Lorem ipsum dolors sit amets sums consectetur adipicing elit sed do eiusmod eset tempor incididunt ut labore.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-                    <div class="feed-widget blog-feed mb50 wow fadeIn">
-                        <h4>Berita Hangat</h4>
-                        <div class="blog-list">
-                            <div class="single-blog">
-                                <div class="blog-thumb">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog-details">
-                                    <h4><a href="#">Trending Topik</a></h4>
-                                    <p>Berita ini berisikan topik - topik hangat yang menyajian informasi terkini</p>
-                                </div>
-                            </div>
-							<?php foreach ($berita as $key => $value): ?>
-								<div class="single-blog">
-                                <div class="blog-thumb">
-                                    <img src="<?php echo base_url('uploads/berita/'.$value->foto) ?>" alt="">
-                                </div>
-                                <div class="blog-details">
-                                    <h4><?php echo $value->judul ?></h4>
-                                    <p><?php echo $value->konten ?><a href="#">Read More</a></p>
-                                    <p class="blog-meta">Posted by <a href="#"><?php echo $value->author ?></a> at <a href="#"><?php echo $value->tanggal ?></a></p>
-                                </div>
-                            </div>
-							<?php endforeach ?>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden-md col-lg-4 col-sm-6 col-xs-12">
-                    <div class="feed-widget insta-feed wow fadeIn">
-                        <h4>Instagram Feed</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_1.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_2.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_3.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_4.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_5.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_6.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_7.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_8.jpg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="img/instagram/insta_9.jpg" alt=""></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="client-slider mt50 wow fadeIn">
-                        <div class="single-client">
-                            <img src="img/client/client-1.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-2.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-3.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-4.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-5.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-1.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-2.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-3.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-4.png" alt="">
-                        </div>
-                        <div class="single-client">
-                            <img src="img/client/client-5.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--BLOG AND FEED AREA END-->
+<!--================Our Blog Area =================-->
+<section class="our_blog_area p_120">
+       <div class="container">
+              <div class="main_title">
+                     <h2>Berita</h2>
+             </div>
+             <div class="blog_inner row">
+
+                   <?php foreach ($berita as $key => $value): ?>
+                          <div class="col-lg-4">
+                            <div class="o_blog_item">
+                                   <div class="blog_img">
+                                          <img class="img-fluid" src="<?php echo base_url('uploads/berita/'.$value->foto) ?>" alt="">
+                                  </div>
+                                  <div class="blog_text">
+                                          <p><a href="<?php echo base_url('Home/beritadetail/'.$this->uri->segment(3)."/".$value->id) ?>"><h4><?php echo $value->judul ?></h4></a></p>
+                                          <p><?php echo substr($value->konten, 0,30)."..."; ?></p>
+                                          <a class="date" href="#"><?php echo $value->tanggal ?></a>
+                                          <h5>Author :<p><?php echo $value->author ?></p></span></h5>
+                                  </div>
+                          </div>
+                  </div>
+          <?php endforeach ?>
+  </div>
+</div>
+</section>
+<!--================End Our Blog Area =================-->

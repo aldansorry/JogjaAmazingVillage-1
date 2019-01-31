@@ -4,12 +4,13 @@
 <?php $this->load->view('home/template3/part/bannerpage') ?>
 <!-- End banner Area -->	
 
-<!-- Start service Area -->
+
+<!-- Start quote Area -->
 <?php $this->load->view('home/template3/part/deskripsi') ?>
-<!-- End service Area -->
+<!-- End quote Area -->
 
 <!-- Start exibition Area -->
-<?php $this->load->view('home/template3/part/berita'); ?>
+<?php $this->load->view('home/template3/part/wisata'); ?>
 <!-- End exibition Area -->			
 
 <?php $this->load->view('home/template3/part/footer') ?>

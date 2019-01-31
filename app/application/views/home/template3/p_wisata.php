@@ -6,10 +6,6 @@
 
 <!-- Start quote Area -->
 <?php $this->load->view('home/template3/part/wisata_list') ?>
-<!-- End quote Area -->
-
-<!-- Start exibition Area -->
-<?php $this->load->view('home/template3/part/berita'); ?>
-<!-- End exibition Area -->			
+<!-- End quote Area -->		
 
 <?php $this->load->view('home/template3/part/footer') ?>
