@@ -13,17 +13,25 @@ class Configpage_model extends CI_Model {
     return $query->row(0);
   }
 
-  public function update_data($id_desawisata,$banner_img)
+  public function update_data($id_desawisata,$logo_img,$banner_img)
   {
     $db_debug = $this->db->db_debug;
     $this->db->db_debug = FALSE;
     $set = [
       'subdomain' => $this->input->post('subdomain'),
+      'short_about' => $this->input->post('short_about'),
       'template' => $this->input->post('template'),
       'telp' => $this->input->post('telp'),
+      'telp_wa' => $this->input->post('telp_wa'),
       'email' => $this->input->post('email'),
+      'sosial_facebook' => $this->input->post('sosial_facebook'),
+      'sosial_instagram' => $this->input->post('sosial_instagram'),
+      'sosial_twitter' => $this->input->post('sosial_twitter'),
     ];
 
+    if ($logo_img != null) {
+      $set['logo_img'] = $logo_img;
+    }
     if ($banner_img != null) {
       $set['banner_img'] = $banner_img;
     }

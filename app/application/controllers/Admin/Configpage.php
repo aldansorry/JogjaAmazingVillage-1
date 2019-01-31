@@ -33,37 +33,53 @@ class Configpage extends CI_Controller {
 			$this->load->view('admin/config/page',$data);
 			$this->load->view('admin/footer');
 		}else{
-			if ($_FILES['banner_img']['name'] != "") {
-				$config['upload_path'] = './uploads/banner/';
-				$config['allowed_types'] = 'gif|jpg|png';
-				$config['max_size']  = '2000';
-				$config['max_width']  = '10240';
-				$config['max_height']  = '7680';
+			$error_1 = "";
+			$error_2 = "";
+			$file_name_1 = null;
+			$file_name_2 = null;
+			if ($_FILES['logo_img']['name'] != "") {
+				$config1['upload_path'] = './uploads/logo/';
+				$config1['allowed_types'] = 'gif|jpg|png';
+				$config1['max_size']  = '2000';
+				$config1['max_width']  = '10240';
+				$config1['max_height']  = '7680';
 
-				$this->load->library('upload', $config);
+				$this->load->library('upload', $config1);
 
-				if ( ! $this->upload->do_upload('banner_img')){
-					$error = array('error' => $this->upload->display_errors());
-					$data['error'] = $error['error'];
-					$this->load->view('admin/header');
-					$this->load->view('admin/config/page',$data);
-					$this->load->view('admin/footer');
+				if ( ! $this->upload->do_upload('logo_img')){
+					$error_1 = $this->upload->display_errors();
 				}
 				else{
-					$error = $this->Configpage_model->update_data($id_desawisata,$this->upload->data('file_name'));
-					$data['data'] = $this->Configpage_model->get_data($id_desawisata);
-					$this->load->view('admin/header');
-					$this->load->view('admin/config/page',$data);
-					$this->load->view('admin/footer');
+					$file_name_1 = $this->upload->data('file_name');
 				}
-			}else{
-				$error = $this->Configpage_model->update_data($id_desawisata,null);
-				$data['data'] = $this->Configpage_model->get_data($id_desawisata);
-				$this->load->view('admin/header');
-				$this->load->view('admin/config/page',$data);
-				$this->load->view('admin/footer');
-				
 			}
+			if ($_FILES['banner_img']['name'] != "") {
+				$config2['upload_path'] = './uploads/banner/';
+				$config2['allowed_types'] = 'gif|jpg|png';
+				$config2['max_size']  = '2000';
+				$config2['max_width']  = '10240';
+				$config2['max_height']  = '7680';
+
+				$this->upload->initialize($config2,TRUE);
+
+				if ( ! $this->upload->do_upload('banner_img')){
+					$error_2 = $this->upload->display_errors();
+				}
+				else{
+					$file_name_2 = $this->upload->data('file_name');
+				}
+			}
+
+			$error = $this->Configpage_model->update_data($id_desawisata,$file_name_1,$file_name_2);
+			$data['data'] = $this->Configpage_model->get_data($id_desawisata);
+			$data['error1'] = $error_1;
+			$data['error2'] = $error_2;
+			
+			$this->load->view('admin/header');
+			$this->load->view('admin/config/page',$data);
+			$this->load->view('admin/footer');
+
+			
 			
 		}
 	}
