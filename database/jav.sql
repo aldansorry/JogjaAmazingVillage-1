@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2019 at 09:00 AM
+-- Generation Time: Jan 31, 2019 at 11:02 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -72,7 +72,8 @@ INSERT INTO `berita` (`id`, `judul`, `konten`, `author`, `tanggal`, `foto`, `fk_
 (1, 'Peresmian Desa Wisata Tembi', 'Desawisata Tembi Telah diresmikan Oleh Gubernur DIY', 'Bagus Pogar', '2019-01-17', 'logocoding.png', 1),
 (2, 'Desa wisata sambi dikunjungi gub', 'desa wisata sambi dikunjungi gubernur diy. gubernur Diy  ingin  tahu proses jalannya desa wisata tersebut', '', '2019-01-17', 'Rambu_stop.jpg', 2),
 (3, 'Peresmian Desa Wisata Tanjung', 'peresmian desawisata tanjung', 'Bagus Pogar', '2019-03-05', 'Rambu_stop1.jpg', 3),
-(5, 'Banyak Wahana baru di desa tanju', 'Desa wisata Tanjung berlokasi kurang lebih 5 KM dari Monumen Jogja Kembali (Monjali) atau tepatnya berada di Desa Dono Harjo, Kecamatan Ngaglik, Kabupaten Sleman. Desa wisata Tanjung diresmikan pada tahun 2001, dan sejak saat itu banyak wisatawan lokal maupun mancanegara yang datang ke desa ini terutama pada musim libur sekolah.\r\n\r\nSelain memiliki potensi wisata alam pedesaan, Desa Tanjung juga menawarkan wisata kesenian tradisional, budaya, dan kerajinan atau home industri. Satu lagi yang merupakan ciri khas Desa Tunjung adalah adanya rumah Joglo bersejarah yang diberi nama Joglo Tanjung. Konon rumah Joglo yang kini berumur lebih dari 200 tahun ini dulunya milik lurah desa setempat.\r\n\r\nJoglo Tanjung mengalami 2 kali renovasi. Meski lantai tanah rumah Joglo kini telah direnovasi menjadi lantai keramik, namun secara keseluruhan bagian dan ornament-ornament kuno yang ada masih terjaga dengan baik. Beberapa bagian rumah Joglo antara lain pendopo, pringgitan, ndalem longkangan, pawon, dan garasi kereta dan kandang kuda yang saat ini berubah menjadi tempat penyimpanan gamelan.\r\n\r\nDesa Tanjung memiliki areal persawahan yang cukup luas yang juga menjadi potensi wisata desa ini. Pengunjung dapat belajar dan turun langsung ke sawah untuk belajar bagaimana mengolah tanah, menanam, memanen, sampai hasil panen tersebut tersaji di meja makan.\r\n\r\nPotensi kesenian di Desa Tanjung diantaranya Jathilan, Sholawatan, Karawitan, Tari Angguk Putri, dan Tari Klasik. Untuk potensi kerajinan atau home industry yang bisa diikuti oleh pengunjung antara lain pembuatan mainan anak, proses memasak makanan tradisional, dan pembuatan batik. Sedangkan untuk upacara adat yang biasa diselenggerakan di desa antara lain Mantenan, Sunatan, Kenduri, dan Wiwid.\r\n\r\nAkses menuju Desa Tanjung sangat mudah. Pengunjung bisa ambil rute Monjali ke utara. Sampai di KM 11, ambil kiri atau ke arah Jalan Magelang, sekitar 950 meter akan menemukan Desa Tanjung.', 'Aldhan Biuzar', '2019-01-30', 'bola.jpg', 3);
+(5, 'Banyak Wahana baru di desa tanju', 'Desa wisata Tanjung berlokasi kurang lebih 5 KM dari Monumen Jogja Kembali (Monjali) atau tepatnya berada di Desa Dono Harjo, Kecamatan Ngaglik, Kabupaten Sleman. Desa wisata Tanjung diresmikan pada tahun 2001, dan sejak saat itu banyak wisatawan lokal maupun mancanegara yang datang ke desa ini terutama pada musim libur sekolah.\r\n\r\nSelain memiliki potensi wisata alam pedesaan, Desa Tanjung juga menawarkan wisata kesenian tradisional, budaya, dan kerajinan atau home industri. Satu lagi yang merupakan ciri khas Desa Tunjung adalah adanya rumah Joglo bersejarah yang diberi nama Joglo Tanjung. Konon rumah Joglo yang kini berumur lebih dari 200 tahun ini dulunya milik lurah desa setempat.\r\n\r\nJoglo Tanjung mengalami 2 kali renovasi. Meski lantai tanah rumah Joglo kini telah direnovasi menjadi lantai keramik, namun secara keseluruhan bagian dan ornament-ornament kuno yang ada masih terjaga dengan baik. Beberapa bagian rumah Joglo antara lain pendopo, pringgitan, ndalem longkangan, pawon, dan garasi kereta dan kandang kuda yang saat ini berubah menjadi tempat penyimpanan gamelan.\r\n\r\nDesa Tanjung memiliki areal persawahan yang cukup luas yang juga menjadi potensi wisata desa ini. Pengunjung dapat belajar dan turun langsung ke sawah untuk belajar bagaimana mengolah tanah, menanam, memanen, sampai hasil panen tersebut tersaji di meja makan.\r\n\r\nPotensi kesenian di Desa Tanjung diantaranya Jathilan, Sholawatan, Karawitan, Tari Angguk Putri, dan Tari Klasik. Untuk potensi kerajinan atau home industry yang bisa diikuti oleh pengunjung antara lain pembuatan mainan anak, proses memasak makanan tradisional, dan pembuatan batik. Sedangkan untuk upacara adat yang biasa diselenggerakan di desa antara lain Mantenan, Sunatan, Kenduri, dan Wiwid.\r\n\r\nAkses menuju Desa Tanjung sangat mudah. Pengunjung bisa ambil rute Monjali ke utara. Sampai di KM 11, ambil kiri atau ke arah Jalan Magelang, sekitar 950 meter akan menemukan Desa Tanjung.', 'Aldhan Biuzar', '2019-01-30', 'bola.jpg', 3),
+(6, 'Peresmian', 'Peresmian desawisata', 'Bagus Pogar', '2019-01-31', 'logocoding1.png', 1);
 
 -- --------------------------------------------------------
 
@@ -85,8 +86,14 @@ CREATE TABLE `config_page` (
   `fk_desawisata` int(11) NOT NULL,
   `template` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `subdomain` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_about` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `telp` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telp_wa` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sosial_facebook` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sosial_instagram` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sosial_twitter` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo_img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner_img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -94,10 +101,10 @@ CREATE TABLE `config_page` (
 -- Dumping data for table `config_page`
 --
 
-INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`, `telp`, `email`, `banner_img`) VALUES
-(1, 1, 'template4', 'tembi2233', '3', '3', 'cover_photo_245405_14223494281.png'),
-(4, 2, '', '', '', '', ''),
-(6, 3, 'template3', 'tanjung', '087815316315', 'aldansorry@gmail.com', 'bola.jpg');
+INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`, `short_about`, `telp`, `telp_wa`, `email`, `sosial_facebook`, `sosial_instagram`, `sosial_twitter`, `logo_img`, `banner_img`) VALUES
+(1, 1, 'template2', 'tembi2233', '1', '3', '1', '1', '1', '1', '1', 'Madao_Smoking1.png', 'one-piece-hd-wallpapers_53749122.jpg'),
+(4, 2, '', '', '', '', '', '', '', '', '', '', ''),
+(6, 3, 'template3', 'tanjung', '', '087815316315', '', 'aldansorry@gmail.com', '', '', '', '', 'bola.jpg');
 
 -- --------------------------------------------------------
 
@@ -332,7 +339,8 @@ INSERT INTO `review` (`id`, `nama`, `email`, `telp`, `rating`, `keterangan`, `fo
 (1, 'Bagus Pogar', 'baguspogar@gmail.com', 2147483647, 1, 'desanya sangat bagus', '1.jpg', 1, '2019-01-24 13:58:07'),
 (2, 'Budi hariyanto', 'budihariyanto@gmail.', 2147483647, 4, 'Pemandangannya susasana desanya sangat indah wajib untuk di kunjungi', 'dw_sambi_(1)_(Copy).jpg', 2, '2019-01-24 13:58:07'),
 (3, 'Yahya Hartanto', 'yahya89720837', 2147483647, 5, 'Desawisata Tanjung cocok untuk beredukasi bagi keluarga , bagaimana caranya bercocok tanam', '86d27-desa-tanjung.jpg', 3, '2019-01-24 13:58:07'),
-(4, 'a', 'b@c.d', 0, 3, 'f', '', 1, '2019-01-25 10:39:00');
+(4, 'a', 'b@c.d', 0, 3, 'f', '', 1, '2019-01-25 10:39:00'),
+(5, 'aldhan', 'aldansorry@gmail.com', 89992298, 3, 'Asri ramah', '', 1, '2019-01-31 09:11:40');
 
 -- --------------------------------------------------------
 
@@ -395,7 +403,8 @@ INSERT INTO `users` (`id`, `nama`, `alamat`, `telp`, `email`, `username`, `passw
 (1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, NULL, NULL, '2019-01-14 09:16:22', NULL, NULL),
 (2, 'desa1', 'desa1', '0000', 'desa1', 'desa123', '3cf9be6f2f317279cc0a8207a77bd0db', 1, NULL, 'logoaldansorry2.png', 4, 1, NULL, '2019-01-22 09:29:01', NULL, NULL),
 (6, '1', '1', '1', '1', '111111', '96e79218965eb72c92a549dd5a330112', 1, NULL, 'aaa.png', 1, 1, NULL, '2019-01-29 09:11:46', NULL, NULL),
-(7, 'Tanjung', 'Tanjung', '0757557557557', 'bagus.pogar@gmail.co', '123456', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, 'bola.jpg', 2, 3, NULL, '2019-01-30 11:27:07', NULL, NULL);
+(7, 'Tanjung', 'Tanjung', '0757557557557', 'bagus.pogar@gmail.co', '123456', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, 'bola.jpg', 2, 3, NULL, '2019-01-30 11:27:07', NULL, NULL),
+(8, 'aldhan', 'Lumajang', '089911919', 'aldansorry@gmail.com', 'aldhan123', '9573deb4cce6dc87332fe330eda3ecac', 1, NULL, 'aaa1.png', 2, 1, NULL, '2019-01-31 09:06:54', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -548,7 +557,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `config_page`
@@ -602,7 +611,7 @@ ALTER TABLE `pengunjung`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `toko`
@@ -614,7 +623,7 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `wisata`
