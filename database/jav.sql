@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2019 at 10:40 AM
+-- Generation Time: Jan 31, 2019 at 09:00 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -45,7 +45,8 @@ INSERT INTO `agenda` (`id`, `tanggal`, `judul`, `keterangan`, `foto`, `fk_desawi
 (1, '2019-02-01', 'Upacara skaten', 'akan diadakn upacara sekaten yang jatuh pada taggal 1 Frebruari 2019', 'images.jpg', 1),
 (2, '2019-01-31', 'Reog Ponorogo', 'Desa sambi akan merayakan ulang tahunnya. dan akan menampilkan Reog yang asli dari ponorogo Jawa timur', 'sejumlah-penari-menampilkan-kesenian-terkenal-reog-ponorogo1499925621.jpg', 2),
 (3, '2019-01-18', 'Tari Lesung', 'akan diadakan tari lesung untuk memperingati hari panen di desa wisata tanjung', 'Bendrong_Lesung01.jpg', 3),
-(4, '2019-02-03', 'Sepeda santai', 'Bersepeda santai di desa wisata tembi. dapatkan doorprice menarik 1 sepeda motor, 1kulkas, 1 tv  turut juga dihadiri oleh bupati bantul', 'wisata-sepeda-di-bali.jpg', 1);
+(4, '2019-02-03', 'Sepeda santai', 'Bersepeda santai di desa wisata tembi. dapatkan doorprice menarik 1 sepeda motor, 1kulkas, 1 tv  turut juga dihadiri oleh bupati bantul', 'wisata-sepeda-di-bali.jpg', 1),
+(5, '2019-01-30', 'Upaacara adat', 'akan diadakan upacara adat', '105435_labuhanmerapi1.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,8 @@ CREATE TABLE `berita` (
 INSERT INTO `berita` (`id`, `judul`, `konten`, `author`, `tanggal`, `foto`, `fk_desawisata`) VALUES
 (1, 'Peresmian Desa Wisata Tembi', 'Desawisata Tembi Telah diresmikan Oleh Gubernur DIY', 'Bagus Pogar', '2019-01-17', 'logocoding.png', 1),
 (2, 'Desa wisata sambi dikunjungi gub', 'desa wisata sambi dikunjungi gubernur diy. gubernur Diy  ingin  tahu proses jalannya desa wisata tersebut', '', '2019-01-17', 'Rambu_stop.jpg', 2),
-(3, 'Peresmian Desa Wisata Tanjung', 'peresmian desawisata tanjung', 'Bagus Pogar', '2019-03-05', 'Rambu_stop1.jpg', 3);
+(3, 'Peresmian Desa Wisata Tanjung', 'peresmian desawisata tanjung', 'Bagus Pogar', '2019-03-05', 'Rambu_stop1.jpg', 3),
+(5, 'Banyak Wahana baru di desa tanju', 'Desa wisata Tanjung berlokasi kurang lebih 5 KM dari Monumen Jogja Kembali (Monjali) atau tepatnya berada di Desa Dono Harjo, Kecamatan Ngaglik, Kabupaten Sleman. Desa wisata Tanjung diresmikan pada tahun 2001, dan sejak saat itu banyak wisatawan lokal maupun mancanegara yang datang ke desa ini terutama pada musim libur sekolah.\r\n\r\nSelain memiliki potensi wisata alam pedesaan, Desa Tanjung juga menawarkan wisata kesenian tradisional, budaya, dan kerajinan atau home industri. Satu lagi yang merupakan ciri khas Desa Tunjung adalah adanya rumah Joglo bersejarah yang diberi nama Joglo Tanjung. Konon rumah Joglo yang kini berumur lebih dari 200 tahun ini dulunya milik lurah desa setempat.\r\n\r\nJoglo Tanjung mengalami 2 kali renovasi. Meski lantai tanah rumah Joglo kini telah direnovasi menjadi lantai keramik, namun secara keseluruhan bagian dan ornament-ornament kuno yang ada masih terjaga dengan baik. Beberapa bagian rumah Joglo antara lain pendopo, pringgitan, ndalem longkangan, pawon, dan garasi kereta dan kandang kuda yang saat ini berubah menjadi tempat penyimpanan gamelan.\r\n\r\nDesa Tanjung memiliki areal persawahan yang cukup luas yang juga menjadi potensi wisata desa ini. Pengunjung dapat belajar dan turun langsung ke sawah untuk belajar bagaimana mengolah tanah, menanam, memanen, sampai hasil panen tersebut tersaji di meja makan.\r\n\r\nPotensi kesenian di Desa Tanjung diantaranya Jathilan, Sholawatan, Karawitan, Tari Angguk Putri, dan Tari Klasik. Untuk potensi kerajinan atau home industry yang bisa diikuti oleh pengunjung antara lain pembuatan mainan anak, proses memasak makanan tradisional, dan pembuatan batik. Sedangkan untuk upacara adat yang biasa diselenggerakan di desa antara lain Mantenan, Sunatan, Kenduri, dan Wiwid.\r\n\r\nAkses menuju Desa Tanjung sangat mudah. Pengunjung bisa ambil rute Monjali ke utara. Sampai di KM 11, ambil kiri atau ke arah Jalan Magelang, sekitar 950 meter akan menemukan Desa Tanjung.', 'Aldhan Biuzar', '2019-01-30', 'bola.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -93,8 +95,9 @@ CREATE TABLE `config_page` (
 --
 
 INSERT INTO `config_page` (`id`, `fk_desawisata`, `template`, `subdomain`, `telp`, `email`, `banner_img`) VALUES
-(1, 1, 'template2', 'tembi2233', '2', '2', 'samuraiwall2.png'),
-(2, 5, 'template1', 'Desa5', '', '', '');
+(1, 1, 'template4', 'tembi2233', '3', '3', 'cover_photo_245405_14223494281.png'),
+(4, 2, '', '', '', '', ''),
+(6, 3, 'template3', 'tanjung', '087815316315', 'aldansorry@gmail.com', 'bola.jpg');
 
 -- --------------------------------------------------------
 
@@ -120,11 +123,9 @@ CREATE TABLE `desawisata` (
 --
 
 INSERT INTO `desawisata` (`id`, `nama`, `alamat`, `desa`, `kecamatan`, `kabupaten`, `deskripsi`, `_lat`, `_long`, `foto`) VALUES
-(1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', '', '', '', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, '1.jpg'),
-(2, 'Desa wisata Sambi', 'Jl. Kaliurang KM. 19.2, Dusun Sambi, Desa Pakembinangun, Kec. Pakem, Purwodadi, Pakembinangun, Slema', '', '', '', 'Suasana khas pedesaan, pemandangannya bagus, banyak camping ground dan gazebo untuk pertemuan', -7.774297, 110.375128, 'dw_sambi_(1)_(Copy).jpg'),
-(3, 'Desa Wisata Tanjung', ' Tanjung, Donoharjo, Ngaglik, Ponason, Donoharjo, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yog', '', '', '', 'Desa wisata dengan wahana membajak sawah & melakukan aktivitas pedesaan.', -7.84435, 110.34329, 'download_(3).jpg'),
-(4, '1', '1', '1', '1', '1', '1', 1.2, 1.2, 'logoaldansorry4.png'),
-(5, '2', '21', '2', '2', '2', '21', 1.2, 1.2, 'logoaldansorry5.png');
+(1, 'Desa wisata Tembi', 'Jalan Parangtritis km 8,5, Tembi, Timbulharjo, Sewon, Mriyan, Timbulharjo, Sewon, Bantul, Daerah Ist', 'Tembi', 'Timbulharjo', 'Bantul', 'Desa wisata ini sangat terkenal di yogyakarta menjadi salah satu destinasi para pengunjung', -7.84435, 110.34329, ''),
+(2, 'Desa wisata Sambi', 'Jl. Kaliurang KM. 19.2, Dusun Sambi, Desa Pakembinangun, Kec. Pakem, Purwodadi, Pakembinangun, Slema', 'Pakembinangun', 'Pakem', 'Sleman', 'Desa Wisata Sambi adalah merupakan desa alami asli Jogja, yang terletak di jalan Kaliurang Km. 19,2 padukuhan Sambi desa Pakembinangun Kec. Pakem Kabupaten Sleman DIY. Desa Wisata Sambi memiliki beragam potensi wisata yang menarik untuk dikunjungi oleh wisatawan. Desa wisata yang berada cukup dekat dengan Gunung Merapi ini, menghadirkan panorama alam yang sangat indah untuk dinikmati sehingga dapat memberikan kesegaran dan ketentraman hati, panorama alam pesawahan dan pepohonan yang rindang serta kejernihan airnya juga rumah-rumah adat seperti joglo, limasan, simon, dengan halaman yang luas, bisa dipakai media bermain sambil menikmati sejuknya udara serta suasana desa alami asli Jogja.', -7.774297, 110.375128, ''),
+(3, 'Desa Wisata Tanjung', ' Tanjung, Donoharjo, Ngaglik, Ponason, Donoharjo, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yog', 'Donoharjo', 'Sleman', 'Sleman', 'Desa wisata dengan wahana membajak sawah & melakukan aktivitas pedesaan.', -7.84435, 110.34329, '');
 
 -- --------------------------------------------------------
 
@@ -147,10 +148,15 @@ CREATE TABLE `galeri` (
 
 INSERT INTO `galeri` (`id`, `judul`, `foto`, `nourut`, `ukuran`, `fk_desawisata`) VALUES
 (1, 'Pengunjung belajar batik di desa tembi', 'desa-wisata-tembi_20180919_125221.jpg', '1', '2', 1),
-(2, 'Ritual yang diadakan sesepuh desa sambi', '105435_labuhanmerapi1.jpg', '2', '2', 2),
 (3, 'Wisata memandangi persawahan', 'download_(1).jpg', '3', '3', 3),
 (4, 'Pengunjung belajar bercocok tanam ', 'tanjung.jpg', '4', '4', 3),
-(5, 'Sepeda santai', 'wisata_sepeda_onthel_di_pedesaan_borobudur.jpg', '5', '4', 1);
+(5, 'Sepeda santai', 'wisata_sepeda_onthel_di_pedesaan_borobudur.jpg', '5', '4', 1),
+(6, 'Wisatawan sedang membajak sawah', 'download_(2).jpg', '1', '2', 2),
+(7, 'Belajar menanam Padi', '574388_620.jpg', '2', '3', 2),
+(8, 'Rafting', '0800031karo-rafting780x390.JPG', '4', '3', 2),
+(9, 'Peternakan Desa Sambi', '09122016014949.jpg', '5', '3', 2),
+(10, 'Bercocok Tanam', '574388_6201.jpg', '3', '3', 1),
+(11, 'Lesung', 'Bendrong_Lesung01.jpg', '3', '3', 1);
 
 -- --------------------------------------------------------
 
@@ -173,7 +179,9 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`id`, `no`, `kategori`, `foto`, `fasilitas`, `status`, `fk_penginapan`) VALUES
-(1, '1', '1', 'logoaldansorry2.png', '1', '1', 1);
+(1, '1', '2', '', '2 bed, kamar mandi dalam, tv, kulkas, almari, meja, kolam renang ,AC', 'Ada', 1),
+(2, '2', '1', 'IMG_7965.jpg', 'Bed 3, Km dalam, tv, kipas angin', 'Ada', 1),
+(3, '3', '2', 'business-sambiresortspa-hotel-sleman8733_l.jpg', 'ac tv kamarmandi kolam renang, pemandian Air panas, SPA, pijat refleksi', 'Ada', 1);
 
 -- --------------------------------------------------------
 
@@ -194,9 +202,16 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nama`, `keterangan`, `foto`, `fk_desawisata`) VALUES
-(1, 'Wisata Alam', '', 'air-terjun-sri-gethuk.jpg', 1),
-(2, 'Petualangan', '', 'IMG-20120322-WA0001-732946.jpg', 2),
-(3, 'Edukasi', '', 'download_(2).jpg', 2);
+(1, 'Wisata Alam', 'Wisata Alam', 'air-terjun-sri-gethuk.jpg', 1),
+(2, 'Petualangan', 'Outbond di desa wisata Sambi dikhususkan di Ledok Sambi yang dekat dengan lokasi Kali Kuning. Fasilitas yang terdapat di Ledok Sambi ini antara lain arena outbond dengan fasilitas flying fox, meniti tali dan lain-lain.', 'IMG-20120322-WA0001-732946.jpg', 2),
+(3, 'Pertanian', 'Lahan pertanian yang membentang di desa wisata Sambi merupakan objek yang menarik. Wisatawan dapat mempraktekan secara langsung kegiatan-kegiatan pertanian seperti menanam padi, membajak sawah dan belajar budidaya jamur.', 'download_(2).jpg', 2),
+(7, 'Wisata Alam', 'Di wisata ini kita dapat mempelajari tentang alam ', 'aaa2.png', 3),
+(13, 'Edukasi', 'Kita bisa belajar sambil bermain', 'bola7.jpg', 3),
+(14, 'Arung Jeram', 'Mengarungi sungai dengan keseruan', 'stadium.jpg', 3),
+(15, 'Peternakan', 'Peternakan di desa wisata Sambi berupa peternakan sapi perah. Wisatawan dapat mempraktekan cara memerah susu sapi secara tradisional. Wisatawan juga dapat belajar membudidayakan sapi perah. Wisatawan juga dapat menangkap ikan tanpa bantuan alat di sawah.', '09122016014949.jpg', 2),
+(16, 'Panorama', 'Panorama desa yang sejuk, asri dan nyaman menjadi daya tarik tersendiri bagi desa wisata Sambi. Wisatawan dapat berjalan menyusuri desa (tracking) dengan dipandu olah pemandu setempat. Tracking dapat dilakukan sesuai permintaan wisatawan', 'sambi_panorama.jpg', 2),
+(17, 'Pertanian', 'Pertanian', '574388_620.jpg', 1),
+(18, 'Kesenian', 'Kesenian', 'belajar-gamelan-desa-wisata-tembi.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -243,11 +258,8 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id`, `nama`, `keterangan`, `alamat`, `foto`, `fk_desawisata`) VALUES
-(1, 'D omah ', 'home stay yang terletak di desa wisata tembi', 'desa Tembi, Sewon, Bantul, Yogyakarta,', '5587566764f8029e976fa07463837d0e.jpg', 1),
-(2, 'Rumah Joglo', 'Rumah Joglo terletak di desa sambi , merupakan salah satu penginapan resort dan spa. bagi para pengunjung yang ingin menginap di sini merupakan salah satu destinasi yang wajib di kunjungi. karena pemandangan khas pedesaan melekat di desa ini', 'Jl. Kaliurang Km. 19.2, Desa Wisata Sambi | Pakembinangun, Pakem, 55582, Indonesia', 'filename-img-2178-jpg.jpg', 2),
-(3, 'D homestay', 'Homestay ini terdapat di Desa Wisata Tanjung', 'Desa wisata Tanjung yogyakarta', '132265845.jpg', 3),
-(4, ' Sakinah homestay', 'Home stay yang ada di daerah desawisata Tanjung', 'Desa wisata tanjung', '132265821.jpg', 3),
-(5, 'Tembi Village Home stay', 'fasilitas tidak perlu diragukan lagi', 'Desa wisata Tembi', '2c7d05d85a44be4ab3c810969431f278.jpg', 1);
+(1, 'Hotel Tembi', 'Hotel sambi dengan fasilitas bintang 4', 'Desa Wisata Sambi', 'Hotel_sambi.JPG', 1),
+(2, 'Tembi House', 'Tembi House', 'Desa Wisata Tembi', 'desa-wisata-tembi-e1506527257772.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -343,9 +355,12 @@ CREATE TABLE `toko` (
 --
 
 INSERT INTO `toko` (`id`, `nama`, `alamat`, `keterangan`, `jenis`, `foto`, `fk_desawisata`) VALUES
-(1, 'Jendela Jogja', 'Jalan Gedong Kuning A No.161, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198', 'Toko Oleh oleh khas jogja', 'Oleh oleh', '1145527JENDELA-JOGJA-5780x390.jpg', 1),
+(1, 'Jendela Jogja', 'Jalan Gedong Kuning A No.161, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198', 'Toko Oleh oleh khas jogja', 'Sovenir', '1145527JENDELA-JOGJA-5780x390.jpg', 1),
 (2, 'Wong batik', 'Jl. HOS Cokroaminoto No.149, Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244', 'Pusat oleh oleh jogja dan merchandise khas jogja', 'Sovenir', 'download.jpg', 2),
-(3, 'Jogja Souvenir', 'Suryatmajan, Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55213', 'Toko Souvenir Terlengkap di Yogyakarta', 'Sovenir', 'souvenir.jpg', 3);
+(3, 'Jogja Souvenir', 'Suryatmajan, Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55213', 'Toko Souvenir Terlengkap di Yogyakarta', 'Sovenir', 'souvenir.jpg', 3),
+(5, 'Bakso Mangkok', 'Desa sambi Yogyakrta', 'Bakso mangkok yang sangat viral ', 'Oleh - oleh', 'p057q4df1.jpg', 2),
+(6, 'Mie Lethek Mbah Mendes', 'Jalan Margo Utomo No.22, Gowongan,', 'Lethek atau letek berarti kotor. Namun nama itu disematkan bukan karena mie-nya kotor, melainkan warnanya yang hitam pekat. Variannya beragam, ada yang rebus, goreng, serta dicampur dengan nasi goreng. Aroma olahan bumbu menyeruak begitu bawang putih, kemiri, merica, dan garam mulai ditumis. Masakan makin lezat dengan tambahan suwir daging ayam jago kampung.', 'Oleh - oleh', '6aa4db55-1430-4fdc-b83f-2ad97fd33b78.jpg', 1),
+(7, 'Ingkung Mbah Kentol', 'Desa Wisata Tembi', 'Jalan-jalan ke Kabupaten Bantul? Jangan lupa mencicipi Ingkung Ayam di warung Mbah Kentol. Makanan ini berupa ayam kampung utuh yang diikat dan dimasukkan dalam kreneng (anyaman bambu), kemudian dimasak menggunakan bumbu rempah. Konon, cara memasak ini memiliki filosofi tersendiri, yaitu memupuk rasa persatuan dan saling membantu antara warga satu dengan yang lain. Penasaran dengan kuliner yang disajikan bersama lalapan ini, kan?', 'Oleh - oleh', 'Ingkung-Mbah-Kentol.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -377,8 +392,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `alamat`, `telp`, `email`, `username`, `password`, `status`, `ket_status`, `foto`, `fk_level`, `fk_desawisata`, `fk_penginapan`, `datecreated`, `createdby`, `editedby`) VALUES
-(1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, 1, NULL, '2019-01-14 09:16:22', NULL, NULL),
-(2, 'desa1', 'desa1', '0000', 'desa1', 'desa123', '3cf9be6f2f317279cc0a8207a77bd0db', 1, NULL, 'logoaldansorry2.png', 4, 1, NULL, '2019-01-22 09:29:01', NULL, NULL);
+(1, 'superadmin', 'superadmin', 'superadmin', 'superadmin', '1', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'superadmin', 'superadmin.png', 1, NULL, NULL, '2019-01-14 09:16:22', NULL, NULL),
+(2, 'desa1', 'desa1', '0000', 'desa1', 'desa123', '3cf9be6f2f317279cc0a8207a77bd0db', 1, NULL, 'logoaldansorry2.png', 4, 1, NULL, '2019-01-22 09:29:01', NULL, NULL),
+(6, '1', '1', '1', '1', '111111', '96e79218965eb72c92a549dd5a330112', 1, NULL, 'aaa.png', 1, 1, NULL, '2019-01-29 09:11:46', NULL, NULL),
+(7, 'Tanjung', 'Tanjung', '0757557557557', 'bagus.pogar@gmail.co', '123456', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, 'bola.jpg', 2, 3, NULL, '2019-01-30 11:27:07', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -403,11 +420,15 @@ CREATE TABLE `wisata` (
 
 INSERT INTO `wisata` (`id`, `nama`, `keterangan`, `harga`, `jamkunjung`, `foto`, `fk_desawisata`, `fk_kategori`) VALUES
 (1, 'Wisata alam Arum jeram', 'Arum jeram', 10000000, '10:00 - 20:00', '0800031karo-rafting780x390.JPG', 1, 1),
-(2, 'Outboound', 'outbound', 10000000, '08.00', 'DSC001902.jpg', 2, 2),
+(2, 'Outboound', 'Outbond di desa wisata Sambi dikhususkan di Ledok Sambi yang dekat dengan lokasi Kali Kuning. Fasilitas yang terdapat di Ledok Sambi ini antara lain arena outbond dengan fasilitas flying fox, meniti tali dan lain-lain.', 250000, '08.00-17.00', 'DSC0019022.jpg', 2, 2),
 (3, 'Bercocok Tananm', 'Wisata Persawahan untuk bercocok tanam. merupkana salah satu wisata edukasi di desa wisata tanjung', 20000, '08.00', '574388_620.jpg', 3, 3),
 (4, 'Air tejun', 'Air tejun', 300000, '08.00-17.00', 'Wisata_Air_Terjun_di_Jogja.jpg', 3, 1),
 (5, 'Kolam renang Desa Tembi', 'Salah satu wisata di Desa wisata tembi, yaitu  kolam renang desa tembi', 10000, '09.00-19.00', 'Kolam-Renang-Tembi-Jogja.jpg', 1, 1),
-(6, 'Rumah Budaya Desa Wisata tembi', 'Salah satu wisata di desa tembi', 15000, '09.00-19.00', 'images_(1).jpg', 1, 3);
+(6, 'Rumah Budaya Desa Wisata tembi', 'Salah satu wisata di desa tembi', 15000, '09.00-19.00', 'images_(1).jpg', 1, 3),
+(7, 'Tanam PADI-TK & PlygroupMinimal 30 orang', 'Beragam permainanTangkap ikan atau flying foxMakan & snack 1 kaliFasilitator', 65000, '08.00-17.00', '574388_6201.jpg', 2, 3),
+(8, 'Perah susu sapi', 'Bisa belajar memerah susu. mengehtahui bagaimana perawatan sapi perah. guide', 30000, '08.00-17.00', '09122016014949.jpg', 2, 15),
+(9, 'View Sambi', 'Panorama desa yang sejuk, asri dan nyaman menjadi daya tarik tersendiri bagi desa wisata Sambi. Wisatawan dapat berjalan menyusuri desa (tracking) dengan dipandu olah pemandu setempat. Tracking dapat dilakukan sesuai permintaan wisatawan.', 200000, '08.00-17.00', 'Sambiiii.jpg', 2, 16),
+(10, 'Gamelan', 'Desa wisata Tembi Terdapat Gamelan', 30000, '08.00-17.00', 'belajar-gamelan-desa-wisata-tembi.jpg', 1, 18);
 
 --
 -- Indexes for dumped tables
@@ -521,43 +542,43 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `config_page`
 --
 ALTER TABLE `config_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `desawisata`
 --
 ALTER TABLE `desawisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `level`
@@ -569,7 +590,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `penginapan`
 --
 ALTER TABLE `penginapan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengunjung`
@@ -587,19 +608,19 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -621,7 +642,7 @@ ALTER TABLE `berita`
 -- Constraints for table `config_page`
 --
 ALTER TABLE `config_page`
-  ADD CONSTRAINT `config_page_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`);
+  ADD CONSTRAINT `config_page_ibfk_1` FOREIGN KEY (`fk_desawisata`) REFERENCES `desawisata` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `galeri`
